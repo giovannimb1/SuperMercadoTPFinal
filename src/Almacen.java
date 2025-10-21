@@ -1,0 +1,48 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Almacen implements IGestor<Producto> {
+
+    /// ATRIBUTOS
+    private Map<Integer, Producto> productos = new HashMap<>();
+
+    /// CONSTRUCTOR
+    public Almacen() {
+    }
+
+    /// GETTER
+    public Map<Integer, Producto> getProductos() {
+        return productos;
+    }
+
+    /// METODOS
+
+    public String agregar(Producto p) {
+        productos.put(p.getId(), p);
+        return "El producto (" + p.getNombre() + ") ha sido añadido correctamente al almacen";
+    }
+
+    public String eliminar(int id) {
+        String txt = "El ID: " + id + " no corresponde a ningun producto dentro del almacen";
+        if (productos.containsKey(id)) {
+            productos.remove(id);
+            txt = "El producto correspondiente a ese ID (" + id + ") fue eliminado del almacen";
+        }
+        return txt;
+    }
+
+    public String modificar(int id, Producto p) {
+        String txt = "El ID: " + id + " no corresponde a ningun producto dentro del almacen";
+        if (productos.containsKey(id)) {
+            productos.put(id, p);
+            txt = "El producto (" + p.getNombre() + ") ha sido modificado correctamente";
+        }
+        return txt;
+    }
+
+    public void listar(){
+        for(Producto p : productos.values()){
+            System.out.println(p);
+        }
+    }
+}
