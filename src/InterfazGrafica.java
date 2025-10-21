@@ -14,8 +14,6 @@ public class InterfazGrafica extends Application {
     public void start(Stage stage) {
         System.out.println(getClass().getResource("/img/cap.png"));
 
-
-
         // Instancia del layout con la resolucion de la ventana;
         AnchorPane layout = new AnchorPane();
         layout.setPrefSize(800, 600);
@@ -85,7 +83,7 @@ public class InterfazGrafica extends Application {
         textoLogo.setImage(new Image(getClass().getResource("/img/nombre.png").toExternalForm()));
 
         //muestro TOD0
-        layout.getChildren().addAll(imgFondo, fondo,textoLogo, logo, lblUsuario, txtUsuario, lblPass, txtPass, btnIniciar);
+        layout.getChildren().addAll(imgFondo, fondo, textoLogo, logo, lblUsuario, txtUsuario, lblPass, txtPass, btnIniciar);
 
         /*Escena con el layout antes creado donde se le pone
         un titulo a la ventana, y hace que no se pueda ni achicar ni ampliar
