@@ -25,6 +25,7 @@ public class Producto implements Comparable<Producto> {
     }
 
     public Producto() {
+        this.id = cont++;
     }
 
     /// GETTERS AND SETTERS
@@ -92,14 +93,14 @@ public class Producto implements Comparable<Producto> {
     @Override
     public String toString() {
         return "|------------------------------------------------|\n" +
-                "| [PRODUCTO]  ID: " + id + "                              |\n" +
+                "| [PRODUCTO]  ID: " + id + "\n" +
                 "|------------------------------------------------|\n" +
-                "|  Nombre: " + nombre + "                          |\n" +
-                "|  Marca: " + marca + "                          |\n" +
-                "|  Precio: $" + precio + "                                |\n" +
-                "|  Vencimiento: " + vencimiento + "                       |\n" +
-                "|  Stock: " + stock + "                                     |\n" +
-                "|  Categoría: " + categoria + "                             |\n" +
+                "|  Nombre: " + nombre + "\n" +
+                "|  Marca: " + marca + "\n" +
+                "|  Precio: $" + precio+ "\n" +
+                "|  Vencimiento: " + vencimiento + "\n" +
+                "|  Stock: " + stock + "\n" +
+                "|  Categoría: " + categoria + "\n" +
                 "|------------------------------------------------|";
     }
 
