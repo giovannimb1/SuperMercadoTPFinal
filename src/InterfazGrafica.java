@@ -12,6 +12,8 @@ public class InterfazGrafica extends Application {
 
     @Override
     public void start(Stage stage) {
+        System.out.println(getClass().getResource("/img/cap.png"));
+
 
 
         // Instancia del layout con la resolucion de la ventana;
@@ -66,21 +68,21 @@ public class InterfazGrafica extends Application {
         imgFondo.setFitHeight(602.0);
         imgFondo.setLayoutX(327.0);
         imgFondo.setLayoutY(0.0);
-        imgFondo.setImage(new Image("file:C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal-master/img/Captura de pantalla 2025-10-20 204731.png"));
+        imgFondo.setImage(new Image(getClass().getResource("/img/cap.png").toExternalForm()));
 
         ImageView logo = new ImageView();
         logo.setFitWidth(160.0);
         logo.setFitHeight(155.0);
         logo.setLayoutX(20.0);
         logo.setLayoutY(97.0);
-        logo.setImage(new Image("file:C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal-master/img/140396-pip-boy-fallout-picture-hq-image-free.png"));
+        logo.setImage(new Image(getClass().getResource("/img/fall.png").toExternalForm()));
 
         ImageView textoLogo = new ImageView();
         textoLogo.setFitWidth(320.0);
         textoLogo.setFitHeight(260.0);
         textoLogo.setLayoutX(65.0);
         textoLogo.setLayoutY(50);
-        textoLogo.setImage(new Image("file:C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal-master/img/nombre.png"));
+        textoLogo.setImage(new Image(getClass().getResource("/img/nombre.png").toExternalForm()));
 
         //muestro TOD0
         layout.getChildren().addAll(imgFondo, fondo,textoLogo, logo, lblUsuario, txtUsuario, lblPass, txtPass, btnIniciar);
