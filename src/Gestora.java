@@ -1,11 +1,10 @@
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class Gestora implements IGestor<Usuario> {
 
     /// ATRIBUTOS
-    private Set<Usuario> usuarios = GestoraJSON.archivoAset("usuarios.json");
+    private Set<Usuario> usuarios = new HashSet<>();
 
     /// CONSTRUCTOR
     public Gestora() {
@@ -27,38 +26,16 @@ public class Gestora implements IGestor<Usuario> {
     @Override
     public String eliminar(int id){
         String txt = "El ID no corresponde a ningun usuario en el sistema";
-        Iterator<Usuario> it = usuarios.iterator();
-        while(it.hasNext()){
-            Usuario u = it.next();
-            if(u.getId() == id){
-                it.remove();
-                txt = "El Usuario ("+u.getUsername()+") ha sido eliminado del sistema correctamente";
-                break;
-            }
-        }
-     return txt;
+        return txt;    ///LO DEJE ACA INCOMPLETO,  NO LO TOQUEN
     }
 
     @Override
     public String modificar(int id, Usuario u){
-        String txt = "El ID no corresponde a ningun usuario en el sistema";
-        Iterator<Usuario> it = usuarios.iterator();
-        while(it.hasNext()){
-            Usuario us = it.next();
-            if(us.getId() == id){
-                it.remove();
-                usuarios.add(u);
-                txt = "El Usuario ("+u.getUsername()+") ha sido modificado del sistema correctamente";
-                break;
-            }
-        }
-        return txt;
+        return "";        ///LO DEJE ACA INCOMPLETO,  NO LO TOQUEN
     }
 
     @Override
     public void listar(){
-        for(Usuario u : usuarios){
-            System.out.println(u);
-        }
+        ///LO DEJE ACA INCOMPLETO,  NO LO TOQUEN
     }
 }

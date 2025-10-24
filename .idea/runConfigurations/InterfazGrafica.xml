@@ -2,7 +2,7 @@
   <configuration default="false" name="InterfazGrafica" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="InterfazGrafica" />
     <module name="testSupermerk2" />
-    <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Usuario\Desktop\configuracion lol\javafx\openjfx-25_windows-x64_bin-sdk\javafx-sdk-25\lib&quot; --add-modules javafx.controls --enable-native-access=javafx.graphics" />
+    <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Gonzalo\Desktop\SuperMercadoTPFinal-master\lib\javafx-sdk-25\lib&quot; --add-modules javafx.controls --enable-native-access=javafx.graphics" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

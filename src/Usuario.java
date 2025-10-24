@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Usuario implements Comparable<Usuario> {
+public abstract class Usuario implements Comparable<Usuario>{
 
     /// ATRIBUTOS
     protected int id;
@@ -15,7 +15,7 @@ public abstract class Usuario implements Comparable<Usuario> {
     protected boolean permisos;
 
     /// CONSTRUCTORES
-    public Usuario(String nombre, String apellido, String username, String email, String password) {
+    public Usuario(int id, String nombre, String apellido, String username, String email, String password, LocalDate fechaRegistro) {
         this.id = cont++;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -27,7 +27,6 @@ public abstract class Usuario implements Comparable<Usuario> {
 
     public Usuario() {
         this.id = cont++;
-        this.fechaRegistro = LocalDate.now();
     }
 
     /// GETTERS AND SETTERS
@@ -87,14 +86,6 @@ public abstract class Usuario implements Comparable<Usuario> {
         this.permisos = permisos;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setFechaRegistro(LocalDate fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
-    }
-
     /// METODOS
     @Override
     public String toString() {
@@ -106,7 +97,7 @@ public abstract class Usuario implements Comparable<Usuario> {
                 "|  Email: $" + email + "\n" +
                 "|  Contraseña: " + password + "\n" +
                 "|  Fecha Registro: " + fechaRegistro + "\n" +
-                "|  Admin: " + permisos + "\n" +
+                "|  Admin: "  +permisos + "\n" +
                 "|------------------------------------------------|";
 
     }
@@ -127,8 +118,8 @@ public abstract class Usuario implements Comparable<Usuario> {
         return Objects.hash(id, email);
     }
 
-    @Override
-    public int compareTo(Usuario aux) {
-        return this.fechaRegistro.compareTo(aux.getFechaRegistro());
-    }
+     @Override
+     public int compareTo(Usuario aux){
+         return this.fechaRegistro.compareTo(aux.getFechaRegistro());
+     }
 }
