@@ -4,7 +4,7 @@ import java.util.Map;
 public class Almacen implements IGestor<Producto> {
 
     /// ATRIBUTOS
-    private Map<Integer, Producto> productos = new HashMap<>();
+    private Map<Integer, Producto> productos = GestoraJSON.archivoAmap("productos.json");
 
     /// CONSTRUCTOR
     public Almacen() {

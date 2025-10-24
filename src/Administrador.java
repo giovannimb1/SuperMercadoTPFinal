@@ -1,10 +1,10 @@
-import java.time.LocalDate;
 
 public class Administrador extends Usuario{
 
-   /// CONSTRUCTORES
-    public Administrador(int id, String nombre, String apellido, String username, String email, String password, LocalDate fechaRegistro) {
-        super(id, nombre, apellido, username, email, password, fechaRegistro);
+    /// CONSTRUCTORES
+
+    public Administrador(String nombre, String apellido, String username, String email, String password) {
+        super(nombre, apellido, username, email, password);
         super.setPermisos(true);
     }
 
