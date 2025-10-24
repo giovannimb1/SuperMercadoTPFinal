@@ -1,0 +1,10 @@
+[{
+    "password": "13579",
+    "fecha_registro": "2025-10-24",
+    "apellido": "Perez",
+    "id": 1,
+    "permisos": true,
+    "nombre": "Jorge",
+    "email": "jorge@gmail.com",
+    "username": "jorgeC"
+}]

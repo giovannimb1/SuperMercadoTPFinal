@@ -89,6 +89,10 @@ public class Producto implements Comparable<Producto> {
         this.categoria = categoria;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     /// METODOS
     @Override
     public String toString() {
