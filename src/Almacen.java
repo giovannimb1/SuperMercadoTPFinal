@@ -4,10 +4,19 @@ import java.util.Map;
 public class Almacen implements IGestor<Producto> {
 
     /// ATRIBUTOS
+    private static Almacen instancia; //singleton
     private Map<Integer, Producto> productos = GestoraJSON.archivoAmap("productos.json");
 
     /// CONSTRUCTOR
-    public Almacen() {
+    private Almacen() {
+    }
+
+    //singleton
+    public static Almacen getInstancia(){
+        if(instancia == null){
+            instancia = new Almacen();
+        }
+      return instancia;
     }
 
     /// GETTER

@@ -1,15 +1,12 @@
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+
 
 public class Main {
     public static void main(String[] args) {
 
 
             /*
-            NO ME BORREn esto
+            NO ME BORREn esto q es para probar
             */
         Producto p1 = new Producto(
                 "Leche Entera",
@@ -28,14 +25,18 @@ public class Main {
                 "13579"
         );
 
-        /// probando
-        Almacen alm = new Almacen();   /// ya le cargue el p1
-        Gestora gest = new Gestora();  /// ya le cargue el admin
+        // probando
+                                        //al unico Almacen ya le cargue el p1
+                                       // a la unica Gestora de usuarios le cargue el admin
 
-        System.out.println(alm.getProductos().size());
-        System.out.println(gest.getUsuarios().size());
+        System.out.println(Almacen.getInstancia().getProductos().size()); // 1
+        System.out.println(Gestora.getInstancia().getUsuarios().size()); // 1
 
-        System.out.println(admin.iniciarSesion("jorgeC","13579"));
-        System.out.println(admin.iniciarSesion("jorgec","13579"));
+        System.out.println(admin.iniciarSesion("jorgeC","13579")); // true
+        System.out.println(admin.iniciarSesion("jorgec","13579")); // false
+
+        Almacen.getInstancia().listar();
+        Gestora.getInstancia().listar();
+
     }
 }
