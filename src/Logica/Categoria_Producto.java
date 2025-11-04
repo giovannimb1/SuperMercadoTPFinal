@@ -1,0 +1,5 @@
+package Logica;
+
+public enum Categoria_Producto {
+    CARNE,LACTEO,VEGETAL,BEBIDA,SNACK,HIGIENE,LIMPIEZA
+}

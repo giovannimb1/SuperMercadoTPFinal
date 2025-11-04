@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="file://$USER_HOME$/Desktop/configuracion lol/javafx/openjfx-25_windows-x64_bin-sdk/javafx-sdk-25/lib" />
       <root url="jar://$PROJECT_DIR$/json-20240303.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://$USER_HOME$/Desktop/configuracion lol/javafx/openjfx-25_windows-x64_bin-sdk/javafx-sdk-25/lib" recursive="false" />
   </library>
 </component>
