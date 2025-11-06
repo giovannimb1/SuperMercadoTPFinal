@@ -2,6 +2,7 @@ package Interfaz;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 
 public class Intro extends JFrame {
 
@@ -14,17 +15,20 @@ public class Intro extends JFrame {
         setLocationRelativeTo(null);
 
         JPanel panel = new JPanel(null);
-        panel.setBackground(new Color(14, 21, 37));
         add(panel);
 
 
-        JLabel usuarioT = Metodos.textoDefault(82, 400, "USUARIO");
+        ImageIcon img = new ImageIcon(getClass().getResource("/img/fondo.png"));
+        JLabel fondo = new JLabel(img);
+        fondo.setBounds(0, 0, 1280, 720);
+
+
+        JLabel usuarioT = Metodos.textoDefault(82, 400, "USUARIO", Color.BLACK);
 
         JTextField inUsuario = new JTextField();
         inUsuario.setBounds(82, 430, 200, 25);
 
-
-        JLabel contranaT = Metodos.textoDefault(82, 470, "CONTRASEÑA");
+        JLabel contranaT = Metodos.textoDefault(82, 470, "CONTRASEÑA", Color.BLACK);
 
         JPasswordField inContrasena = new JPasswordField();
         inContrasena.setBounds(82, 500, 200, 25);
@@ -50,7 +54,7 @@ public class Intro extends JFrame {
 
             boolean flag = true; // verificador
 
-            if(flag){
+            if (flag) {
                 new Menu().setVisible(true);
                 dispose();
 
@@ -83,6 +87,9 @@ public class Intro extends JFrame {
         panel.add(inUsuario);
         panel.add(registro);
         panel.add(iniciarSecion);
+        panel.add(fondo);
+
+
     }
 
     /*

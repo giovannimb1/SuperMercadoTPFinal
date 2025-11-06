@@ -16,6 +16,9 @@ public class Carrito {
 
     }
 
+   //HACE UN METODO Q ME RETORNE UNA LISTA DE PRODUCTOS
+
+
 
     /// METODOS
 

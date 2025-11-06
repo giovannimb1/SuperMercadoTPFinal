@@ -17,9 +17,24 @@ public class Carrito extends JFrame{
         panel.setBackground(new Color(14, 21, 37));
         add(panel);
 
+        JButton ticket = new JButton("Finalizar Compra");
+        ticket.setBounds(540, 600, 200, 40);
+        ticket.setBackground(new Color(80, 150, 255));
+        ticket.setForeground(Color.WHITE);
+        ticket.setFocusPainted(false);
+
+        ticket.addActionListener(e -> {
+            System.out.println(/*aca q retorne la lista de productos*/);
+
+        });
+
+        panel.add(ticket);
+
+
         // JLabel ticket = Metodos.textoDefault(null, null, metodo) // aca poner el q retorna el ticket
 
         //panel.add(ticket);
+
 
 
     }

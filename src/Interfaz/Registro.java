@@ -14,14 +14,14 @@ public class Registro extends JFrame {
         setLocationRelativeTo(null);
 
         JPanel panel = new JPanel(null);
-        panel.setBackground(new Color(14, 21, 37));
+        panel.setBackground(new Color(255, 255, 255));
         add(panel);
 
-        JLabel text1 = Metodos.textoDefault(125 ,100, "NOMBRE");
-        JLabel text2 = Metodos.textoDefault(125 ,150, "APELLIDO");
-        JLabel text3 = Metodos.textoDefault(125 ,200, "CONTRASEÑA");
-        JLabel text4 = Metodos.textoDefault(125 ,250, "USUARIO");
-        JLabel text5 = Metodos.textoDefault(125 ,300, "EMAIL");
+        JLabel text1 = Metodos.textoDefault(125 ,100, "NOMBRE",Color.BLACK);
+        JLabel text2 = Metodos.textoDefault(125 ,150, "APELLIDO",Color.BLACK);
+        JLabel text3 = Metodos.textoDefault(125 ,200, "CONTRASEÑA",Color.BLACK);
+        JLabel text4 = Metodos.textoDefault(125 ,250, "USUARIO",Color.BLACK);
+        JLabel text5 = Metodos.textoDefault(125 ,300, "EMAIL",Color.BLACK);
 
 
         JTextField inNombre = new JTextField();
@@ -93,7 +93,7 @@ public class Registro extends JFrame {
 
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Intro().setVisible(true));
+        SwingUtilities.invokeLater(() -> new Registro().setVisible(true));
     }
 }
 

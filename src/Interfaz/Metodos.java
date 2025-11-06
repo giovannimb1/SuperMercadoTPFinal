@@ -1,30 +1,39 @@
 package Interfaz;
 
+import Logica.Producto;
+import Logica.Usuario;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Metodos {
 
 
     //metodo texto default :v
 
-    public static JLabel textoDefault(int x , int y, String texto) {
+    public static JLabel textoDefault(int x , int y, String texto, Color color) {
         JLabel aux = new JLabel(texto);
-        aux.setForeground(Color.WHITE);
+        aux.setForeground(color);
         aux.setFont(new Font("Arial", Font.PLAIN, 18));
         aux.setBounds(x, y, 100, 20);
 
         return aux;
     }
 
-    public static JLabel armadoTicket(int x , int y, String infoCompras) {
-        JLabel aux = new JLabel(infoCompras);
-        aux.setForeground(Color.BLACK);
-        aux.setFont(new Font("Arial", Font.PLAIN, 18));
-        aux.setBounds(x, y, 100, 20);
+    public static JLabel textoProductos(int x , int y, String info, Color color) {
+        JLabel aux = new JLabel(info);
+        aux.setForeground(color);
+        aux.setBounds(20, 20, 200, 30);
 
         return aux;
     }
+
+
+
+
+
+
 
 
 
