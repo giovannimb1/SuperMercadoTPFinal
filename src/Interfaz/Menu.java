@@ -18,7 +18,7 @@ public class Menu extends JFrame {
         setLocationRelativeTo(null);
 
         //Aca dependiendo el email q cargue los privilegios o no
-        boolean admin = true;
+        boolean admin = false;
         //
 
         JPanel panel = new JPanel(null);
@@ -73,13 +73,13 @@ public class Menu extends JFrame {
         JPanel contenedor = new JPanel();
         contenedor.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
         contenedor.setBackground(new Color(14, 21, 37));
-/*
+
         // ESPERANDO LISTA DE PRODUCTOS
-        for (Producto producto :) {
-            JPanel caja = crearCajaProducto(producto);
+        for (Producto producto :x) {
+            JPanel caja = productoAvisual(producto, null);
             contenedor.add(caja);
         }
-*/
+
     }
 
     private JPanel productoAvisual(Producto producto, String dirImg) {
