@@ -1,4 +1,4 @@
-package Logica;
+package Codigo.Logica;
 
 import org.json.JSONArray;
 import org.json.JSONException;

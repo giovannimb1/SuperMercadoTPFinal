@@ -1,4 +1,4 @@
-package Logica;
+package Codigo.Logica;
 
 import java.time.LocalDate;
 import java.util.Objects;

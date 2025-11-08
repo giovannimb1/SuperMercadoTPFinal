@@ -1,11 +1,7 @@
-package Interfaz;
-
-import Logica.Producto;
-import Logica.Usuario;
+package Codigo.Interfaz;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Metodos {
 

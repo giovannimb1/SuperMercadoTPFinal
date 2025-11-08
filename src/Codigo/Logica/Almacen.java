@@ -1,4 +1,4 @@
-package Logica;
+package Codigo.Logica;
 
 import java.util.Map;
 

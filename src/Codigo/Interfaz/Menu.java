@@ -1,5 +1,7 @@
-package Interfaz;
+package Codigo.Interfaz;
 
+import Codigo.Logica.Categoria_Producto;
+import Codigo.Logica.Producto;
 import Logica.*;
 
 

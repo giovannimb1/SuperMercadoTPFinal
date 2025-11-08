@@ -1,10 +1,7 @@
-package Interfaz;
-
-import Logica.Categoria_Producto;
+package Codigo.Interfaz;
 
 import javax.swing.*;
 import java.awt.*;
-import java.time.LocalDate;
 
 public class RegistroProductos extends JFrame {
 
