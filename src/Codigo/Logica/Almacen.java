@@ -13,11 +13,11 @@ public class Almacen implements IGestor<Producto> {
     }
 
     //singleton
-    public static Almacen getInstancia(){
-        if(instancia == null){
+    public static Almacen getInstancia() {
+        if (instancia == null) {
             instancia = new Almacen();
         }
-      return instancia;
+        return instancia;
     }
 
     /// GETTER
@@ -28,34 +28,34 @@ public class Almacen implements IGestor<Producto> {
     /// METODOS
 
     @Override
-    public String agregar(Producto p) {
+    public boolean agregar(Producto p) {
         productos.put(p.getId(), p);
-        return "El Producto (" + p.getNombre() + ") ha sido añadido correctamente al almacen";
+        return true;
     }
 
     @Override
-    public String eliminar(int id) {
-        String txt = "El ID: " + id + " no corresponde a ningun producto dentro del almacen";
+    public boolean eliminar(int id) {
+      boolean flag = false;
         if (productos.containsKey(id)) {
             productos.remove(id);
-            txt = "El Producto correspondiente a ese ID (" + id + ") fue eliminado del almacen";
+            flag = true;
         }
-        return txt;
+        return flag;
     }
 
     @Override
-    public String modificar(int id, Producto p) {
-        String txt = "El ID: " + id + " no corresponde a ningun producto dentro del almacen";
+    public boolean modificar(int id, Producto p) {
+       boolean flag = false;
         if (productos.containsKey(id)) {
             productos.put(id, p);
-            txt = "El Producto (" + p.getNombre() + ") ha sido modificado correctamente";
+            flag = true;
         }
-        return txt;
+        return flag;
     }
 
     @Override
-    public void listar(){
-        for(Producto p : productos.values()){
+    public void listar() {
+        for (Producto p : productos.values()) {
             System.out.println(p);
         }
     }

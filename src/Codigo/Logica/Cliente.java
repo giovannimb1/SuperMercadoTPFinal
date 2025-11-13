@@ -17,6 +17,12 @@ public class Cliente extends Usuario {
     }
 
     /// METODOS
+    public boolean agregarProducto(int id){
+        return carrito.agregarProducto(id);
+    }
 
+    public boolean eliminarProducto(Producto p){
+        return carrito.eliminarProducto(p);
+    }
 
 }

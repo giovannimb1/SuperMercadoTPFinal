@@ -113,10 +113,6 @@ public abstract class Usuario implements Comparable<Usuario> {
 
     }
 
-    public boolean iniciarSesion(String usuario, String contra) {
-        return usuario.equals(username) && contra.equals(password);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

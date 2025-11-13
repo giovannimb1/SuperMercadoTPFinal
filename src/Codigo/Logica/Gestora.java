@@ -6,7 +6,7 @@ import java.util.Set;
 public class Gestora implements IGestor<Usuario> {
 
     /// ATRIBUTOS
-    private static Gestora instancia;
+    private static Gestora instancia; //singleton
     private Set<Usuario> usuarios = GestoraJSON.archivoAset("usuarios.json");
 
     /// CONSTRUCTOR
@@ -29,40 +29,38 @@ public class Gestora implements IGestor<Usuario> {
     /// METODOS
 
     @Override
-    public String agregar(Usuario u) {
-        usuarios.add(u);
-        return "El Usuario (" + u.getUsername() + ") ha sido creado correctamente";
+    public boolean agregar(Usuario u) {
+        return usuarios.add(u);
     }
 
     @Override
-    public String eliminar(int id) {
-        String txt = "El ID no corresponde a ningun usuario en el sistema";
+    public boolean eliminar(int id) {
+       boolean flag = false;
         Iterator<Usuario> it = usuarios.iterator();
         while (it.hasNext()) {
             Usuario u = it.next();
             if (u.getId() == id) {
                 it.remove();
-                txt = "El Usuario (" + u.getUsername() + ") ha sido eliminado del sistema correctamente";
+                flag = true;
                 break;
             }
         }
-        return txt;
+        return flag;
     }
 
     @Override
-    public String modificar(int id, Usuario u) {
-        String txt = "El ID no corresponde a ningun usuario en el sistema";
+    public boolean modificar(int id, Usuario u) {
+       boolean flag = false;
         Iterator<Usuario> it = usuarios.iterator();
         while (it.hasNext()) {
             Usuario us = it.next();
             if (us.getId() == id) {
                 it.remove();
-                usuarios.add(u);
-                txt = "El Usuario (" + u.getUsername() + ") ha sido modificado del sistema correctamente";
+                flag = usuarios.add(u);
                 break;
             }
         }
-        return txt;
+        return flag;
     }
 
     @Override
@@ -70,5 +68,16 @@ public class Gestora implements IGestor<Usuario> {
         for (Usuario u : usuarios) {
             System.out.println(u);
         }
+    }
+
+    public Usuario buscar(String us, String pass){
+        Usuario aux = null;
+        for(Usuario u : usuarios){
+            if(u.username.equals(us) && u.password.equals(pass)){
+                aux = u;
+                break;
+            }
+        }
+     return aux;
     }
 }

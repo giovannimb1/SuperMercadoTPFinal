@@ -125,6 +125,19 @@ public class Producto implements Comparable<Producto> {
     public int compareTo(Producto aux) {
         return Double.compare(this.precio, aux.precio);
     }
+
+    public boolean reducirStock(){
+        boolean flag = false;
+        if(this.stock > 0){
+            this.stock--;
+            flag = true;
+        }
+     return flag;
+    }
+
+    public void aumentarStock(){
+        this.stock++;
+    }
 }
 
 

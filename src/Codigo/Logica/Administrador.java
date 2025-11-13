@@ -46,7 +46,7 @@ public class Administrador extends Usuario {
         Producto p = new Producto(nombre, marca, precio, fecha, stock, categoria);
 
         // lo añadimos al almacen (map)
-        System.out.println(Almacen.getInstancia().agregar(p));
+        Almacen.getInstancia().agregar(p);
     }
 
     public void eliminarProducto() {
@@ -55,7 +55,7 @@ public class Administrador extends Usuario {
         int opcion = elegirProducto(sc, "Ingrese el ID del producto a eliminar");
 
         // lo borramos del almacen (map)
-        System.out.println(Almacen.getInstancia().eliminar(opcion));
+        Almacen.getInstancia().eliminar(opcion);
     }
 
     public void modificarProducto() {
@@ -96,7 +96,7 @@ public class Administrador extends Usuario {
         }
 
         // lo añadimos al almacen
-        System.out.println(Almacen.getInstancia().modificar(p.getId(),p));
+        Almacen.getInstancia().modificar(p.getId(),p);
     }
 
     /// metodos para MODULARIZAR
