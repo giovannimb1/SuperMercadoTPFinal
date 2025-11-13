@@ -2,7 +2,7 @@ package Codigo.Interfaz;
 
 import Codigo.Logica.Categoria_Producto;
 import Codigo.Logica.Producto;
-import Logica.*;
+import Codigo.Logica.*;
 
 
 import javax.swing.*;
@@ -77,10 +77,7 @@ public class Menu extends JFrame {
         contenedor.setBackground(new Color(14, 21, 37));
 
         // ESPERANDO LISTA DE PRODUCTOS
-        for (Producto producto :x) {
-            JPanel caja = productoAvisual(producto, null);
-            contenedor.add(caja);
-        }
+
 
     }
 

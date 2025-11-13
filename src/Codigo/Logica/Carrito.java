@@ -17,13 +17,6 @@ public class Carrito {
 
     }
 
-<<<<<<< HEAD:src/Codigo/Logica/Carrito.java
-   //HACE UN METODO Q ME RETORNE UNA LISTA DE PRODUCTOS
-
-
-
-=======
->>>>>>> ee33312 (Cambie todos los metodos a booleanos, pase el inicio de sesion a la gestora pq no tenia sentido en usuario, hice la clase carrito y cree pero todavia no use la excepcion de autenticacion):src/Logica/Carrito.java
     /// METODOS
 
     public boolean agregarProducto(int id){

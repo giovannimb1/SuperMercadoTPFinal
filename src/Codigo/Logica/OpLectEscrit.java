@@ -12,8 +12,9 @@ import java.io.IOException;
 public class OpLectEscrit {
 
     public static void grabar(String nombreArchivo, JSONArray jarray) {
+        String archivo = "src/Json/"+nombreArchivo;
         try {
-            FileWriter fw = new FileWriter(nombreArchivo);
+            FileWriter fw = new FileWriter(archivo);
             fw.write(jarray.toString(4));
             fw.close();
         } catch (IOException e) {
@@ -22,9 +23,10 @@ public class OpLectEscrit {
     }
 
     public static JSONTokener leer(String nombreArchivo) {
+        String archivo = "src/Json/"+nombreArchivo;
         JSONTokener token = null;
         try {
-            token = new JSONTokener(new FileReader(nombreArchivo));
+            token = new JSONTokener(new FileReader(archivo));
         } catch (FileNotFoundException e1) {
             e1.printStackTrace();
         } catch (JSONException e2) {
