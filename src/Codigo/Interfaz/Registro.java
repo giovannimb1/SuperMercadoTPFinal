@@ -19,28 +19,27 @@ public class Registro extends JFrame {
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(255, 255, 255));
         add(panel);
-
-        JLabel text1 = Metodos.textoDefault(125, 100, "NOMBRE", Color.BLACK);
-        JLabel text2 = Metodos.textoDefault(125, 150, "APELLIDO", Color.BLACK);
-        JLabel text3 = Metodos.textoDefault(125, 200, "CONTRASEÑA", Color.BLACK);
-        JLabel text4 = Metodos.textoDefault(125, 250, "USUARIO", Color.BLACK);
-        JLabel text5 = Metodos.textoDefault(125, 300, "EMAIL", Color.BLACK);
+        JLabel text1 = Metodos.textoDefault(125, 80, "NOMBRE", Color.BLACK);
+        JLabel text2 = Metodos.textoDefault(125, 130, "APELLIDO", Color.BLACK);
+        JLabel text4 = Metodos.textoDefault(125, 180, "USUARIO", Color.BLACK);
+        JLabel text5 = Metodos.textoDefault(125, 230, "EMAIL", Color.BLACK);
+        JLabel text3 = Metodos.textoDefault(125, 280, "CONTRASEÑA", Color.BLACK);
         JLabel text6 = Metodos.textoDefault(125, 330, "REPETIR", Color.BLACK);
 
         JTextField inNombre = new JTextField();
-        inNombre.setBounds(275, 100, 200, 25);
+        inNombre.setBounds(275, 80, 200, 25);
 
         JTextField inApellido = new JTextField();
-        inApellido.setBounds(275, 150, 200, 25);
+        inApellido.setBounds(275, 130, 200, 25);
 
         JTextField inEmail = new JTextField();
-        inEmail.setBounds(275, 300, 200, 25);
+        inEmail.setBounds(275, 230, 200, 25);
 
         JTextField inUsername = new JTextField();
-        inUsername.setBounds(275, 250, 200, 25);
+        inUsername.setBounds(275, 180, 200, 25);
 
         JPasswordField inPassword = new JPasswordField();
-        inPassword.setBounds(275, 200, 200, 25);
+        inPassword.setBounds(275, 280, 200, 25);
 
         JPasswordField inPasswordRepeticion = new JPasswordField();
         inPasswordRepeticion.setBounds(275, 330, 200, 25);
