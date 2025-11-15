@@ -1,11 +1,13 @@
 package Codigo.Interfaz;
 
+import Codigo.Logica.*;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class Registro extends JFrame {
+public class RegistroUsuario extends JFrame {
 
-    public Registro() {
+    public RegistroUsuario() {
 
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 getClass().getResource("/img/logos/logo.png")));
@@ -70,12 +72,21 @@ public class Registro extends JFrame {
             String pass = new String(inPassword.getPassword());
             String pass2 = new String(inPasswordRepeticion.getPassword());
 
-            // Aquí falta comprobación para ver si existe el email y el usuario
-            if (pass.equals(pass2) && nombre != null && apellido != null) {
-                JOptionPane.showMessageDialog(null, "Creado con exito!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Error");
+            if(pass.compareTo(pass2) == 0){
+                Cliente cliente = new Cliente(nombre,apellido,user,email,pass);
+
+                if (Gestora.getInstancia().agregar(cliente)) {
+                    Metodos.excepcionPantallaEmergente("Agregado con exito");
+
+                } else {
+                    Metodos.excepcionPantallaEmergente( "Error");
+                }
+            }else {
+                Metodos.excepcionPantallaEmergente("La contraseña no es la misma en los 2 campos");
+    
             }
+
+
 
             dispose();
         });
@@ -98,6 +109,6 @@ public class Registro extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Registro().setVisible(true));
+        SwingUtilities.invokeLater(() -> new RegistroUsuario().setVisible(true));
     }
 }

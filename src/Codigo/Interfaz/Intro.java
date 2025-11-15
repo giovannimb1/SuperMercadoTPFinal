@@ -43,7 +43,7 @@ public class Intro extends JFrame {
         registro.setFocusPainted(false);
 
         registro.addActionListener(e -> {
-            new Registro().setVisible(true);
+            new RegistroUsuario().setVisible(true);
         });
 
         JButton iniciarSecion = new JButton("Iniciar");

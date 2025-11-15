@@ -3,6 +3,8 @@ import Codigo.Logica.*;
 
 public class Sesion {
     private static Usuario usuarioActivo;
+    private static Carrito carrito =   new Carrito();
+
 
     public static Usuario getUsuarioActivo() {
         return usuarioActivo;
@@ -16,6 +18,13 @@ public class Sesion {
         usuarioActivo = null;
     }
 
+    public static Carrito getCarrito() {
+        return carrito;
+    }
+
+    public static void setCarrito(Carrito carrito) {
+        Sesion.carrito = carrito;
+    }
 
 }
 

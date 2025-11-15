@@ -2,9 +2,9 @@ package Codigo.Interfaz;
 import javax.swing.*;
 import java.awt.*;
 
-public class Carrito extends JFrame{
+public class CarritoInterfaz extends JFrame{
 
-    public Carrito()  {
+    public CarritoInterfaz()  {
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 getClass().getResource("/img/logos/logo.png")));
 
@@ -81,6 +81,6 @@ public class Carrito extends JFrame{
 
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Carrito().setVisible(true));
+        SwingUtilities.invokeLater(() -> new CarritoInterfaz().setVisible(true));
     }
 }

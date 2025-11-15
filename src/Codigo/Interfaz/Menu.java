@@ -8,6 +8,7 @@ import Codigo.Logica.*;
 import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Menu extends JFrame {
 
@@ -22,8 +23,6 @@ public class Menu extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
-
-
 
 
         JPanel panel = new JPanel(null);
@@ -87,7 +86,7 @@ public class Menu extends JFrame {
             carritoBoton.setForeground(Color.WHITE);
             carritoBoton.setFocusPainted(false);
             carritoBoton.addActionListener(e -> {
-                new Carrito().setVisible(true);
+                new CarritoInterfaz().setVisible(true);
                 dispose();
 
             });
@@ -108,22 +107,35 @@ public class Menu extends JFrame {
                 Categoria_Producto.LACTEO
         );
 
-//crea el producto
-        JPanel prod = productoAvisual(p1,null);
+        ArrayList<JPanel> productos = new ArrayList<>();
+
+        for(Producto p: Almacen.getInstancia().getProductos().values()){
+
+            productos.add(productoAvisual(p,null));
+        }
 
 
         panel.add(logochiquito);
         panel.add(decoracion1);
 
 //se muestra
-        contenedorProductos.add(prod);
+        for(JPanel p: productos){
+            contenedorProductos.add(p);
+
+        }
+
+
 
         panel.add(contenedorProductos);
+
+        //Jbutton CerrarSesion = new
 
         panel.add(fondo);
 
 
     }
+
+    //creador de productos
 
     private JPanel productoAvisual(Producto producto, String dirImg) {
 
@@ -142,14 +154,7 @@ public class Menu extends JFrame {
         JLabel precio = new JLabel("$" + producto.getPrecio());
         precio.setForeground(Color.WHITE);
 
-        JButton mandarAlCarrito = new JButton("C:"+ producto.getStock());
-        mandarAlCarrito.setForeground(Color.BLACK);
 
-        mandarAlCarrito.addActionListener(e -> {
-            producto.setStock(producto.getStock()-1);
-            //esto cambia el texto del boton
-            mandarAlCarrito.setText("C:" + producto.getStock());
-        });
 
         JLabel foto = null;
 
@@ -180,7 +185,37 @@ public class Menu extends JFrame {
         caja.add(foto);
 
         if(!Sesion.getUsuarioActivo().isPermisos()){
+
+            JButton mandarAlCarrito = new JButton("C:"+ producto.getStock());
+            mandarAlCarrito.setForeground(Color.BLACK);
+
+
+            mandarAlCarrito.addActionListener(e -> {
+                if(Sesion.getCarrito().agregarProducto(producto.getId())){
+                    //esto cambia el texto del boton
+                    mandarAlCarrito.setText("C:" + producto.getStock());
+
+
+                }else {
+                    mandarAlCarrito.setText("Sin Stock");
+                    Metodos.excepcionPantallaEmergente("No hay mas Productos");
+
+                }
+
+            });
             caja.add(mandarAlCarrito);
+
+        }else {
+            JButton modificar = new JButton("Modificar");
+            modificar.setForeground(Color.WHITE);
+            modificar.addActionListener(e->{
+                ModificarProducto.setProducto(producto);
+                new ModificarProducto().setVisible(true);
+
+
+            });
+            caja.add(modificar);
+
 
         }
 

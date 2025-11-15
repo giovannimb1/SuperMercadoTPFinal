@@ -1,4 +1,5 @@
 package Codigo.Interfaz;
+
 import javax.swing.*;
 import java.awt.*;
 

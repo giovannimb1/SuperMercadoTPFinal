@@ -1,16 +1,39 @@
 package Codigo.Interfaz;
+
+
+import Codigo.Logica.Categoria_Producto;
+import Codigo.Logica.Producto;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.time.LocalDate;
 
-public class RegistroProductos extends JFrame {
+public class ModificarProducto extends JFrame {
 
-    public RegistroProductos() {
+    private static Producto producto ;
 
+    public static void setProducto(Producto producto) {
+        ModificarProducto.producto = producto;
+    }
+
+    public ModificarProducto() {
+
+        // borrar
+        Producto p1 = new Producto(
+                "Leche Entera",
+                "La Serenisima",
+                850.50,
+                LocalDate.of(2025, 11, 15),
+                25,
+                Categoria_Producto.LACTEO
+        );
+        setProducto(p1);
+//
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 getClass().getResource("/img/logos/logo.png")));
 
-        setTitle("Registro De Productos :3");
+        setTitle("Modificador De Productos");
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -28,28 +51,34 @@ public class RegistroProductos extends JFrame {
         JLabel text6 = Metodos.textoDefault(125, 300, "CATEGORIA", Color.WHITE);
 
         JTextField inNombre = new JTextField();
+        inNombre.setText(producto.getNombre());
         inNombre.setBounds(275, 50, 200, 25);
 
         JTextField inMarca = new JTextField();
+        inMarca.setText(producto.getMarca());
         inMarca.setBounds(275, 100, 200, 25);
 
         JTextField inPrecio = new JTextField();
+        inPrecio.setText(""+producto.getPrecio());
         inPrecio.setBounds(275, 150, 200, 25);
 
         JTextField inVencimiento = new JTextField();
+        inVencimiento.setText(""+producto.getVencimiento());
         inVencimiento.setBounds(275, 200, 200, 25);
 
         JTextField inStock = new JTextField();
+        inStock.setText(""+producto.getStock());
         inStock.setBounds(275, 250, 200, 25);
 
         JTextField inCategoria = new JTextField();
+        inCategoria.setText(""+producto.getCategoria());
         inCategoria.setBounds(275, 300, 200, 25);
 
         ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenuProductos/fondo.png"));
         JLabel fondo = new JLabel(img);
         fondo.setBounds(0, 0, 600, 500);
 
-        JButton boton = new JButton("Registrar");
+        JButton boton = new JButton("Modificar");
         boton.setBounds(80, 400, 200, 40);
         boton.setBackground(new Color(80, 150, 255));
         boton.setForeground(Color.WHITE);
@@ -67,7 +96,7 @@ public class RegistroProductos extends JFrame {
             boolean flag = true;
 
             if (flag) {
-                JOptionPane.showMessageDialog(null, "Creado con exito!");
+                JOptionPane.showMessageDialog(null, "Modificado con exito!");
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Error");
@@ -110,7 +139,9 @@ public class RegistroProductos extends JFrame {
         panel.add(fondo);
     }
 
+
+
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new RegistroProductos().setVisible(true));
+        SwingUtilities.invokeLater(() -> new ModificarProducto().setVisible(true));
     }
 }
