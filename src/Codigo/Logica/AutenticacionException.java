@@ -1,4 +1,4 @@
-package Logica;
+package Codigo.Logica;
 
 public class AutenticacionException extends Exception {
 

@@ -1,5 +1,9 @@
 package Codigo.Interfaz;
 
+import Codigo.Logica.AutenticacionException;
+import Codigo.Logica.Gestora;
+import Codigo.Logica.Usuario;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -61,17 +65,18 @@ public class Intro extends JFrame {
         // ACA VERIFICAR
         iniciarSecion.addActionListener(e -> {
 
-            boolean flag = true; // verificador
 
-            String nombre  = inUsuario.getText();
-            String contrasenia =inContrasena.getText();
+            String us  = inUsuario.getText();
+            String pass =inContrasena.getText();
+           try {
+               Usuario u = Gestora.getInstancia().inicioSesion(us,pass);
+               boolean admin = u.isPermisos();
+               new Menu().setVisible(true);
+               dispose();
+           }catch(AutenticacionException ex){
+               System.out.println(ex.getMessage());
+           }
 
-
-            if (flag) {
-                new Menu().setVisible(true);
-                dispose();
-
-            }
 
         });
 

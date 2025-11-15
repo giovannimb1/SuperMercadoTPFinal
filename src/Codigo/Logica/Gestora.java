@@ -70,14 +70,12 @@ public class Gestora implements IGestor<Usuario> {
         }
     }
 
-    public Usuario buscar(String us, String pass){
-        Usuario aux = null;
+    public Usuario inicioSesion(String us, String pass) throws AutenticacionException {
         for(Usuario u : usuarios){
             if(u.username.equals(us) && u.password.equals(pass)){
-                aux = u;
-                break;
+                return u;
             }
         }
-     return aux;
+      throw new AutenticacionException("Usuario y/o contraseña incorrectos");
     }
 }

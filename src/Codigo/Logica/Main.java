@@ -34,8 +34,12 @@ public class Main {
         System.out.println(Almacen.getInstancia().getProductos().size()); // 1
         System.out.println(Gestora.getInstancia().getUsuarios().size()); // 1
 
-        System.out.println(Gestora.getInstancia().buscar("jorgeC","13579")); // usuario toString
-        System.out.println(Gestora.getInstancia().buscar("jorgec","13579")); // null
+       try {
+           System.out.println(Gestora.getInstancia().inicioSesion("jorgeC", "13579")); // usuario toString
+           System.out.println(Gestora.getInstancia().inicioSesion("jorgec", "13579")); // null
+       }catch (AutenticacionException e){
+           System.out.println(e.getMessage());
+       }
 
         System.out.println("\n=======================\n");
         Almacen.getInstancia().listar();
