@@ -21,11 +21,11 @@ public class Registro extends JFrame {
         panel.setBackground(new Color(255, 255, 255));
         add(panel);
 
-        JLabel text1 = Metodos.textoDefault(125 ,100, "NOMBRE",Color.BLACK);
-        JLabel text2 = Metodos.textoDefault(125 ,150, "APELLIDO",Color.BLACK);
-        JLabel text3 = Metodos.textoDefault(125 ,200, "CONTRASEÑA",Color.BLACK);
-        JLabel text4 = Metodos.textoDefault(125 ,250, "USUARIO",Color.BLACK);
-        JLabel text5 = Metodos.textoDefault(125 ,300, "EMAIL",Color.BLACK);
+        JLabel text1 = Metodos.textoDefault(125, 100, "NOMBRE", Color.BLACK);
+        JLabel text2 = Metodos.textoDefault(125, 150, "APELLIDO", Color.BLACK);
+        JLabel text3 = Metodos.textoDefault(125, 200, "CONTRASEÑA", Color.BLACK);
+        JLabel text4 = Metodos.textoDefault(125, 250, "USUARIO", Color.BLACK);
+        JLabel text5 = Metodos.textoDefault(125, 300, "EMAIL", Color.BLACK);
 
 
         JTextField inNombre = new JTextField();
@@ -55,7 +55,7 @@ public class Registro extends JFrame {
 
         cancelarBoton.addActionListener(e -> {
             dispose();
-                });
+        });
 
         JButton boton = new JButton("Registrarse");
         boton.setBounds(320, 400, 200, 40);
@@ -65,28 +65,32 @@ public class Registro extends JFrame {
 
         boton.addActionListener(e -> {
 
-            /*aca solo verifiquemos si recibe un usuario y un email autorizado a crearse una cuenta
-             * y q no exista*/
+            String pass = inPassword.getText();
+            String user = inUsername.getText();
+            String email = inEmail.getText();
+            String apellido = inApellido.getText();
+            String nombre = inNombre.getText();
+
+            //aca hace el creador de usuario
+
+
+
+            //
+
 
             boolean flag = true; // aca el metodo q lo retorne
 
-            if(flag){
+            if (flag) {
                 JOptionPane.showMessageDialog(null, "Creado con exito!");
 
-            }
-            else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Error");
 
             }
             dispose();
 
 
-
         });
-
-
-
-
 
 
         panel.add(inNombre);
@@ -104,7 +108,6 @@ public class Registro extends JFrame {
         panel.add(fondo);
 
     }
-
 
 
     public static void main(String[] args) {
