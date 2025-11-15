@@ -23,13 +23,19 @@ public class Menu extends JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
 
-        //Aca dependiendo el email q cargue los privilegios o no
-        boolean admin = true;
-        //
+
 
 
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(14, 21, 37));
+
+
+        //esto funciona como una minipantalla
+        JPanel contenedorProductos = new JPanel();
+        contenedorProductos.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        contenedorProductos.setBackground(new Color(87, 112, 144));
+        contenedorProductos.setBounds(50, 150, 1180, 500); // área donde se acomodarán
+
 
 
         ImageIcon img = new ImageIcon(getClass().getResource("/img/Menu/1.png"));
@@ -40,15 +46,9 @@ public class Menu extends JFrame {
         JLabel decoracion1 = new JLabel(img2);
         decoracion1.setBounds(0, 0, 1280, 720);
 
-        ImageIcon img3 = new ImageIcon(getClass().getResource("/img/Menu/3.png"));
-        JLabel decoracion2 = new JLabel(img3);
-        decoracion2.setBounds(0, 0, 1280, 720);
-
         ImageIcon img4 = new ImageIcon(getClass().getResource("/img/Menu/4.png"));
         JLabel logochiquito = new JLabel(img4);
         logochiquito.setBounds(0, 0, 1280, 720);
-
-
 
         JScrollPane scroll = new JScrollPane(panel);
         scroll.setBounds(0, 0, 1280, 720);
@@ -57,8 +57,9 @@ public class Menu extends JFrame {
         add(scroll);
 
 
+
         //TEST
-        if (admin) {
+        if (Sesion.getUsuarioActivo().isPermisos()) {
             JButton registrarProducto = new JButton("Registrar Producto");
             registrarProducto.setBounds(950, 67, 200, 40);
             registrarProducto.setBackground(new Color(80, 150, 255));
@@ -70,7 +71,6 @@ public class Menu extends JFrame {
 
                 if (flag) {
                     new RegistroProductos().setVisible(true);
-                    dispose();
                 }
 
             });
@@ -96,16 +96,30 @@ public class Menu extends JFrame {
 
         }
 
-        Producto x = new Producto("NOSE", "hola", 333, LocalDate.now(), 3, Categoria_Producto.LIMPIEZA);
-        JPanel contenedor = new JPanel();
-        contenedor.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
-        contenedor.setBackground(new Color(14, 21, 37));
 
         // ESPERANDO LISTA DE PRODUCTOS
 
+        Producto p1 = new Producto(
+                "Leche Entera",
+                "La Serenisima",
+                850.50,
+                LocalDate.of(2025, 11, 15),
+                25,
+                Categoria_Producto.LACTEO
+        );
+
+//crea el producto
+        JPanel prod = productoAvisual(p1,null);
+
+
         panel.add(logochiquito);
         panel.add(decoracion1);
-        //panel.add(decoracion2);
+
+//se muestra
+        contenedorProductos.add(prod);
+
+        panel.add(contenedorProductos);
+
         panel.add(fondo);
 
 
@@ -128,9 +142,48 @@ public class Menu extends JFrame {
         JLabel precio = new JLabel("$" + producto.getPrecio());
         precio.setForeground(Color.WHITE);
 
+        JButton mandarAlCarrito = new JButton("C:"+ producto.getStock());
+        mandarAlCarrito.setForeground(Color.BLACK);
+
+        mandarAlCarrito.addActionListener(e -> {
+            producto.setStock(producto.getStock()-1);
+            //esto cambia el texto del boton
+            mandarAlCarrito.setText("C:" + producto.getStock());
+        });
+
+        JLabel foto = null;
+
+        if(dirImg != null){
+
+            ImageIcon img = new ImageIcon(getClass().getResource(dirImg));
+            Image imagen = img.getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH);
+            img = new ImageIcon(imagen);
+
+             foto = new JLabel (img);
+            foto.setForeground(Color.WHITE);
+
+        }else {
+
+            ImageIcon img = new ImageIcon(getClass().getResource("/img/FotoProductos/0.jpg"));
+            Image imagen = img.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+            img = new ImageIcon(imagen);
+
+            foto = new JLabel (img);
+            foto.setForeground(Color.WHITE);
+
+
+
+        }
         caja.add(nombre);
         caja.add(marca);
         caja.add(precio);
+        caja.add(foto);
+
+        if(!Sesion.getUsuarioActivo().isPermisos()){
+            caja.add(mandarAlCarrito);
+
+        }
+
 
         return caja;
     }

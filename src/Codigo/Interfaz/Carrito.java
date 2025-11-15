@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Carrito extends JFrame{
+
     public Carrito()  {
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 getClass().getResource("/img/logos/logo.png")));
@@ -36,7 +37,7 @@ public class Carrito extends JFrame{
         logochiquito.setBounds(0, 0, 1280, 720);
 
 
-        JButton volverAlMenu = new JButton("Registrar Producto");
+        JButton volverAlMenu = new JButton("Salir");
         volverAlMenu.setBounds(950, 67, 200, 40);
         volverAlMenu.setBackground(new Color(80, 150, 255));
         volverAlMenu.setForeground(Color.WHITE);

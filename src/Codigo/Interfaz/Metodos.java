@@ -40,7 +40,7 @@ public class Metodos extends JFrame {
 
     }
 
-   // public static Usuario llevarUsuario
+
 
 
 }

@@ -7,4 +7,15 @@
     "nombre": "Jorge",
     "email": "jorge@gmail.com",
     "username": "jorgeC"
-}]
+},
+  {
+    "password": "fr",
+    "fecha_registro": "2025-10-24",
+    "apellido": "Lopez",
+    "id": 1,
+    "permisos": false,
+    "nombre": "Gonzalo",
+    "email": "gonzalo@gmail.com",
+    "username": "gonzaloL"
+  }
+]

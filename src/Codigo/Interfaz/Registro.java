@@ -21,27 +21,31 @@ public class Registro extends JFrame {
         panel.setBackground(new Color(255, 255, 255));
         add(panel);
 
-        JLabel text1 = Metodos.textoDefault(125 ,100, "NOMBRE",Color.BLACK);
-        JLabel text2 = Metodos.textoDefault(125 ,150, "APELLIDO",Color.BLACK);
-        JLabel text3 = Metodos.textoDefault(125 ,200, "CONTRASEÑA",Color.BLACK);
-        JLabel text4 = Metodos.textoDefault(125 ,250, "USUARIO",Color.BLACK);
-        JLabel text5 = Metodos.textoDefault(125 ,300, "EMAIL",Color.BLACK);
+        JLabel text1 = Metodos.textoDefault(125, 80, "NOMBRE", Color.BLACK);
+        JLabel text2 = Metodos.textoDefault(125, 130, "APELLIDO", Color.BLACK);
+        JLabel text3 = Metodos.textoDefault(125, 180, "EMAIL", Color.BLACK);
+        JLabel text4 = Metodos.textoDefault(125, 230, "USUARIO", Color.BLACK);
+        JLabel text5 = Metodos.textoDefault(125, 280, "CONTRASEÑA", Color.BLACK);
+        JLabel text6 = Metodos.textoDefault(125, 330, "REPETIR", Color.BLACK);
 
 
         JTextField inNombre = new JTextField();
-        inNombre.setBounds(275, 100, 200, 25);
+        inNombre.setBounds(275, 80, 200, 25);
 
         JTextField inApellido = new JTextField();
-        inApellido.setBounds(275, 150, 200, 25);
+        inApellido.setBounds(275, 130, 200, 25);
 
         JTextField inEmail = new JTextField();
-        inEmail.setBounds(275, 200, 200, 25);
+        inEmail.setBounds(275, 180, 200, 25);
 
         JTextField inUsername = new JTextField();
-        inUsername.setBounds(275, 250, 200, 25);
+        inUsername.setBounds(275, 230, 200, 25);
 
-        JTextField inPassword = new JTextField();
-        inPassword.setBounds(275, 300, 200, 25);
+        JPasswordField inPassword = new JPasswordField();
+        inPassword.setBounds(275, 280, 200, 25);
+
+        JPasswordField inPasswordRepeticion = new JPasswordField();
+        inPasswordRepeticion.setBounds(275, 330, 200, 25);
 
         ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenu/fondoM.png"));
         JLabel fondo = new JLabel(img);
@@ -55,7 +59,7 @@ public class Registro extends JFrame {
 
         cancelarBoton.addActionListener(e -> {
             dispose();
-                });
+        });
 
         JButton boton = new JButton("Registrarse");
         boton.setBounds(320, 400, 200, 40);
@@ -65,25 +69,34 @@ public class Registro extends JFrame {
 
         boton.addActionListener(e -> {
 
-            /*aca solo verifiquemos si recibe un usuario y un email autorizado a crearse una cuenta
-             * y q no exista*/
+                    String email = inEmail.getText();
+                    String apellido = inApellido.getText();
+                    String nombre = inNombre.getText();
+                    String pass = inPassword.getText();
+                    String pass2 = inPasswordRepeticion.getText();
+                    String user = inUsername.getText();
 
-            boolean flag = true; // aca el metodo q lo retorne
+                    //falta comprobacion para ver si existe el email y el usuario
+                    if (pass.compareTo(pass2) == 0 && nombre != null && apellido != null) {
+                        JOptionPane.showMessageDialog(null, "Creado con exito!");
 
-            if(flag){
-                JOptionPane.showMessageDialog(null, "Creado con exito!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error");
 
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Error");
+                    }
 
-            }
+
+                });
+
+
+            //aca hace el creador de usuario
+
+
+
+            //
+
+
             dispose();
-
-
-
-        });
-
 
 
 
@@ -94,17 +107,18 @@ public class Registro extends JFrame {
         panel.add(inPassword);
         panel.add(inUsername);
         panel.add(inEmail);
+        panel.add(inPasswordRepeticion);
         panel.add(text1);
         panel.add(text2);
         panel.add(text3);
         panel.add(text4);
         panel.add(text5);
+        panel.add(text6);
         panel.add(boton);
         panel.add(cancelarBoton);
         panel.add(fondo);
 
     }
-
 
 
     public static void main(String[] args) {

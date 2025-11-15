@@ -9,7 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Intro extends JFrame {
-
     public Intro() {
 
         setIconImage(Toolkit.getDefaultToolkit().getImage(
@@ -64,35 +63,21 @@ public class Intro extends JFrame {
         iniciarSecion.addActionListener(e -> {
 
 
-            String us  = inUsuario.getText();
-            String pass =inContrasena.getText();
+            String us = inUsuario.getText();
+            String pass = inContrasena.getText();
 
             try {
-                Usuario u = Gestora.getInstancia().inicioSesion(us,pass);
-                boolean admin = u.isPermisos();
+
+                Usuario u = Gestora.getInstancia().inicioSesion(us, pass);
+                Sesion.setUsuarioActivo(u);
+
+
                 new Menu().setVisible(true);
                 dispose();
-            }catch(AutenticacionException ex){
+
+
+            } catch (AutenticacionException ex) {
                 Metodos.excepcionPantallaEmergente(ex.getMessage());
-            }
-
-
-        });
-
-
-        iniciarSecion.addActionListener(e -> {
-            String usuario = inUsuario.getText();
-            String contrasena = inContrasena.getText();
-
-            // boolean validacion = validador(usuario, contrasena);
-            boolean validacion = true; // momentaneo
-
-            if (validacion == true) {
-                // new Menu().setVisible(true);
-                dispose();
-
-            } else {
-                //  JOptionPane p = new JOptionPane(null, "hola");
             }
 
 
