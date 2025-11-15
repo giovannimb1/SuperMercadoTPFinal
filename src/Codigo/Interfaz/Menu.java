@@ -24,11 +24,30 @@ public class Menu extends JFrame {
         setLocationRelativeTo(null);
 
         //Aca dependiendo el email q cargue los privilegios o no
-        boolean admin = false;
+        boolean admin = true;
         //
+
 
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(14, 21, 37));
+
+
+        ImageIcon img = new ImageIcon(getClass().getResource("/img/Menu/1.png"));
+        JLabel fondo = new JLabel(img);
+        fondo.setBounds(0, 0, 1280, 720);
+
+        ImageIcon img2 = new ImageIcon(getClass().getResource("/img/Menu/2.png"));
+        JLabel decoracion1 = new JLabel(img2);
+        decoracion1.setBounds(0, 0, 1280, 720);
+
+        ImageIcon img3 = new ImageIcon(getClass().getResource("/img/Menu/3.png"));
+        JLabel decoracion2 = new JLabel(img3);
+        decoracion2.setBounds(0, 0, 1280, 720);
+
+        ImageIcon img4 = new ImageIcon(getClass().getResource("/img/Menu/4.png"));
+        JLabel logochiquito = new JLabel(img4);
+        logochiquito.setBounds(0, 0, 1280, 720);
+
 
 
         JScrollPane scroll = new JScrollPane(panel);
@@ -39,9 +58,9 @@ public class Menu extends JFrame {
 
 
         //TEST
-        if (!admin) {
+        if (admin) {
             JButton registrarProducto = new JButton("Registrar Producto");
-            registrarProducto.setBounds(1000, 50, 200, 40);
+            registrarProducto.setBounds(950, 67, 200, 40);
             registrarProducto.setBackground(new Color(80, 150, 255));
             registrarProducto.setForeground(Color.WHITE);
             registrarProducto.setFocusPainted(false);
@@ -51,7 +70,7 @@ public class Menu extends JFrame {
 
                 if (flag) {
                     new RegistroProductos().setVisible(true);
-                    //if(lista recibio uno mas de los q tenia se agrega)
+                    dispose();
                 }
 
             });
@@ -59,15 +78,17 @@ public class Menu extends JFrame {
 
 
         } else {
-            ImageIcon carrito = new ImageIcon(getClass().getResource("/img/carrito-de-compras.png"));
+
+            ImageIcon carrito = new ImageIcon(getClass().getResource("/img/iconos/carrito-de-compras.png"));
             Image imagen = carrito.getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH);
             carrito = new ImageIcon(imagen);
             JButton carritoBoton = new JButton(carrito);
-            carritoBoton.setBounds(1050, 10, 200, 40);
+            carritoBoton.setBounds(950, 67, 200, 40);
             carritoBoton.setForeground(Color.WHITE);
             carritoBoton.setFocusPainted(false);
             carritoBoton.addActionListener(e -> {
                 new Carrito().setVisible(true);
+                dispose();
 
             });
             panel.add(carritoBoton);
@@ -81,6 +102,11 @@ public class Menu extends JFrame {
         contenedor.setBackground(new Color(14, 21, 37));
 
         // ESPERANDO LISTA DE PRODUCTOS
+
+        panel.add(logochiquito);
+        panel.add(decoracion1);
+        //panel.add(decoracion2);
+        panel.add(fondo);
 
 
     }

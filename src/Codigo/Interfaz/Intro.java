@@ -4,6 +4,7 @@ import Codigo.Logica.AutenticacionException;
 import Codigo.Logica.Gestora;
 import Codigo.Logica.Usuario;
 
+import javax.naming.AuthenticationException;
 import javax.swing.*;
 import java.awt.*;
 
@@ -21,8 +22,6 @@ public class Intro extends JFrame {
         setLocationRelativeTo(null);
 
 
-
-
         JPanel panel = new JPanel(null);
         add(panel);
 
@@ -38,7 +37,6 @@ public class Intro extends JFrame {
 
         JTextField inUsuario = new JTextField();
         inUsuario.setBounds(110, 380, 200, 25);
-
 
         JLabel contranaT = Metodos.textoDefault(110, 420, "CONTRASEÑA", Color.BLACK);
 
@@ -61,21 +59,22 @@ public class Intro extends JFrame {
         iniciarSecion.setForeground(Color.WHITE);
         iniciarSecion.setFocusPainted(false);
 
-
         // ACA VERIFICAR
+
         iniciarSecion.addActionListener(e -> {
 
 
             String us  = inUsuario.getText();
             String pass =inContrasena.getText();
-           try {
-               Usuario u = Gestora.getInstancia().inicioSesion(us,pass);
-               boolean admin = u.isPermisos();
-               new Menu().setVisible(true);
-               dispose();
-           }catch(AutenticacionException ex){
-               System.out.println(ex.getMessage());
-           }
+
+            try {
+                Usuario u = Gestora.getInstancia().inicioSesion(us,pass);
+                boolean admin = u.isPermisos();
+                new Menu().setVisible(true);
+                dispose();
+            }catch(AutenticacionException ex){
+                Metodos.excepcionPantallaEmergente(ex.getMessage());
+            }
 
 
         });
@@ -111,19 +110,7 @@ public class Intro extends JFrame {
 
     }
 
-    /*
 
-        public static boolean validador(String us, String p) {
-            for(Object usuario : usuarios){
-                if (us.compareTo(usuario.getUser()) == 0 && p.compareTo(usuario.getPass()) == 0) {
-                    return true;
-                }
-            }
-            return false;
-
-
-        }
-    */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new Intro().setVisible(true));
     }

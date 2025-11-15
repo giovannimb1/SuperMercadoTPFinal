@@ -31,18 +31,14 @@ public class Registro extends JFrame {
         JTextField inNombre = new JTextField();
         inNombre.setBounds(275, 100, 200, 25);
 
-
         JTextField inApellido = new JTextField();
         inApellido.setBounds(275, 150, 200, 25);
-
 
         JTextField inEmail = new JTextField();
         inEmail.setBounds(275, 200, 200, 25);
 
-
         JTextField inUsername = new JTextField();
         inUsername.setBounds(275, 250, 200, 25);
-
 
         JTextField inPassword = new JTextField();
         inPassword.setBounds(275, 300, 200, 25);
@@ -51,8 +47,18 @@ public class Registro extends JFrame {
         JLabel fondo = new JLabel(img);
         fondo.setBounds(0, 0, 600, 500);
 
+        JButton cancelarBoton = new JButton("Cancelar");
+        cancelarBoton.setBounds(80, 400, 200, 40);
+        cancelarBoton.setBackground(new Color(80, 150, 255));
+        cancelarBoton.setForeground(Color.WHITE);
+        cancelarBoton.setFocusPainted(false);
+
+        cancelarBoton.addActionListener(e -> {
+            dispose();
+                });
+
         JButton boton = new JButton("Registrarse");
-        boton.setBounds(190, 400, 200, 40);
+        boton.setBounds(320, 400, 200, 40);
         boton.setBackground(new Color(80, 150, 255));
         boton.setForeground(Color.WHITE);
         boton.setFocusPainted(false);
@@ -94,6 +100,7 @@ public class Registro extends JFrame {
         panel.add(text4);
         panel.add(text5);
         panel.add(boton);
+        panel.add(cancelarBoton);
         panel.add(fondo);
 
     }
