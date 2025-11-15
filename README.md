@@ -18,4 +18,3 @@ Para el Trabajo Practico Final de Programación II realizamos un Sistema de Comp
 - Visualización de stock y productos
 
 
-#### Integrantes : 
