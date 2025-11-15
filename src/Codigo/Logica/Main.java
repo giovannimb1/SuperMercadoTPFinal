@@ -27,6 +27,14 @@ public class Main {
                 "13579"
         );
 
+        Administrador test = new Administrador(
+                "ewew",
+                "rfrf",
+                "gio",
+                "jorge@gmail.com",
+                "2468"
+        );
+
         // probando
                                         //al unico Almacen ya le cargue el p1
                                        // a la unica Gestora de usuarios le cargue el admin
@@ -44,6 +52,9 @@ public class Main {
         System.out.println("\n=======================\n");
         Almacen.getInstancia().listar();
         Gestora.getInstancia().listar();
+
+        System.out.println("\n======PRUEBA======\n");
+        System.out.println(Gestora.getInstancia().agregar(test));
 
     }
 }

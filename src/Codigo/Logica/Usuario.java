@@ -115,13 +115,15 @@ public abstract class Usuario implements Comparable<Usuario> {
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Usuario usuario)) return false;
-        return id == usuario.id && Objects.equals(username, usuario.username) && Objects.equals(email, usuario.email);
+        if (!(o instanceof Usuario u)) return false;
+        return id == u.id ||
+                Objects.equals(username, u.username) ||
+                Objects.equals(email, u.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, email);
+        return 0;  // esto es para q pase de una a comparar por equals
     }
 
     @Override
