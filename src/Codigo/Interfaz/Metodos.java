@@ -3,7 +3,7 @@ package Codigo.Interfaz;
 import javax.swing.*;
 import java.awt.*;
 
-public class Metodos {
+public class Metodos extends JFrame  {
 
 
     //metodo texto default :v
@@ -24,6 +24,11 @@ public class Metodos {
 
         return aux;
     }
+
+
+
+
+
 
 
 

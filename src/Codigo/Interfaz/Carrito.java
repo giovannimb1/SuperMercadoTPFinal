@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class Carrito extends JFrame{
     public Carrito()  {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(
+                getClass().getResource("/img/logos/logo.png")));
 
 
         setTitle("SuperMercado");

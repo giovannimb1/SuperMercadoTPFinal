@@ -7,6 +7,10 @@ public class Registro extends JFrame {
 
     public Registro() {
 
+        setIconImage(Toolkit.getDefaultToolkit().getImage(
+                getClass().getResource("/img/logos/logo.png")));
+
+
         setTitle("Registro");
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,9 +47,12 @@ public class Registro extends JFrame {
         JTextField inPassword = new JTextField();
         inPassword.setBounds(275, 300, 200, 25);
 
+        ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenu/fondoM.png"));
+        JLabel fondo = new JLabel(img);
+        fondo.setBounds(0, 0, 600, 500);
 
         JButton boton = new JButton("Registrarse");
-        boton.setBounds(190, 375, 200, 40);
+        boton.setBounds(190, 400, 200, 40);
         boton.setBackground(new Color(80, 150, 255));
         boton.setForeground(Color.WHITE);
         boton.setFocusPainted(false);
@@ -87,6 +94,7 @@ public class Registro extends JFrame {
         panel.add(text4);
         panel.add(text5);
         panel.add(boton);
+        panel.add(fondo);
 
     }
 

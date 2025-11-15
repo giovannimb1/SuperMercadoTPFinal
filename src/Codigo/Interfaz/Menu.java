@@ -13,6 +13,10 @@ public class Menu extends JFrame {
 
     public Menu() {
 
+        setIconImage(Toolkit.getDefaultToolkit().getImage(
+                getClass().getResource("/img/logos/logo.png")));
+
+
         setTitle("SuperMercado");
         setSize(1280, 720);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
