@@ -1,15 +1,9 @@
 package Codigo.Interfaz;
-
-import Codigo.Logica.AutenticacionException;
-import Codigo.Logica.Gestora;
-import Codigo.Logica.Usuario;
-
-import javax.naming.AuthenticationException;
+import Codigo.Logica.*;
 import javax.swing.*;
 import java.awt.*;
 
 public class Intro extends JFrame {
-
     public Intro() {
 
         setIconImage(Toolkit.getDefaultToolkit().getImage(
@@ -20,7 +14,6 @@ public class Intro extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
-
 
         JPanel panel = new JPanel(null);
         add(panel);
@@ -59,30 +52,21 @@ public class Intro extends JFrame {
         iniciarSecion.setForeground(Color.WHITE);
         iniciarSecion.setFocusPainted(false);
 
-        // ACA VERIFICAR
-
         iniciarSecion.addActionListener(e -> {
 
-
-            String us  = inUsuario.getText();
-            String pass =inContrasena.getText();
+            String us = inUsuario.getText();
+            String pass = inContrasena.getText();
 
             try {
 
-                Usuario u = Gestora.getInstancia().inicioSesion(us,pass);
-                boolean admin = u.isPermisos();
+                Usuario u = Gestora.getInstancia().inicioSesion(us, pass);
+                Sesion.setUsuarioActivo(u);
+                new Menu().setVisible(true);
+                dispose();
 
-
-
-                    new Menu().setVisible(true);
-                    dispose();
-
-
-
-            }catch(AutenticacionException ex){
+            } catch (AutenticacionException ex) {
                 Metodos.excepcionPantallaEmergente(ex.getMessage());
             }
-
 
         });
 
@@ -95,9 +79,7 @@ public class Intro extends JFrame {
         panel.add(inicio);
         panel.add(fondo);
 
-
     }
-
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new Intro().setVisible(true));

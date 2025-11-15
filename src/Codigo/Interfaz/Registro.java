@@ -10,7 +10,6 @@ public class Registro extends JFrame {
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 getClass().getResource("/img/logos/logo.png")));
 
-
         setTitle("Registro");
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,7 +25,7 @@ public class Registro extends JFrame {
         JLabel text3 = Metodos.textoDefault(125, 200, "CONTRASEÑA", Color.BLACK);
         JLabel text4 = Metodos.textoDefault(125, 250, "USUARIO", Color.BLACK);
         JLabel text5 = Metodos.textoDefault(125, 300, "EMAIL", Color.BLACK);
-
+        JLabel text6 = Metodos.textoDefault(125, 330, "REPETIR", Color.BLACK);
 
         JTextField inNombre = new JTextField();
         inNombre.setBounds(275, 100, 200, 25);
@@ -35,13 +34,16 @@ public class Registro extends JFrame {
         inApellido.setBounds(275, 150, 200, 25);
 
         JTextField inEmail = new JTextField();
-        inEmail.setBounds(275, 200, 200, 25);
+        inEmail.setBounds(275, 300, 200, 25);
 
         JTextField inUsername = new JTextField();
         inUsername.setBounds(275, 250, 200, 25);
 
-        JTextField inPassword = new JTextField();
-        inPassword.setBounds(275, 300, 200, 25);
+        JPasswordField inPassword = new JPasswordField();
+        inPassword.setBounds(275, 200, 200, 25);
+
+        JPasswordField inPasswordRepeticion = new JPasswordField();
+        inPasswordRepeticion.setBounds(275, 330, 200, 25);
 
         ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenu/fondoM.png"));
         JLabel fondo = new JLabel(img);
@@ -52,10 +54,7 @@ public class Registro extends JFrame {
         cancelarBoton.setBackground(new Color(80, 150, 255));
         cancelarBoton.setForeground(Color.WHITE);
         cancelarBoton.setFocusPainted(false);
-
-        cancelarBoton.addActionListener(e -> {
-            dispose();
-        });
+        cancelarBoton.addActionListener(e -> dispose());
 
         JButton boton = new JButton("Registrarse");
         boton.setBounds(320, 400, 200, 40);
@@ -65,55 +64,41 @@ public class Registro extends JFrame {
 
         boton.addActionListener(e -> {
 
-            String pass = inPassword.getText();
-            String user = inUsername.getText();
-            String email = inEmail.getText();
-            String apellido = inApellido.getText();
             String nombre = inNombre.getText();
+            String apellido = inApellido.getText();
+            String email = inEmail.getText();
+            String user = inUsername.getText();
+            String pass = new String(inPassword.getPassword());
+            String pass2 = new String(inPasswordRepeticion.getPassword());
 
-            //aca hace el creador de usuario
-
-
-
-            //
-
-
-            boolean flag = true; // aca el metodo q lo retorne
-
-            if (flag) {
+            // Aquí falta comprobación para ver si existe el email y el usuario
+            if (pass.equals(pass2) && nombre != null && apellido != null) {
                 JOptionPane.showMessageDialog(null, "Creado con exito!");
-
             } else {
                 JOptionPane.showMessageDialog(null, "Error");
-
             }
+
             dispose();
-
-
         });
-
 
         panel.add(inNombre);
         panel.add(inApellido);
         panel.add(inPassword);
         panel.add(inUsername);
         panel.add(inEmail);
+        panel.add(inPasswordRepeticion);
         panel.add(text1);
         panel.add(text2);
         panel.add(text3);
         panel.add(text4);
         panel.add(text5);
+        panel.add(text6);
         panel.add(boton);
         panel.add(cancelarBoton);
         panel.add(fondo);
-
     }
-
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new Registro().setVisible(true));
     }
 }
-
-
-

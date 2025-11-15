@@ -1,7 +1,4 @@
 package Codigo.Interfaz;
-
-import Codigo.Logica.Usuario;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -39,8 +36,4 @@ public class Metodos extends JFrame {
         JOptionPane.showMessageDialog(null, mensaje);
 
     }
-
-
-
-
 }
