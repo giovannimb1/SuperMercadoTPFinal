@@ -16,6 +16,11 @@ public class Cliente extends Usuario {
         super.setPermisos(false);
     }
 
+    /// GETTER
+    public Carrito getCarrito() {
+        return carrito;
+    }
+
     /// METODOS
     public boolean agregarProducto(int id){
         return carrito.agregarProducto(id);

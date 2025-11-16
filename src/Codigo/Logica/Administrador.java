@@ -20,6 +20,26 @@ public class Administrador extends Usuario {
 
     /// METODOS
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // -----------------------------------------seguro dsp borro eso de abajo----------------------------
+
     public void agregarProductos() {
         Scanner sc = new Scanner(System.in);
 

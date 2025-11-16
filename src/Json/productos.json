@@ -1,9 +1,272 @@
-[{
-    "vencimiento": "2025-11-15",
-    "marca": "La Serenisima",
-    "precio": 850.5,
-    "categoria": "LACTEO",
-    "id": 1,
-    "stock": 25,
-    "nombre": "Leche Entera"
-}]
+[
+    {
+        "vencimiento": "2025-11-15",
+        "marca": "La Serenisima",
+        "precio": 850.5,
+        "categoria": "LACTEO",
+        "id": 1,
+        "stock": 25,
+        "nombre": "Leche Entera"
+    },
+    {
+        "vencimiento": "2025-04-02",
+        "marca": "Casancrem",
+        "precio": 1800,
+        "categoria": "LACTEO",
+        "id": 3,
+        "stock": 25,
+        "nombre": "Queso Crema"
+    },
+    {
+        "vencimiento": "2025-03-18",
+        "marca": "Ilolay",
+        "precio": 720,
+        "categoria": "LACTEO",
+        "id": 4,
+        "stock": 30,
+        "nombre": "Yogur Frutado"
+    },
+    {
+        "vencimiento": "2025-02-20",
+        "marca": "Friar",
+        "precio": 3500,
+        "categoria": "CARNE",
+        "id": 5,
+        "stock": 15,
+        "nombre": "Carne Molida"
+    },
+    {
+        "vencimiento": "2025-02-15",
+        "marca": "Granja Tres Arroyos",
+        "precio": 2800,
+        "categoria": "CARNE",
+        "id": 6,
+        "stock": 20,
+        "nombre": "Pechuga de Pollo"
+    },
+    {
+        "vencimiento": "2025-03-01",
+        "marca": "Swift",
+        "precio": 4200,
+        "categoria": "CARNE",
+        "id": 7,
+        "stock": 18,
+        "nombre": "Milanesa Vacuna"
+    },
+    {
+        "vencimiento": "2025-02-05",
+        "marca": "El Trébol",
+        "precio": 1100,
+        "categoria": "VEGETAL",
+        "id": 8,
+        "stock": 50,
+        "nombre": "Manzanas Rojas"
+    },
+    {
+        "vencimiento": "2025-02-08",
+        "marca": "CampoFresco",
+        "precio": 900,
+        "categoria": "VEGETAL",
+        "id": 9,
+        "stock": 60,
+        "nombre": "Papas"
+    },
+    {
+        "vencimiento": "2025-02-12",
+        "marca": "Hortalizas SA",
+        "precio": 750,
+        "categoria": "VEGETAL",
+        "id": 10,
+        "stock": 45,
+        "nombre": "Zanahorias"
+    },
+    {
+        "vencimiento": "2026-01-01",
+        "marca": "Coca Cola",
+        "precio": 1600,
+        "categoria": "BEBIDA",
+        "id": 11,
+        "stock": 70,
+        "nombre": "Coca Cola"
+    },
+    {
+        "vencimiento": "2026-06-01",
+        "marca": "Villavicencio",
+        "precio": 700,
+        "categoria": "BEBIDA",
+        "id": 12,
+        "stock": 100,
+        "nombre": "Agua sin gas"
+    },
+    {
+        "vencimiento": "2025-11-12",
+        "marca": "Cepita",
+        "precio": 950,
+        "categoria": "BEBIDA",
+        "id": 13,
+        "stock": 40,
+        "nombre": "Jugo de Naranja"
+    },
+    {
+        "vencimiento": "2025-12-01",
+        "marca": "Quilmes",
+        "precio": 1300,
+        "categoria": "BEBIDA",
+        "id": 14,
+        "stock": 50,
+        "nombre": "Cerveza Rubia"
+    },
+    {
+        "vencimiento": "2025-10-10",
+        "marca": "Lays",
+        "precio": 1250,
+        "categoria": "SNACK",
+        "id": 15,
+        "stock": 60,
+        "nombre": "Papas Fritas Clásicas"
+    },
+    {
+        "vencimiento": "2025-08-01",
+        "marca": "Don Satur",
+        "precio": 850,
+        "categoria": "SNACK",
+        "id": 16,
+        "stock": 80,
+        "nombre": "Bizcochitos"
+    },
+    {
+        "vencimiento": "2025-07-20",
+        "marca": "Pepitos",
+        "precio": 900,
+        "categoria": "SNACK",
+        "id": 17,
+        "stock": 90,
+        "nombre": "Galletitas de Chocolate"
+    },
+    {
+        "vencimiento": "2025-09-05",
+        "marca": "Havanna",
+        "precio": 1500,
+        "categoria": "SNACK",
+        "id": 18,
+        "stock": 70,
+        "nombre": "Alfajor Triple"
+    },
+    {
+        "vencimiento": "2027-03-10",
+        "marca": "Head & Shoulders",
+        "precio": 2300,
+        "categoria": "HIGIENE",
+        "id": 19,
+        "stock": 40,
+        "nombre": "Shampoo Anticaspa"
+    },
+    {
+        "vencimiento": "2027-04-01",
+        "marca": "Dove",
+        "precio": 1900,
+        "categoria": "HIGIENE",
+        "id": 20,
+        "stock": 35,
+        "nombre": "Jabón Líquido"
+    },
+    {
+        "vencimiento": "2027-06-15",
+        "marca": "Colgate",
+        "precio": 1100,
+        "categoria": "HIGIENE",
+        "id": 21,
+        "stock": 60,
+        "nombre": "Pasta Dental"
+    },
+    {
+        "vencimiento": "2027-05-12",
+        "marca": "Rexona",
+        "precio": 1600,
+        "categoria": "HIGIENE",
+        "id": 22,
+        "stock": 50,
+        "nombre": "Desodorante"
+    },
+    {
+        "vencimiento": "2026-07-01",
+        "marca": "Ayudín",
+        "precio": 900,
+        "categoria": "LIMPIEZA",
+        "id": 23,
+        "stock": 55,
+        "nombre": "Lavandina"
+    },
+    {
+        "vencimiento": "2026-05-22",
+        "marca": "Magistral",
+        "precio": 1400,
+        "categoria": "LIMPIEZA",
+        "id": 24,
+        "stock": 70,
+        "nombre": "Detergente"
+    },
+    {
+        "vencimiento": "2026-08-13",
+        "marca": "Mr. Músculo",
+        "precio": 1800,
+        "categoria": "LIMPIEZA",
+        "id": 25,
+        "stock": 35,
+        "nombre": "Limpiador Multiuso"
+    },
+    {
+        "vencimiento": "2026-09-01",
+        "marca": "Ala",
+        "precio": 2500,
+        "categoria": "LIMPIEZA",
+        "id": 26,
+        "stock": 40,
+        "nombre": "Jabón en Polvo"
+    },
+    {
+        "vencimiento": "2025-02-09",
+        "marca": "La Huerta",
+        "precio": 920,
+        "categoria": "VEGETAL",
+        "id": 27,
+        "stock": 55,
+        "nombre": "Tomate Perita"
+    },
+    {
+        "vencimiento": "2025-02-06",
+        "marca": "TropiRico",
+        "precio": 1000,
+        "categoria": "VEGETAL",
+        "id": 28,
+        "stock": 65,
+        "nombre": "Bananas"
+    },
+    {
+        "vencimiento": "2025-09-01",
+        "marca": "Paty",
+        "precio": 2000,
+        "categoria": "CARNE",
+        "id": 29,
+        "stock": 30,
+        "nombre": "Nuggets de Pollo"
+    },
+    {
+        "vencimiento": "2025-04-14",
+        "marca": "La Paulina",
+        "precio": 1400,
+        "categoria": "LACTEO",
+        "id": 30,
+        "stock": 50,
+        "nombre": "Queso Rallado"
+    },
+    {
+        "vencimiento": "2026-02-01",
+        "marca": "Sprite",
+        "precio": 1500,
+        "categoria": "BEBIDA",
+        "id": 31,
+        "stock": 75,
+        "nombre": "Gaseosa de Lima"
+    }
+]
