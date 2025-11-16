@@ -30,6 +30,7 @@ public class Almacen implements IGestor<Producto> {
     @Override
     public boolean agregar(Producto p) {
         productos.put(p.getId(), p);
+        GestoraJSON.mapAarchivo("productos.json",productos);
         return true;
     }
 
@@ -38,6 +39,7 @@ public class Almacen implements IGestor<Producto> {
       boolean flag = false;
         if (productos.containsKey(id)) {
             productos.remove(id);
+            GestoraJSON.mapAarchivo("productos.json",productos);
             flag = true;
         }
         return flag;
@@ -48,6 +50,7 @@ public class Almacen implements IGestor<Producto> {
        boolean flag = false;
         if (productos.containsKey(id)) {
             productos.put(id, p);
+            GestoraJSON.mapAarchivo("productos.json",productos);
             flag = true;
         }
         return flag;
