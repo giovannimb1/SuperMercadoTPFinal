@@ -37,4 +37,15 @@ public class Metodos extends JFrame {
         JOptionPane.showMessageDialog(null, mensaje);
 
     }
+
+    public static JButton botonesCategorias(int x, int y,String texto)
+    {
+        JButton boton = new JButton(texto);
+        boton.setBounds(x, y, 25, 25);
+        boton.setBackground(new Color(80, 150, 255));
+        boton.setForeground(Color.WHITE);
+        boton.setFocusPainted(false);
+
+        return boton;
+    }
 }

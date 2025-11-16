@@ -38,7 +38,7 @@ public class CarritoInterfaz extends JFrame{
 
         JButton volverAlMenu = new JButton("Salir");
         volverAlMenu.setBounds(950, 67, 200, 40);
-        volverAlMenu.setBackground(new Color(80, 150, 255));
+        volverAlMenu.setBackground(new Color(255, 49, 49));
         volverAlMenu.setForeground(Color.WHITE);
         volverAlMenu.setFocusPainted(false);
         volverAlMenu.addActionListener(e -> {

@@ -10,13 +10,33 @@
         "username": "jorgeC"
     },
     {
-        "password": "jojo",
+        "password": "f",
         "fecha_registro": "2025-11-16",
-        "apellido": "chauno",
-        "id": 3,
+        "apellido": "agsag",
+        "id": 2,
         "permisos": false,
         "nombre": "holasi",
         "email": "holasichauno@gmail.com",
-        "username": "holachau"
+        "username": "dd"
+    },
+    {
+        "password": "",
+        "fecha_registro": "2025-11-16",
+        "apellido": "",
+        "id": 5,
+        "permisos": false,
+        "nombre": "",
+        "email": "",
+        "username": ""
+    },
+    {
+        "password": "e",
+        "fecha_registro": "2025-11-16",
+        "apellido": "",
+        "id": 7,
+        "permisos": false,
+        "nombre": "",
+        "email": "e",
+        "username": "e"
     }
 ]

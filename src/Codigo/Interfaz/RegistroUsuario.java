@@ -50,12 +50,12 @@ public class RegistroUsuario extends JFrame {
         JLabel fondo = new JLabel(img);
         fondo.setBounds(0, 0, 600, 500);
 
-        JButton cancelarBoton = new JButton("Cancelar");
-        cancelarBoton.setBounds(80, 400, 200, 40);
-        cancelarBoton.setBackground(new Color(80, 150, 255));
-        cancelarBoton.setForeground(Color.WHITE);
-        cancelarBoton.setFocusPainted(false);
-        cancelarBoton.addActionListener(e -> dispose());
+        JButton cerrar = new JButton("Cerrar");
+        cerrar.setBounds(80, 400, 200, 40);
+        cerrar.setBackground(new Color(255, 49, 49));
+        cerrar.setForeground(Color.WHITE);
+        cerrar.setFocusPainted(false);
+        cerrar.addActionListener(e -> dispose());
 
         JButton boton = new JButton("Registrarse");
         boton.setBounds(320, 400, 200, 40);
@@ -77,6 +77,8 @@ public class RegistroUsuario extends JFrame {
 
                 if (Gestora.getInstancia().agregar(cliente)) {
                     Metodos.excepcionPantallaEmergente("Agregado con exito");
+                    dispose();
+
 
                 } else {
                     Metodos.excepcionPantallaEmergente( "Error");
@@ -88,7 +90,6 @@ public class RegistroUsuario extends JFrame {
 
 
 
-            dispose();
         });
 
         panel.add(inNombre);
@@ -104,7 +105,7 @@ public class RegistroUsuario extends JFrame {
         panel.add(text5);
         panel.add(text6);
         panel.add(boton);
-        panel.add(cancelarBoton);
+        panel.add(cerrar);
         panel.add(fondo);
     }
 

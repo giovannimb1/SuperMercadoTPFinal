@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 public class ModificarProducto extends JFrame {
 
-    private static Producto producto ;
+    private static Producto producto;
 
     public static void setProducto(Producto producto) {
         ModificarProducto.producto = producto;
@@ -29,7 +29,7 @@ public class ModificarProducto extends JFrame {
                 Categoria_Producto.LACTEO
         );
         setProducto(p1);
-//
+
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 getClass().getResource("/img/logos/logo.png")));
 
@@ -59,19 +59,19 @@ public class ModificarProducto extends JFrame {
         inMarca.setBounds(275, 100, 200, 25);
 
         JTextField inPrecio = new JTextField();
-        inPrecio.setText(""+producto.getPrecio());
+        inPrecio.setText("" + producto.getPrecio());
         inPrecio.setBounds(275, 150, 200, 25);
 
         JTextField inVencimiento = new JTextField();
-        inVencimiento.setText(""+producto.getVencimiento());
+        inVencimiento.setText("" + producto.getVencimiento());
         inVencimiento.setBounds(275, 200, 200, 25);
 
         JTextField inStock = new JTextField();
-        inStock.setText(""+producto.getStock());
+        inStock.setText("" + producto.getStock());
         inStock.setBounds(275, 250, 200, 25);
 
         JTextField inCategoria = new JTextField();
-        inCategoria.setText(""+producto.getCategoria());
+        inCategoria.setText("" + producto.getCategoria());
         inCategoria.setBounds(275, 300, 200, 25);
 
         ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenuProductos/fondo.png"));
@@ -79,7 +79,8 @@ public class ModificarProducto extends JFrame {
         fondo.setBounds(0, 0, 600, 500);
 
         JButton boton = new JButton("Modificar");
-        boton.setBounds(80, 400, 200, 40);
+        boton.setBounds(320, 400, 200, 40);
+
         boton.setBackground(new Color(80, 150, 255));
         boton.setForeground(Color.WHITE);
         boton.setFocusPainted(false);
@@ -103,13 +104,13 @@ public class ModificarProducto extends JFrame {
             }
         });
 
-        JButton cancelar = new JButton("Cancelar");
-        cancelar.setBounds(320, 400, 200, 40);
-        cancelar.setBackground(new Color(80, 150, 255));
-        cancelar.setForeground(Color.WHITE);
-        cancelar.setFocusPainted(false);
+        JButton cerrar = new JButton("Cerrar");
+        cerrar.setBounds(80, 400, 200, 40);
+        cerrar.setBackground(new Color(255, 49, 49));
+        cerrar.setForeground(Color.WHITE);
+        cerrar.setFocusPainted(false);
 
-        cancelar.addActionListener(e -> dispose());
+        cerrar.addActionListener(e -> dispose());
 
         JButton cargarImagen = new JButton("Imagen");
         cargarImagen.setBounds(200, 340, 200, 40);
@@ -134,11 +135,10 @@ public class ModificarProducto extends JFrame {
         panel.add(text5);
         panel.add(text6);
         panel.add(boton);
-        panel.add(cancelar);
+        panel.add(cerrar);
         panel.add(cargarImagen);
         panel.add(fondo);
     }
-
 
 
     public static void main(String[] args) {

@@ -25,21 +25,31 @@ public class Menu extends JFrame {
         setLocationRelativeTo(null);
 
 
-        JPanel panel = new JPanel(null);
-        panel.setBackground(new Color(14, 21, 37));
+        JPanel panel = new PanelConFondoRepetido("/img/Menu/1.png");
+        panel.setLayout(null);
 
+        ArrayList<JPanel> productos = new ArrayList<>();
 
-        //esto funciona como una minipantalla
+        for (Producto p : Almacen.getInstancia().getProductos().values()) {
+
+            productos.add(productoAvisual(p, null));
+        }
+
         JPanel contenedorProductos = new JPanel();
+        contenedorProductos.setPreferredSize(new Dimension(1180, productos.size() * 220));
         contenedorProductos.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
         contenedorProductos.setBackground(new Color(87, 112, 144));
-        contenedorProductos.setBounds(50, 150, 1180, 500); // área donde se acomodarán
+        contenedorProductos.setOpaque(false);
 
 
+        for (JPanel p : productos) {
+            contenedorProductos.add(p);
+        }
 
-        ImageIcon img = new ImageIcon(getClass().getResource("/img/Menu/1.png"));
-        JLabel fondo = new JLabel(img);
-        fondo.setBounds(0, 0, 1280, 720);
+        int altoTotal = productos.size() * 220;
+
+        contenedorProductos.setBounds(40, 150, 1180, altoTotal);
+
 
         ImageIcon img2 = new ImageIcon(getClass().getResource("/img/Menu/2.png"));
         JLabel decoracion1 = new JLabel(img2);
@@ -49,12 +59,16 @@ public class Menu extends JFrame {
         JLabel logochiquito = new JLabel(img4);
         logochiquito.setBounds(0, 0, 1280, 720);
 
+        JLabel bienvendo = new JLabel("Bienvenido : " + Sesion.getUsuarioActivo().getUsername());
+        bienvendo.setForeground(Color.BLACK);
+        bienvendo.setFont(new Font("Segoe UI", Font.PLAIN, 36));
+        bienvendo.setBounds(200, 65, 400, 40);
+
         JScrollPane scroll = new JScrollPane(panel);
         scroll.setBounds(0, 0, 1280, 720);
         scroll.setBorder(null);
         scroll.getVerticalScrollBar().setUnitIncrement(16);
         add(scroll);
-
 
 
         //TEST
@@ -66,11 +80,8 @@ public class Menu extends JFrame {
             registrarProducto.setFocusPainted(false);
             registrarProducto.addActionListener(e -> {
 
-                boolean flag = true; // verificador
 
-                if (flag) {
-                    new RegistroProductos().setVisible(true);
-                }
+                new RegistroProductos().setVisible(true);
 
             });
             panel.add(registrarProducto);
@@ -95,42 +106,33 @@ public class Menu extends JFrame {
 
         }
 
+        JButton cerrarSesion = new JButton("Cerrar Sesion");
+        cerrarSesion.setBounds(720, 67, 200, 40);
+        cerrarSesion.setBackground(new Color(255, 49, 49));
+        cerrarSesion.setForeground(Color.WHITE);
+        cerrarSesion.setFocusPainted(false);
+        cerrarSesion.addActionListener(e -> {
 
-        // ESPERANDO LISTA DE PRODUCTOS
-
-        Producto p1 = new Producto(
-                "Leche Entera",
-                "La Serenisima",
-                850.50,
-                LocalDate.of(2025, 11, 15),
-                25,
-                Categoria_Producto.LACTEO
-        );
-
-        ArrayList<JPanel> productos = new ArrayList<>();
-
-        for(Producto p: Almacen.getInstancia().getProductos().values()){
-
-            productos.add(productoAvisual(p,null));
-        }
+            Sesion.cerrarSesion();
+            new Intro().setVisible(true);
 
 
-        panel.add(logochiquito);
-        panel.add(decoracion1);
+        });
+        panel.add(cerrarSesion);
+
 
 //se muestra
-        for(JPanel p: productos){
+        for (JPanel p : productos) {
             contenedorProductos.add(p);
 
         }
 
-
+        panel.add(bienvendo);
+        panel.add(contenedorProductos);
+        panel.add(logochiquito);
+        panel.add(decoracion1);
 
         panel.add(contenedorProductos);
-
-        //Jbutton CerrarSesion = new
-
-        panel.add(fondo);
 
 
     }
@@ -155,27 +157,25 @@ public class Menu extends JFrame {
         precio.setForeground(Color.WHITE);
 
 
-
         JLabel foto = null;
 
-        if(dirImg != null){
+        if (dirImg != null) {
 
             ImageIcon img = new ImageIcon(getClass().getResource(dirImg));
             Image imagen = img.getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH);
             img = new ImageIcon(imagen);
 
-            foto = new JLabel (img);
+            foto = new JLabel(img);
             foto.setForeground(Color.WHITE);
 
-        }else {
+        } else {
 
             ImageIcon img = new ImageIcon(getClass().getResource("/img/FotoProductos/0.jpg"));
             Image imagen = img.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
             img = new ImageIcon(imagen);
 
-            foto = new JLabel (img);
+            foto = new JLabel(img);
             foto.setForeground(Color.WHITE);
-
 
 
         }
@@ -184,19 +184,19 @@ public class Menu extends JFrame {
         caja.add(precio);
         caja.add(foto);
 
-        if(!Sesion.getUsuarioActivo().isPermisos()){
+        if (!Sesion.getUsuarioActivo().isPermisos()) {
 
-            JButton mandarAlCarrito = new JButton("C:"+ producto.getStock());
+            JButton mandarAlCarrito = new JButton("C:" + producto.getStock());
             mandarAlCarrito.setForeground(Color.BLACK);
 
 
             mandarAlCarrito.addActionListener(e -> {
-                if(Sesion.getCarrito().agregarProducto(producto.getId())){
+                if (Sesion.getCarrito().agregarProducto(producto.getId())) {
                     //esto cambia el texto del boton
                     mandarAlCarrito.setText("C:" + producto.getStock());
 
 
-                }else {
+                } else {
                     mandarAlCarrito.setText("Sin Stock");
                     Metodos.excepcionPantallaEmergente("No hay mas Productos");
 
@@ -205,10 +205,10 @@ public class Menu extends JFrame {
             });
             caja.add(mandarAlCarrito);
 
-        }else {
+        } else {
             JButton modificar = new JButton("Modificar");
             modificar.setForeground(Color.WHITE);
-            modificar.addActionListener(e->{
+            modificar.addActionListener(e -> {
                 ModificarProducto.setProducto(producto);
                 new ModificarProducto().setVisible(true);
 
