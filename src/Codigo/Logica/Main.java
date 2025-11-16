@@ -35,8 +35,17 @@ public class Main {
                 "2468"
         );
 
+        Cliente ctest = new Cliente(
+                "holasi",
+                "chauno",
+                "holachau",
+                "holasichauno@gmail.com",
+                "jojo"
+        );
+
+
         // probando
-        //al unico Almacen ya le cargue el p1
+        //al unico Almacen ya le cargue los 30p
         // a la unica Gestora de usuarios le cargue el admin
 
         System.out.println(Almacen.getInstancia().getProductos().size()); // 30
@@ -44,17 +53,18 @@ public class Main {
 
         try {
             System.out.println(Gestora.getInstancia().inicioSesion("jorgeC", "13579")); // usuario toString
-            System.out.println(Gestora.getInstancia().inicioSesion("jorgec", "13579")); // null
+            System.out.println(Gestora.getInstancia().inicioSesion("jorgec", "13579")); // excepction
         } catch (AutenticacionException e) {
             System.out.println(e.getMessage());
         }
-
+  /*
         System.out.println("\n=======================\n");
         Almacen.getInstancia().listar();
         Gestora.getInstancia().listar();
-
+ */
         System.out.println("\n======PRUEBA======\n");
         System.out.println(Gestora.getInstancia().agregar(test));
+        System.out.println(Gestora.getInstancia().agregar(ctest));
 
         Producto[] productos = {
                 new Producto("Queso Crema", "Casancrem", 1800, LocalDate.of(2025, 4, 2), 25, Categoria_Producto.LACTEO),

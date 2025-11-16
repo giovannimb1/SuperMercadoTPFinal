@@ -30,7 +30,12 @@ public class Gestora implements IGestor<Usuario> {
 
     @Override
     public boolean agregar(Usuario u) {
-        return usuarios.add(u);
+        boolean flag = false;
+        if(usuarios.add(u)){
+            flag = true;
+            GestoraJSON.setAarchivo("usuarios.json",usuarios);
+        }
+        return flag;
     }
 
     @Override

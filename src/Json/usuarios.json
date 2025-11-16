@@ -1,21 +1,22 @@
-[{
-  "password": "13579",
-  "fecha_registro": "2025-10-24",
-  "apellido": "Perez",
-  "id": 1,
-  "permisos": true,
-  "nombre": "Jorge",
-  "email": "jorge@gmail.com",
-  "username": "jorgeC"
-},
-  {
-    "password": "fr",
-    "fecha_registro": "2025-10-24",
-    "apellido": "Lopez",
-    "id": 1,
-    "permisos": false,
-    "nombre": "Gonzalo",
-    "email": "gonzalo@gmail.com",
-    "username": "gonzaloL"
-  }
+[
+    {
+        "password": "13579",
+        "fecha_registro": "2025-10-24",
+        "apellido": "Perez",
+        "id": 1,
+        "permisos": true,
+        "nombre": "Jorge",
+        "email": "jorge@gmail.com",
+        "username": "jorgeC"
+    },
+    {
+        "password": "jojo",
+        "fecha_registro": "2025-11-16",
+        "apellido": "chauno",
+        "id": 3,
+        "permisos": false,
+        "nombre": "holasi",
+        "email": "holasichauno@gmail.com",
+        "username": "holachau"
+    }
 ]
