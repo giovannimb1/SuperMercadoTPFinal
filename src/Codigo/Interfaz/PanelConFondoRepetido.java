@@ -7,8 +7,8 @@ public class PanelConFondoRepetido extends JPanel {
 
     private final Image fondo;
 
-    public PanelConFondoRepetido(String ruta) {
-        fondo = new ImageIcon(getClass().getResource(ruta)).getImage();
+    public PanelConFondoRepetido(String direccion) {
+        fondo = new ImageIcon(getClass().getResource(direccion)).getImage();
         setLayout(null);
     }
 

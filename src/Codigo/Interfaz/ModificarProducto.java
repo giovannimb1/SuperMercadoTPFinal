@@ -119,7 +119,7 @@ public class ModificarProducto extends JFrame {
         cargarImagen.setFocusPainted(false);
 
         cargarImagen.addActionListener(e -> {
-            ImagenAdministrador.subirImagen(100, 100);
+       //     ImagenAdministrador.asociarDireccionDeImagenAproducto();
         });
 
         panel.add(inNombre);

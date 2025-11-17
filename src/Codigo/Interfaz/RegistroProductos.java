@@ -2,18 +2,17 @@ package Codigo.Interfaz;
 
 import Codigo.Logica.Administrador;
 import Codigo.Logica.Categoria_Producto;
-import Codigo.Logica.Producto;
 import Codigo.Logica.ProductoInvalidoException;
 
 import javax.swing.*;
 import javax.swing.JButton;
 import java.awt.*;
-import java.io.File;
 
 public class RegistroProductos extends JFrame {
 
     private Categoria_Producto x;
     private boolean obligatorio = false;
+    private String direccionDeImagen;
 
     public RegistroProductos() {
 
@@ -62,7 +61,6 @@ public class RegistroProductos extends JFrame {
         JButton categoria7 = Metodos.botonesCategorias(435, 300, "7");
 
 
-
         categoria1.addActionListener(e -> {
             obligatorio = true;
             x = Categoria_Producto.CARNE;
@@ -97,9 +95,23 @@ public class RegistroProductos extends JFrame {
         JLabel fondo = new JLabel(img);
         fondo.setBounds(0, 0, 600, 500);
 
+        JButton cargarImagen = new JButton("Imagen");
+        cargarImagen.setBounds(200, 340, 200, 40);
+        cargarImagen.setBackground(new Color(80, 150, 255));
+        cargarImagen.setForeground(Color.WHITE);
+        cargarImagen.setFocusPainted(false);
+
+
+
+        cargarImagen.addActionListener(e -> {
+           direccionDeImagen =  ImagenAdministrador.direccionDeIMG();
+          //  System.out.println("PRUEBA FINAL : " + direccionDeImagen);
+        });
+
+
+
         JButton boton = new JButton("Registrar");
         boton.setBounds(320, 400, 200, 40);
-
         boton.setBackground(new Color(80, 150, 255));
         boton.setForeground(Color.WHITE);
         boton.setFocusPainted(false);
@@ -114,18 +126,20 @@ public class RegistroProductos extends JFrame {
                 String precio = inPrecio.getText();                                 //<------------------------------
                 String marca = inMarca.getText();
                 String categoria = x.toString();
+                String direccion = direccionDeImagen;
+                System.out.println("DIRECCION DIFINITVA: "+direccion);
+
+
 
                 Administrador admin = (Administrador) Sesion.getUsuarioActivo();
 
-                //manejar excepcion para q no sea nullpointer CP
-                boolean flag = true;
                 try {
 
 
                     if (admin.crearProducto(nombre, stock, vencimiento, precio, marca, categoria)) {
                         JOptionPane.showMessageDialog(null, "Creado con exito!");
 
-                        Menu.getInstancia().productosReutilizable();
+                        Menu.getInstancia().productosReutilizable(); // actualiza la pagina menu :2
 
 
                     } else {
@@ -141,6 +155,8 @@ public class RegistroProductos extends JFrame {
 
         });
 
+
+
         JButton cerrar = new JButton("Cerrar");
         cerrar.setBounds(80, 400, 200, 40);
         cerrar.setBackground(new Color(255, 49, 49));
@@ -149,15 +165,7 @@ public class RegistroProductos extends JFrame {
 
         cerrar.addActionListener(e -> dispose());
 
-        JButton cargarImagen = new JButton("Imagen");
-        cargarImagen.setBounds(200, 340, 200, 40);
-        cargarImagen.setBackground(new Color(80, 150, 255));
-        cargarImagen.setForeground(Color.WHITE);
-        cargarImagen.setFocusPainted(false);
 
-        cargarImagen.addActionListener(e -> {
-            ImagenAdministrador.subirImagen(100, 100);
-        });
 
         //categorias:
         panel.add(categoria1);
@@ -167,8 +175,6 @@ public class RegistroProductos extends JFrame {
         panel.add(categoria5);
         panel.add(categoria6);
         panel.add(categoria7);
-
-
         panel.add(inNombre);
         panel.add(inMarca);
         panel.add(inVencimiento);

@@ -300,13 +300,13 @@
         "nombre": "fawfwa"
     },
     {
-        "vencimiento": "2026-03-02",
-        "marca": "gg",
-        "precio": 92,
-        "categoria": "BEBIDA",
+        "vencimiento": "2026-03-03",
+        "marca": "dawdaw",
+        "precio": 12512,
+        "categoria": "HIGIENE",
         "direccion": null,
         "id": 32,
-        "stock": 14,
-        "nombre": "pepe"
+        "stock": 851,
+        "nombre": "dawdaw"
     }
 ]

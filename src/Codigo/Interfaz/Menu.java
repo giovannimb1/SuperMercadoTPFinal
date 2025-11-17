@@ -1,13 +1,9 @@
 package Codigo.Interfaz;
 
-import Codigo.Logica.Categoria_Producto;
 import Codigo.Logica.Producto;
 import Codigo.Logica.*;
-
-
 import javax.swing.*;
 import java.awt.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Menu extends JFrame {
@@ -125,7 +121,7 @@ public class Menu extends JFrame {
 
         for (Producto p : Almacen.getInstancia().getProductos().values()) {
 
-            productos.add(productoAvisual(p, null));
+            productos.add(productoAvisual(p));
         }
 
 
@@ -156,7 +152,7 @@ public class Menu extends JFrame {
 
     //creador de productos
 
-    private JPanel productoAvisual(Producto producto, String dirImg) {
+    private JPanel productoAvisual(Producto producto) {
 
         JPanel caja = new JPanel();
         caja.setPreferredSize(new Dimension(200, 200));
@@ -176,10 +172,10 @@ public class Menu extends JFrame {
 
         JLabel foto = null;
 
-        if (dirImg != null) {
+        if (producto.getDireccionImg() != null) {
 
-            ImageIcon img = new ImageIcon(getClass().getResource(dirImg));
-            Image imagen = img.getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH);
+            ImageIcon img = new ImageIcon(getClass().getResource(producto.getDireccionImg()));
+            Image imagen = img.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
             img = new ImageIcon(imagen);
 
             foto = new JLabel(img);
