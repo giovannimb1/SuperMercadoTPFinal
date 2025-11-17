@@ -2,6 +2,7 @@ package Codigo.Interfaz;
 
 import Codigo.Logica.Producto;
 import Codigo.Logica.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -12,7 +13,6 @@ public class CarritoInterfaz extends JFrame {
     private static CarritoInterfaz CarritoInterfaz;
 
 
-
     public CarritoInterfaz() {
         CarritoInterfaz = this;
 
@@ -20,8 +20,7 @@ public class CarritoInterfaz extends JFrame {
                 getClass().getResource("/img/logos/logo.png")));
 
 
-
-        setTitle("SuperMercado");
+        setTitle("Carrito");
         setSize(1280, 720);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -51,58 +50,23 @@ public class CarritoInterfaz extends JFrame {
         add(scroll);
 
 
-        //TEST
-        if (Sesion.getUsuarioActivo().isPermisos()) {
-            JButton registrarProducto = new JButton("Registrar Producto");
-            registrarProducto.setBounds(950, 67, 200, 40);
-            registrarProducto.setBackground(new Color(80, 150, 255));
-            registrarProducto.setForeground(Color.WHITE);
-            registrarProducto.setFocusPainted(false);
-            registrarProducto.addActionListener(e -> {
+        JButton volverAlMenu = new JButton("Menu");
+        volverAlMenu.setBounds(950, 67, 200, 40);
+        volverAlMenu.setBackground(new Color(80, 150, 255));
+        volverAlMenu.setForeground(Color.WHITE);
+        volverAlMenu.setFocusPainted(false);
+        volverAlMenu.addActionListener(e -> {
 
 
-                new RegistroProductos().setVisible(true);
-
-            });
-            panel.add(registrarProducto);
-
-
-        } else {
-
-            ImageIcon carrito = new ImageIcon(getClass().getResource("/img/iconos/carrito-de-compras.png"));
-            Image imagen = carrito.getImage().getScaledInstance(32, 32, Image.SCALE_SMOOTH);
-            carrito = new ImageIcon(imagen);
-            JButton carritoBoton = new JButton(carrito);
-            carritoBoton.setBounds(950, 67, 200, 40);
-            carritoBoton.setForeground(Color.WHITE);
-            carritoBoton.setFocusPainted(false);
-            carritoBoton.addActionListener(e -> {
-                new CarritoInterfaz().setVisible(true);
-                dispose();
-
-            });
-            panel.add(carritoBoton);
-
-
-        }
-
-        JButton cerrarSesion = new JButton("Cerrar Sesion");
-        cerrarSesion.setBounds(720, 67, 200, 40);
-        cerrarSesion.setBackground(new Color(255, 49, 49));
-        cerrarSesion.setForeground(Color.WHITE);
-        cerrarSesion.setFocusPainted(false);
-        cerrarSesion.addActionListener(e -> {
-
-            Sesion.cerrarSesion();
-            new Intro().setVisible(true);
-
+            new Menu().setVisible(true);
+            dispose();
 
         });
 
         contenedorProductos = new JPanel();
         carritoAproductos();
 
-        panel.add(cerrarSesion);
+        panel.add(volverAlMenu);
 
         panel.add(contenedorProductos);
         panel.add(bienvendo);
@@ -110,40 +74,38 @@ public class CarritoInterfaz extends JFrame {
         panel.add(decoracion1);
 
 
-
     }
 
-    public void carritoAproductos(){
+    public void carritoAproductos() {
 
         contenedorProductos.removeAll();
 
         ArrayList<JPanel> productos = new ArrayList<>();
 
-        if(Sesion.getUsuarioActivo() instanceof Cliente) {
-            for (Producto p : ((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos()) {
+        ((Cliente) Sesion.getUsuarioActivo()).agregarProducto(30);
 
-                productos.add(productoAvisual(p));
-            }
-
-
-            contenedorProductos.setPreferredSize(new Dimension(1180, productos.size() * 220));
-            contenedorProductos.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
-            contenedorProductos.setBackground(new Color(87, 112, 144));
-            contenedorProductos.setOpaque(false);
-
-
-            for (JPanel p : productos) {
-                contenedorProductos.add(p);
-            }
-
-
-            int altoTotal = productos.size() * 220;
-
-            contenedorProductos.setBounds(40, 150, 1180, altoTotal);
-
-            contenedorProductos.revalidate();
-            contenedorProductos.repaint();
+        for (Producto p : ((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos()) {
+            productos.add(productoAvisual(p));
         }
+
+
+        contenedorProductos.setPreferredSize(new Dimension(1180, productos.size() * 220));
+        contenedorProductos.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        contenedorProductos.setBackground(new Color(87, 112, 144));
+        contenedorProductos.setOpaque(false);
+
+
+        for (JPanel p : productos) {
+            contenedorProductos.add(p);
+        }
+
+
+        int altoTotal = productos.size() * 220;
+
+        contenedorProductos.setBounds(40, 150, 1180, altoTotal);
+
+        contenedorProductos.revalidate();
+        contenedorProductos.repaint();
     }
 
     public static CarritoInterfaz getInstancia() {
@@ -193,35 +155,28 @@ public class CarritoInterfaz extends JFrame {
         foto.setForeground(Color.WHITE);
 
 
-
-
         caja.add(nombre);
         caja.add(marca);
         caja.add(precio);
         caja.add(foto);
 
-        if (!Sesion.getUsuarioActivo().isPermisos()) {
 
-            JButton sacarDelCarrito = new JButton("Sacar");
-            sacarDelCarrito.setForeground(Color.BLACK);
+        JButton sacarDelCarrito = new JButton("Sacar");
+        sacarDelCarrito.setForeground(Color.WHITE);
+        sacarDelCarrito.setBackground(new Color(255, 35, 35));
 
 
-            sacarDelCarrito.addActionListener(e -> {
+        sacarDelCarrito.addActionListener(e -> {
 
-                if (Sesion.getUsuarioActivo() instanceof Cliente){
+            if (((Cliente) Sesion.getUsuarioActivo()).eliminarProducto(producto)) {
 
-                    if(((Cliente) Sesion.getUsuarioActivo()).eliminarProducto(producto)){
+            } else {
+                Metodos.excepcionPantallaEmergente("Error");
+            }
 
-                    }else {
-                        Metodos.excepcionPantallaEmergente("Error");
-                    }
 
-                }
-
-            });
-            caja.add(sacarDelCarrito);
-
-        }
+        });
+        caja.add(sacarDelCarrito);
 
 
         return caja;
@@ -229,6 +184,6 @@ public class CarritoInterfaz extends JFrame {
 
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Menu().setVisible(true));
+        SwingUtilities.invokeLater(() -> new CarritoInterfaz().setVisible(true));
     }
 }
