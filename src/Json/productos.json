@@ -261,12 +261,21 @@
         "nombre": "Queso Rallado"
     },
     {
-        "vencimiento": "2026-02-01",
-        "marca": "Sprite",
-        "precio": 1500,
-        "categoria": "BEBIDA",
+        "vencimiento": "2026-05-03",
+        "marca": "fawfw",
+        "precio": 1412,
+        "categoria": "LIMPIEZA",
         "id": 31,
-        "stock": 75,
-        "nombre": "Gaseosa de Lima"
+        "stock": 333,
+        "nombre": "fawfwa"
+    },
+    {
+        "vencimiento": "2026-03-02",
+        "marca": "gg",
+        "precio": 92,
+        "categoria": "BEBIDA",
+        "id": 32,
+        "stock": 14,
+        "nombre": "pepe"
     }
 ]

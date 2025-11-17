@@ -12,10 +12,17 @@ import java.util.ArrayList;
 
 public class Menu extends JFrame {
 
+    private JPanel contenedorProductos;
+    private static Menu menu;
+
+
+
     public Menu() {
+        menu = this;
 
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 getClass().getResource("/img/logos/logo.png")));
+
 
 
         setTitle("SuperMercado");
@@ -27,29 +34,6 @@ public class Menu extends JFrame {
 
         JPanel panel = new PanelConFondoRepetido("/img/Menu/1.png");
         panel.setLayout(null);
-
-        ArrayList<JPanel> productos = new ArrayList<>();
-
-        for (Producto p : Almacen.getInstancia().getProductos().values()) {
-
-            productos.add(productoAvisual(p, null));
-        }
-
-        JPanel contenedorProductos = new JPanel();
-        contenedorProductos.setPreferredSize(new Dimension(1180, productos.size() * 220));
-        contenedorProductos.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
-        contenedorProductos.setBackground(new Color(87, 112, 144));
-        contenedorProductos.setOpaque(false);
-
-
-        for (JPanel p : productos) {
-            contenedorProductos.add(p);
-        }
-
-        int altoTotal = productos.size() * 220;
-
-        contenedorProductos.setBounds(40, 150, 1180, altoTotal);
-
 
         ImageIcon img2 = new ImageIcon(getClass().getResource("/img/Menu/2.png"));
         JLabel decoracion1 = new JLabel(img2);
@@ -118,23 +102,56 @@ public class Menu extends JFrame {
 
 
         });
+
+        contenedorProductos = new JPanel();
+        productosReutilizable();
+
         panel.add(cerrarSesion);
 
-
-//se muestra
-        for (JPanel p : productos) {
-            contenedorProductos.add(p);
-
-        }
-
-        panel.add(bienvendo);
         panel.add(contenedorProductos);
+        panel.add(bienvendo);
         panel.add(logochiquito);
         panel.add(decoracion1);
 
-        panel.add(contenedorProductos);
 
 
+    }
+
+    public void productosReutilizable(){
+
+        contenedorProductos.removeAll();
+
+        ArrayList<JPanel> productos = new ArrayList<>();
+
+        for (Producto p : Almacen.getInstancia().getProductos().values()) {
+
+            productos.add(productoAvisual(p, null));
+        }
+
+
+        contenedorProductos.setPreferredSize(new Dimension(1180, productos.size() * 220));
+        contenedorProductos.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        contenedorProductos.setBackground(new Color(87, 112, 144));
+        contenedorProductos.setOpaque(false);
+
+
+        for (JPanel p : productos) {
+            contenedorProductos.add(p);
+        }
+
+
+
+        int altoTotal = productos.size() * 220;
+
+        contenedorProductos.setBounds(40, 150, 1180, altoTotal);
+
+        contenedorProductos.revalidate();
+        contenedorProductos.repaint();
+
+    }
+
+    public static Menu getInstancia() {
+        return menu;
     }
 
     //creador de productos
@@ -207,7 +224,7 @@ public class Menu extends JFrame {
 
         } else {
             JButton modificar = new JButton("Modificar");
-            modificar.setForeground(Color.WHITE);
+            modificar.setForeground(Color.BLACK);
             modificar.addActionListener(e -> {
                 ModificarProducto.setProducto(producto);
                 new ModificarProducto().setVisible(true);

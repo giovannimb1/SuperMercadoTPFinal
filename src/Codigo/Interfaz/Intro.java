@@ -1,5 +1,7 @@
 package Codigo.Interfaz;
+
 import Codigo.Logica.*;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -60,7 +62,21 @@ public class Intro extends JFrame {
             try {
 
                 Usuario u = Gestora.getInstancia().inicioSesion(us, pass);
-                Sesion.setUsuarioActivo(u);
+
+                if (u.isPermisos()) {
+
+                    Administrador administrador = (Administrador) u;
+
+                    Sesion.setUsuarioActivo(administrador);
+
+                } else {
+                    Cliente cliente = (Cliente) u;
+
+                    Sesion.setUsuarioActivo(cliente);
+
+
+                }
+
                 new Menu().setVisible(true);
                 dispose();
 

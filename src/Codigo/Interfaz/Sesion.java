@@ -2,9 +2,10 @@ package Codigo.Interfaz;
 import Codigo.Logica.*;
 
 public class Sesion {
-    private static Usuario usuarioActivo;
-    private static Carrito carrito =   new Carrito();
 
+    private static Usuario usuarioActivo;
+
+    private static Carrito carrito = new Carrito();
 
     public static Usuario getUsuarioActivo() {
         return usuarioActivo;

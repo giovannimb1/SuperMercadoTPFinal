@@ -1,7 +1,9 @@
 package Codigo.Interfaz;
 
+import Codigo.Logica.Administrador;
 import Codigo.Logica.Categoria_Producto;
 import Codigo.Logica.Producto;
+import Codigo.Logica.ProductoInvalidoException;
 
 import javax.swing.*;
 import javax.swing.JButton;
@@ -11,6 +13,7 @@ import java.io.File;
 public class RegistroProductos extends JFrame {
 
     private Categoria_Producto x;
+    private boolean obligatorio = false;
 
     public RegistroProductos() {
 
@@ -59,25 +62,33 @@ public class RegistroProductos extends JFrame {
         JButton categoria7 = Metodos.botonesCategorias(435, 300, "7");
 
 
+
         categoria1.addActionListener(e -> {
+            obligatorio = true;
             x = Categoria_Producto.CARNE;
         });
         categoria2.addActionListener(e -> {
+            obligatorio = true;
             x = Categoria_Producto.LACTEO;
         });
         categoria3.addActionListener(e -> {
+            obligatorio = true;
             x = Categoria_Producto.VEGETAL;
         });
         categoria4.addActionListener(e -> {
+            obligatorio = true;
             x = Categoria_Producto.BEBIDA;
         });
         categoria5.addActionListener(e -> {
+            obligatorio = true;
             x = Categoria_Producto.SNACK;
         });
         categoria6.addActionListener(e -> {
+            obligatorio = true;
             x = Categoria_Producto.HIGIENE;
         });
         categoria7.addActionListener(e -> {
+            obligatorio = true;
             x = Categoria_Producto.LIMPIEZA;
         });
 
@@ -95,28 +106,39 @@ public class RegistroProductos extends JFrame {
 
         boton.addActionListener(e -> {
 
-            String nombre = inNombre.getText();                                 //<------------------------------
-            String stock = inStock.getText();                                   //<------------------------------
-            String vencimiento = inVencimiento.getText();                       //<------------------------------
-            String precio = inPrecio.getText();                                 //<------------------------------
-            String marca = inMarca.getText();                                   //<------------------------------
-            String categoria = (x != null) ? x.toString() : "";
 
-            System.out.println(categoria);
-            //
-              //aca pasar a  gio
-            //
+            if (obligatorio){
+                String nombre = inNombre.getText();                                 //<------------------------------
+                String stock = inStock.getText();                                   //<------------------------------
+                String vencimiento = inVencimiento.getText();                       //<------------------------------
+                String precio = inPrecio.getText();                                 //<------------------------------
+                String marca = inMarca.getText();
+                String categoria = x.toString();
+
+                Administrador admin = (Administrador) Sesion.getUsuarioActivo();
+
+                //manejar excepcion para q no sea nullpointer CP
+                boolean flag = true;
+                try {
 
 
-            //manejar excepcion para q no sea nullpointer CP
-            boolean flag = true;
+                    if (admin.crearProducto(nombre, stock, vencimiento, precio, marca, categoria)) {
+                        JOptionPane.showMessageDialog(null, "Creado con exito!");
 
-            if (flag) {
-                JOptionPane.showMessageDialog(null, "Creado con exito!");
-                dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "Error");
+                        Menu.getInstancia().productosReutilizable();
+
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error");
+                    }
+
+                } catch (ProductoInvalidoException ex) {
+                    Metodos.excepcionPantallaEmergente(ex.getMessage());
+                }
+            }else {
+                Metodos.excepcionPantallaEmergente("Elegi Una Categoria");
             }
+
         });
 
         JButton cerrar = new JButton("Cerrar");

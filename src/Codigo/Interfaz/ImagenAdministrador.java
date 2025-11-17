@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
-public class ImagenAdministrador extends JPanel {
+public class ImagenAdministrador extends JFrame {
 
     public static ImageIcon subirImagen(int ancho, int alto) {
         JFileChooser buscador = new JFileChooser();
@@ -24,5 +24,7 @@ public class ImagenAdministrador extends JPanel {
 
         return null;
     }
+
+
 
 }
