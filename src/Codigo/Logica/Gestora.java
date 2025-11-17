@@ -47,6 +47,7 @@ public class Gestora implements IGestor<Usuario> {
             if (u.getId() == id) {
                 it.remove();
                 flag = true;
+                GestoraJSON.setAarchivo("usuarios.json",usuarios);
                 break;
             }
         }
@@ -61,7 +62,9 @@ public class Gestora implements IGestor<Usuario> {
             Usuario us = it.next();
             if (us.getId() == id) {
                 it.remove();
+                u.setId(id);
                 flag = usuarios.add(u);
+                GestoraJSON.setAarchivo("usuarios.json",usuarios);
                 break;
             }
         }

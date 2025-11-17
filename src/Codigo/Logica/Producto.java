@@ -14,6 +14,7 @@ public class Producto implements Comparable<Producto> {
     private LocalDate vencimiento;
     private int stock;
     private Categoria_Producto categoria;
+    private String direccionImg;
 
     /// CONSTRUCTORES
     public Producto(String nombre, String marca, double precio, LocalDate vencimiento, int stock, Categoria_Producto categoria) {
@@ -95,6 +96,14 @@ public class Producto implements Comparable<Producto> {
         this.id = id;
     }
 
+    public String getDireccionImg() {
+        return direccionImg;
+    }
+
+    public void setDireccionImg(String direccionImg) {
+        this.direccionImg = direccionImg;
+    }
+
     /// METODOS
     @Override
     public String toString() {
@@ -107,6 +116,7 @@ public class Producto implements Comparable<Producto> {
                 "|  Vencimiento: " + vencimiento + "\n" +
                 "|  Stock: " + stock + "\n" +
                 "|  Categoría: " + categoria + "\n" +
+                "|  Direccion Imagen: " + direccionImg +"\n"+
                 "|------------------------------------------------|";
     }
 

@@ -32,6 +32,9 @@ public class Administrador extends Usuario {
         try {
             stock = Integer.parseInt(stockP);
             precio = Integer.parseInt(precioP);
+            if(stock < 1 || precio < 1){
+                throw new ProductoInvalidoException("Precio y Stock deben ser mayores a 0");
+            }
             categoria = Categoria_Producto.valueOf(categoriaP);
             vencimiento = LocalDate.parse(vencimientoP);
             if (vencimiento.isBefore(LocalDate.now())) {

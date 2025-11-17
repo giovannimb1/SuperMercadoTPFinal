@@ -57,11 +57,11 @@ public class Main {
         } catch (AutenticacionException e) {
             System.out.println(e.getMessage());
         }
-  /*
+
         System.out.println("\n=======================\n");
         Almacen.getInstancia().listar();
         Gestora.getInstancia().listar();
- */
+
         System.out.println("\n======PRUEBA======\n");
         System.out.println(Gestora.getInstancia().agregar(test));
         System.out.println(Gestora.getInstancia().agregar(ctest));

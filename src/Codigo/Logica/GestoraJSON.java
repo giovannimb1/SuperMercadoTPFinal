@@ -49,6 +49,11 @@ public class GestoraJSON {
             jobj.put("vencimiento", p.getVencimiento().toString());
             jobj.put("stock", p.getStock());
             jobj.put("categoria", p.getCategoria().name());
+            if(p.getDireccionImg()!=null){
+                jobj.put("direccion",p.getDireccionImg());
+            }else{
+                jobj.put("direccion",JSONObject.NULL);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -78,6 +83,11 @@ public class GestoraJSON {
             p.setVencimiento(LocalDate.parse(jobj.getString("vencimiento")));
             p.setStock(jobj.getInt("stock"));
             p.setCategoria(Categoria_Producto.valueOf(jobj.getString("categoria")));
+            if(!jobj.isNull("direccion")){
+                p.setDireccionImg(jobj.getString("direccion"));
+            }else{
+                p.setDireccionImg(null);
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

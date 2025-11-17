@@ -4,6 +4,7 @@
         "marca": "La Serenisima",
         "precio": 850.5,
         "categoria": "LACTEO",
+        "direccion": null,
         "id": 1,
         "stock": 25,
         "nombre": "Leche Entera"
@@ -13,6 +14,7 @@
         "marca": "Casancrem",
         "precio": 1800,
         "categoria": "LACTEO",
+        "direccion": null,
         "id": 3,
         "stock": 25,
         "nombre": "Queso Crema"
@@ -22,6 +24,7 @@
         "marca": "Ilolay",
         "precio": 720,
         "categoria": "LACTEO",
+        "direccion": null,
         "id": 4,
         "stock": 30,
         "nombre": "Yogur Frutado"
@@ -31,6 +34,7 @@
         "marca": "Friar",
         "precio": 3500,
         "categoria": "CARNE",
+        "direccion": null,
         "id": 5,
         "stock": 15,
         "nombre": "Carne Molida"
@@ -40,6 +44,7 @@
         "marca": "Granja Tres Arroyos",
         "precio": 2800,
         "categoria": "CARNE",
+        "direccion": null,
         "id": 6,
         "stock": 20,
         "nombre": "Pechuga de Pollo"
@@ -49,6 +54,7 @@
         "marca": "Swift",
         "precio": 4200,
         "categoria": "CARNE",
+        "direccion": null,
         "id": 7,
         "stock": 18,
         "nombre": "Milanesa Vacuna"
@@ -58,6 +64,7 @@
         "marca": "El Trébol",
         "precio": 1100,
         "categoria": "VEGETAL",
+        "direccion": null,
         "id": 8,
         "stock": 50,
         "nombre": "Manzanas Rojas"
@@ -67,6 +74,7 @@
         "marca": "CampoFresco",
         "precio": 900,
         "categoria": "VEGETAL",
+        "direccion": null,
         "id": 9,
         "stock": 60,
         "nombre": "Papas"
@@ -76,6 +84,7 @@
         "marca": "Hortalizas SA",
         "precio": 750,
         "categoria": "VEGETAL",
+        "direccion": null,
         "id": 10,
         "stock": 45,
         "nombre": "Zanahorias"
@@ -85,6 +94,7 @@
         "marca": "Coca Cola",
         "precio": 1600,
         "categoria": "BEBIDA",
+        "direccion": null,
         "id": 11,
         "stock": 70,
         "nombre": "Coca Cola"
@@ -94,6 +104,7 @@
         "marca": "Villavicencio",
         "precio": 700,
         "categoria": "BEBIDA",
+        "direccion": null,
         "id": 12,
         "stock": 100,
         "nombre": "Agua sin gas"
@@ -103,6 +114,7 @@
         "marca": "Cepita",
         "precio": 950,
         "categoria": "BEBIDA",
+        "direccion": null,
         "id": 13,
         "stock": 40,
         "nombre": "Jugo de Naranja"
@@ -112,6 +124,7 @@
         "marca": "Quilmes",
         "precio": 1300,
         "categoria": "BEBIDA",
+        "direccion": null,
         "id": 14,
         "stock": 50,
         "nombre": "Cerveza Rubia"
@@ -121,6 +134,7 @@
         "marca": "Lays",
         "precio": 1250,
         "categoria": "SNACK",
+        "direccion": null,
         "id": 15,
         "stock": 60,
         "nombre": "Papas Fritas Clásicas"
@@ -130,6 +144,7 @@
         "marca": "Don Satur",
         "precio": 850,
         "categoria": "SNACK",
+        "direccion": null,
         "id": 16,
         "stock": 80,
         "nombre": "Bizcochitos"
@@ -139,6 +154,7 @@
         "marca": "Pepitos",
         "precio": 900,
         "categoria": "SNACK",
+        "direccion": null,
         "id": 17,
         "stock": 90,
         "nombre": "Galletitas de Chocolate"
@@ -148,6 +164,7 @@
         "marca": "Havanna",
         "precio": 1500,
         "categoria": "SNACK",
+        "direccion": null,
         "id": 18,
         "stock": 70,
         "nombre": "Alfajor Triple"
@@ -157,6 +174,7 @@
         "marca": "Head & Shoulders",
         "precio": 2300,
         "categoria": "HIGIENE",
+        "direccion": null,
         "id": 19,
         "stock": 40,
         "nombre": "Shampoo Anticaspa"
@@ -166,6 +184,7 @@
         "marca": "Dove",
         "precio": 1900,
         "categoria": "HIGIENE",
+        "direccion": null,
         "id": 20,
         "stock": 35,
         "nombre": "Jabón Líquido"
@@ -175,6 +194,7 @@
         "marca": "Colgate",
         "precio": 1100,
         "categoria": "HIGIENE",
+        "direccion": null,
         "id": 21,
         "stock": 60,
         "nombre": "Pasta Dental"
@@ -184,6 +204,7 @@
         "marca": "Rexona",
         "precio": 1600,
         "categoria": "HIGIENE",
+        "direccion": null,
         "id": 22,
         "stock": 50,
         "nombre": "Desodorante"
@@ -193,6 +214,7 @@
         "marca": "Ayudín",
         "precio": 900,
         "categoria": "LIMPIEZA",
+        "direccion": null,
         "id": 23,
         "stock": 55,
         "nombre": "Lavandina"
@@ -202,6 +224,7 @@
         "marca": "Magistral",
         "precio": 1400,
         "categoria": "LIMPIEZA",
+        "direccion": null,
         "id": 24,
         "stock": 70,
         "nombre": "Detergente"
@@ -211,6 +234,7 @@
         "marca": "Mr. Músculo",
         "precio": 1800,
         "categoria": "LIMPIEZA",
+        "direccion": null,
         "id": 25,
         "stock": 35,
         "nombre": "Limpiador Multiuso"
@@ -220,6 +244,7 @@
         "marca": "Ala",
         "precio": 2500,
         "categoria": "LIMPIEZA",
+        "direccion": null,
         "id": 26,
         "stock": 40,
         "nombre": "Jabón en Polvo"
@@ -229,6 +254,7 @@
         "marca": "La Huerta",
         "precio": 920,
         "categoria": "VEGETAL",
+        "direccion": null,
         "id": 27,
         "stock": 55,
         "nombre": "Tomate Perita"
@@ -238,6 +264,7 @@
         "marca": "TropiRico",
         "precio": 1000,
         "categoria": "VEGETAL",
+        "direccion": null,
         "id": 28,
         "stock": 65,
         "nombre": "Bananas"
@@ -247,6 +274,7 @@
         "marca": "Paty",
         "precio": 2000,
         "categoria": "CARNE",
+        "direccion": null,
         "id": 29,
         "stock": 30,
         "nombre": "Nuggets de Pollo"
@@ -256,6 +284,7 @@
         "marca": "La Paulina",
         "precio": 1400,
         "categoria": "LACTEO",
+        "direccion": null,
         "id": 30,
         "stock": 50,
         "nombre": "Queso Rallado"
@@ -265,6 +294,7 @@
         "marca": "fawfw",
         "precio": 1412,
         "categoria": "LIMPIEZA",
+        "direccion": null,
         "id": 31,
         "stock": 333,
         "nombre": "fawfwa"
@@ -274,6 +304,7 @@
         "marca": "gg",
         "precio": 92,
         "categoria": "BEBIDA",
+        "direccion": null,
         "id": 32,
         "stock": 14,
         "nombre": "pepe"
