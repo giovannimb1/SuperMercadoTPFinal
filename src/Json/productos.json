@@ -30,16 +30,6 @@
         "nombre": "Yogur Frutado"
     },
     {
-        "vencimiento": "2025-02-20",
-        "marca": "Friar",
-        "precio": 3500,
-        "categoria": "CARNE",
-        "direccion": null,
-        "id": 5,
-        "stock": 15,
-        "nombre": "Carne Molida"
-    },
-    {
         "vencimiento": "2025-02-15",
         "marca": "Granja Tres Arroyos",
         "precio": 2800,
@@ -48,16 +38,6 @@
         "id": 6,
         "stock": 20,
         "nombre": "Pechuga de Pollo"
-    },
-    {
-        "vencimiento": "2025-03-01",
-        "marca": "Swift",
-        "precio": 4200,
-        "categoria": "CARNE",
-        "direccion": null,
-        "id": 7,
-        "stock": 18,
-        "nombre": "Milanesa Vacuna"
     },
     {
         "vencimiento": "2025-02-05",
@@ -260,13 +240,173 @@
         "nombre": "Tomate Perita"
     },
     {
-        "vencimiento": "2026-02-06",
-        "marca": "TropiRico",
-        "precio": 1000,
+        "vencimiento": "2026-06-08",
+        "marca": "fawfwa",
+        "precio": 424,
+        "categoria": "BEBIDA",
+        "direccion": null,
+        "id": 28,
+        "stock": 42,
+        "nombre": "fawaf"
+    },
+    {
+        "vencimiento": "2026-06-08",
+        "marca": "fawfwa",
+        "precio": 424,
+        "categoria": "BEBIDA",
+        "direccion": null,
+        "id": 29,
+        "stock": 42,
+        "nombre": "fawaf"
+    },
+    {
+        "vencimiento": "2026-06-08",
+        "marca": "fawfwa",
+        "precio": 424,
         "categoria": "BEBIDA",
         "direccion": null,
         "id": 30,
-        "stock": 65,
-        "nombre": "Bananas2134"
+        "stock": 42,
+        "nombre": "ni idea"
+    },
+    {
+        "vencimiento": "2026-02-20",
+        "marca": "Friar",
+        "precio": 3500,
+        "categoria": "BEBIDA",
+        "direccion": null,
+        "id": 31,
+        "stock": 20,
+        "nombre": "Carne Molida"
+    },
+    {
+        "vencimiento": "2026-03-01",
+        "marca": "Swfaefeafaefift",
+        "precio": 33333,
+        "categoria": "SNACK",
+        "direccion": null,
+        "id": 32,
+        "stock": 421,
+        "nombre": "mouse"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 33,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 34,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 35,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 36,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 37,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 38,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 39,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 40,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 41,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 42,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 43,
+        "stock": 42,
+        "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2027-04-04",
+        "marca": "2521",
+        "precio": 15125,
+        "categoria": "HIGIENE",
+        "direccion": null,
+        "id": 44,
+        "stock": 42,
+        "nombre": "qcrwwcq"
     }
 ]

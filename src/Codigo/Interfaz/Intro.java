@@ -1,5 +1,6 @@
 package Codigo.Interfaz;
 
+import Codigo.Interfaz.ClasesAux.Metodos;
 import Codigo.Logica.*;
 
 import javax.swing.*;
@@ -8,14 +9,7 @@ import java.awt.*;
 public class Intro extends JFrame {
     public Intro() {
 
-        setIconImage(Toolkit.getDefaultToolkit().getImage(
-                getClass().getResource("/img/logos/logo.png")));
-
-        setTitle("SuperMercado");
-        setSize(1280, 720);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
+        Metodos.ventanasConfiguracionnTipica(this, "Login / Registro");
 
         JPanel panel = new JPanel(null);
         add(panel);

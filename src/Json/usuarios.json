@@ -38,5 +38,15 @@
         "nombre": "",
         "email": "e",
         "username": "e"
+    },
+    {
+        "password": "1",
+        "fecha_registro": "2025-11-17",
+        "apellido": "nose",
+        "id": 6,
+        "permisos": false,
+        "nombre": "hola",
+        "email": "rawmfwopif",
+        "username": "soy yo"
     }
 ]

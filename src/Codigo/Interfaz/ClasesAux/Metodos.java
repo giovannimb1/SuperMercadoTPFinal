@@ -1,4 +1,4 @@
-package Codigo.Interfaz;
+package Codigo.Interfaz.ClasesAux;
 
 import javax.swing.*;
 import java.awt.*;
@@ -49,5 +49,24 @@ public class Metodos extends JFrame {
         return boton;
     }
 
+    public static void ventanasConfiguracionnTipica(JFrame frame, String titulo) {
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(
+                Metodos.class.getResource("/img/logos/logo.png")));
+        frame.setTitle(titulo);
+        frame.setSize(1280, 720); // puse las medidas promedio de las pantallas para no tener quilombo con el tema de adaptarse a cada pantalla
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+    }
+
+    public static void ventanasConfiguracionAlternativa(JFrame frame, String titulo) {
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(
+                Metodos.class.getResource("/img/logos/logo.png")));
+        frame.setTitle(titulo);
+        frame.setSize(600, 500);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+    }
 
 }

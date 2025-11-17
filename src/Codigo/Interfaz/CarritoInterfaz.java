@@ -1,5 +1,7 @@
 package Codigo.Interfaz;
 
+import Codigo.Interfaz.ClasesAux.Metodos;
+import Codigo.Interfaz.ClasesAux.PanelConFondoRepetido;
 import Codigo.Logica.Producto;
 import Codigo.Logica.*;
 
@@ -9,23 +11,14 @@ import java.util.ArrayList;
 
 public class CarritoInterfaz extends JFrame {
 
+
+    //atributos
     private JPanel contenedorProductos;
-    private static CarritoInterfaz CarritoInterfaz;
 
 
     public CarritoInterfaz() {
-        CarritoInterfaz = this;
 
-        setIconImage(Toolkit.getDefaultToolkit().getImage(
-                getClass().getResource("/img/logos/logo.png")));
-
-
-        setTitle("Carrito");
-        setSize(1280, 720);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
-
+        Metodos.ventanasConfiguracionnTipica(this, "Carrito");
 
         JPanel panel = new PanelConFondoRepetido("/img/Menu/1.png");
         panel.setLayout(null);
@@ -48,6 +41,18 @@ public class CarritoInterfaz extends JFrame {
         scroll.setBorder(null);
         scroll.getVerticalScrollBar().setUnitIncrement(16);
         add(scroll);
+
+        JButton finalizarCompra = new JButton("Finalizar Compra");
+        finalizarCompra.setBounds(720, 67, 200, 40);
+        finalizarCompra.setBackground(new Color(34, 164, 55));
+        finalizarCompra.setForeground(Color.WHITE);
+        finalizarCompra.setFocusPainted(false);
+
+        panel.add(finalizarCompra);
+
+        finalizarCompra.addActionListener( e -> {
+            new MetodosDePago().setVisible(true);
+        });
 
 
         JButton volverAlMenu = new JButton("Menu");
@@ -108,13 +113,11 @@ public class CarritoInterfaz extends JFrame {
         contenedorProductos.repaint();
     }
 
-    public static CarritoInterfaz getInstancia() {
-        return CarritoInterfaz;
-    }
-
     //creador de productos
 
     private JPanel productoAvisual(Producto producto) {
+
+
 
         JPanel caja = new JPanel();
         caja.setPreferredSize(new Dimension(200, 200));

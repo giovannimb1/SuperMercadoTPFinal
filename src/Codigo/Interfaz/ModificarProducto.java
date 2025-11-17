@@ -1,5 +1,8 @@
 package Codigo.Interfaz;
 
+import Codigo.Interfaz.ClasesAux.ImagenAdministrador;
+import Codigo.Interfaz.ClasesAux.Metodos;
+import Codigo.Interfaz.ClasesAux.ProductoVisual;
 import Codigo.Logica.Administrador;
 import Codigo.Logica.Categoria_Producto;
 import Codigo.Logica.ProductoInvalidoException;
@@ -15,20 +18,15 @@ public class ModificarProducto extends JFrame {
     private boolean obligatorio = false;
     private String direccionDeImagen;
 
+
+
     public ModificarProducto() {
     }
 
     public ModificarProducto(Producto prod) {
 
 
-        setIconImage(Toolkit.getDefaultToolkit().getImage(
-                getClass().getResource("/img/logos/logo.png")));
-
-        setTitle("Modificador De Productos");
-        setSize(600, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
+        Metodos.ventanasConfiguracionAlternativa(this, "Modificar Productos");
 
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(255, 255, 255));
@@ -150,7 +148,7 @@ public class ModificarProducto extends JFrame {
                         if (admin.eliminarProducto(prod)) {
 
                             JOptionPane.showMessageDialog(null, "Modificado con exito!");
-                            Menu.getInstancia().productosReutilizable(); // actualiza la pagina menu :2
+                            ProductoVisual.productosReutilizable(Menu.getInstancia().getContenedorProductos()); // actualiza la pagina menu :2
 
                         } else {
                             JOptionPane.showMessageDialog(null, "Error");

@@ -1,5 +1,6 @@
 package Codigo.Interfaz;
 
+import Codigo.Interfaz.ClasesAux.Metodos;
 import Codigo.Logica.*;
 
 import javax.swing.*;
@@ -9,14 +10,7 @@ public class RegistroUsuario extends JFrame {
 
     public RegistroUsuario() {
 
-        setIconImage(Toolkit.getDefaultToolkit().getImage(
-                getClass().getResource("/img/logos/logo.png")));
-
-        setTitle("Registro");
-        setSize(600, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
+        Metodos.ventanasConfiguracionAlternativa(this, "Registro Usuariosw");
 
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(255, 255, 255));

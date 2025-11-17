@@ -1,6 +1,4 @@
-package Codigo.Interfaz;
-
-import Codigo.Logica.Producto;
+package Codigo.Interfaz.ClasesAux;
 
 import javax.swing.*;
 import java.awt.*;

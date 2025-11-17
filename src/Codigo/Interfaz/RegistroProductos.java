@@ -1,5 +1,8 @@
 package Codigo.Interfaz;
 
+import Codigo.Interfaz.ClasesAux.ImagenAdministrador;
+import Codigo.Interfaz.ClasesAux.Metodos;
+import Codigo.Interfaz.ClasesAux.ProductoVisual;
 import Codigo.Logica.Administrador;
 import Codigo.Logica.Categoria_Producto;
 import Codigo.Logica.ProductoInvalidoException;
@@ -16,14 +19,7 @@ public class RegistroProductos extends JFrame {
 
     public RegistroProductos() {
 
-        setIconImage(Toolkit.getDefaultToolkit().getImage(
-                getClass().getResource("/img/logos/logo.png")));
-
-        setTitle("Registro De Productos :3");
-        setSize(600, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
+        Metodos.ventanasConfiguracionAlternativa(this, "Registro de Productos");
 
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(255, 255, 255));
@@ -139,7 +135,7 @@ public class RegistroProductos extends JFrame {
                     if (admin.crearProducto(nombre, stock, vencimiento, precio, marca, categoria,direccion)) {
                         JOptionPane.showMessageDialog(null, "Creado con exito!");
 
-                        Menu.getInstancia().productosReutilizable(); // actualiza la pagina menu :2
+                        ProductoVisual.productosReutilizable(Menu.getInstancia().getContenedorProductos()); // actualiza la pagina menu :2
 
 
                     } else {
