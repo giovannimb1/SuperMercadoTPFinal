@@ -9,10 +9,15 @@ import java.awt.*;
 public class Intro extends JFrame {
     public Intro() {
 
+        //config
+
         Metodos.ventanasConfiguracionnTipica(this, "Login / Registro");
 
+        //panel
         JPanel panel = new JPanel(null);
         add(panel);
+
+        //Agrego las imagenes, el texto previo los campos de texto y el campo de texto
 
         ImageIcon img = new ImageIcon(getClass().getResource("/img/Intro/fondo.png"));
         JLabel fondo = new JLabel(img);
@@ -31,6 +36,8 @@ public class Intro extends JFrame {
 
         JPasswordField inContrasena = new JPasswordField();
         inContrasena.setBounds(110, 450, 200, 25);
+
+        //Botones
 
         JButton registro = new JButton("Registrarse");
         registro.setBounds(110, 560, 200, 40);
@@ -79,6 +86,8 @@ public class Intro extends JFrame {
             }
 
         });
+
+        //aca agrego a el panel todos lo jlabel
 
         panel.add(usuarioT);
         panel.add(contranaT);

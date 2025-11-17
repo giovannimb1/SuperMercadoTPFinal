@@ -15,6 +15,9 @@ public class RegistroUsuario extends JFrame {
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(255, 255, 255));
         add(panel);
+
+        //Jlabels botones, textos , campos de textos, campos para las contraseña
+
         JLabel text1 = Metodos.textoDefault(125, 80, "NOMBRE", Color.BLACK);
         JLabel text2 = Metodos.textoDefault(125, 130, "APELLIDO", Color.BLACK);
         JLabel text4 = Metodos.textoDefault(125, 180, "USUARIO", Color.BLACK);
@@ -67,16 +70,21 @@ public class RegistroUsuario extends JFrame {
             String pass2 = new String(inPasswordRepeticion.getPassword());
 
             if(pass.compareTo(pass2) == 0){
-                Cliente cliente = new Cliente(nombre,apellido,user,email,pass);
+                if (pass.length() >=  4){
+                    Cliente cliente = new Cliente(nombre,apellido,user,email,pass);
 
-                if (Gestora.getInstancia().agregar(cliente)) {
-                    Metodos.excepcionPantallaEmergente("Agregado con exito");
-                    dispose();
+                    if (Gestora.getInstancia().agregar(cliente)) {
+                        Metodos.excepcionPantallaEmergente("Agregado con exito");
+                        dispose();
 
 
-                } else {
-                    Metodos.excepcionPantallaEmergente( "Error");
+                    } else {
+                        Metodos.excepcionPantallaEmergente( "Error");
+                    }
+                }else {
+                    Metodos.excepcionPantallaEmergente("La contraseña es menor a los 4 caracteres");
                 }
+
             }else {
                 Metodos.excepcionPantallaEmergente("La contraseña no es la misma en los 2 campos");
     
@@ -85,6 +93,8 @@ public class RegistroUsuario extends JFrame {
 
 
         });
+
+        //agrego los jlabel al panel
 
         panel.add(inNombre);
         panel.add(inApellido);

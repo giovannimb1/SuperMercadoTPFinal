@@ -13,6 +13,8 @@ import java.awt.*;
 
 public class RegistroProductos extends JFrame {
 
+
+    //atributos
     private Categoria_Producto x;
     private boolean obligatorio = false;
     private String direccionDeImagen;
@@ -24,6 +26,14 @@ public class RegistroProductos extends JFrame {
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(255, 255, 255));
         add(panel);
+
+        //creo tiodos los label
+
+        ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenuProductos/fondo.png"));
+        JLabel fondo = new JLabel(img);
+        fondo.setBounds(0, 0, 600, 500);
+
+        //creo los textos, los campos de texto
 
         JLabel text1 = Metodos.textoDefault(125, 50, "NOMBRE", Color.WHITE);
         JLabel text2 = Metodos.textoDefault(125, 100, "MARCA", Color.WHITE);
@@ -47,6 +57,7 @@ public class RegistroProductos extends JFrame {
         JTextField inStock = new JTextField();
         inStock.setBounds(255, 250, 200, 25);
 
+        //categorias
 
         JButton categoria1 = Metodos.botonesCategorias(255, 300, "/img/Categorias/carne.png");
         JButton categoria2 = Metodos.botonesCategorias(285, 300, "/img/Categorias/leche.png");
@@ -55,6 +66,10 @@ public class RegistroProductos extends JFrame {
         JButton categoria5 = Metodos.botonesCategorias(375, 300, "/img/Categorias/snack.png");
         JButton categoria6 = Metodos.botonesCategorias(405, 300, "/img/Categorias/higiene.png");
         JButton categoria7 = Metodos.botonesCategorias(435, 300, "/img/Categorias/limpieza.png");
+
+
+        //aca le agregue la funcionalidad cuando se presiona el boton de cada categoria
+        //siendo q sea obligatorio para despues poder cargarlo en el json sin problema
 
 
         categoria1.addActionListener(e -> {
@@ -87,9 +102,6 @@ public class RegistroProductos extends JFrame {
         });
 
 
-        ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenuProductos/fondo.png"));
-        JLabel fondo = new JLabel(img);
-        fondo.setBounds(0, 0, 600, 500);
 
         JButton cargarImagen = new JButton("Imagen");
         cargarImagen.setBounds(200, 340, 200, 40);
@@ -113,6 +125,8 @@ public class RegistroProductos extends JFrame {
         boton.setFocusPainted(false);
 
         boton.addActionListener(e -> {
+//aca lo q se hace es comprobar si al tocar el boton cumple q
+            //se haya presionado un boton de las categorias
 
 
             if (obligatorio){
@@ -123,19 +137,20 @@ public class RegistroProductos extends JFrame {
                 String marca = inMarca.getText();
                 String categoria = x.toString();
                 String direccion = direccionDeImagen;
-                System.out.println("DIRECCION DIFINITVA: "+direccion);
+           //     System.out.println("DIRECCION DIFINITVA: "+direccion);
 
 
 
                 Administrador admin = (Administrador) Sesion.getUsuarioActivo();
 
                 try {
-
+//aca lo unico q se hace es crearlo y en el metodo automaticamente se carga en el json
+                    //permitiendo q solo tenga q actualizar el menu para q se vuelva a cargar los contenedores
 
                     if (admin.crearProducto(nombre, stock, vencimiento, precio, marca, categoria,direccion)) {
                         JOptionPane.showMessageDialog(null, "Creado con exito!");
 
-                        ProductoVisual.productosReutilizable(Menu.getInstancia().getContenedorProductos()); // actualiza la pagina menu :2
+                        ProductoVisual.cargadorDeContenedores(Menu.getInstancia().getContenedorProductos(),1); // actualiza la pagina menu :2
 
 
                     } else {

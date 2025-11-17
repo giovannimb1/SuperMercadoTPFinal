@@ -3,6 +3,8 @@ import Codigo.Logica.*;
 
 public class Sesion {
 
+    //Esto es para poder mantener el mismo Usuario en todos las clases
+
     private static Usuario usuarioActivo;
 
     private static Carrito carrito = new Carrito();

@@ -28,7 +28,7 @@ public class PanelConFondoRepetido extends JPanel {
     public int contadorDepixelesDeALTOO(){
 
 
-        System.out.println(Almacen.getInstancia().getProductos().size());
+       // System.out.println(Almacen.getInstancia().getProductos().size());
 
 
 

@@ -1,13 +1,13 @@
 [
     {
-        "password": "13579",
-        "fecha_registro": "2025-10-24",
-        "apellido": "Perez",
-        "id": 1,
-        "permisos": true,
-        "nombre": "Jorge",
-        "email": "jorge@gmail.com",
-        "username": "jorgeC"
+        "password": "",
+        "fecha_registro": "2025-11-16",
+        "apellido": "",
+        "id": 5,
+        "permisos": false,
+        "nombre": "",
+        "email": "",
+        "username": ""
     },
     {
         "password": "f",
@@ -20,14 +20,14 @@
         "username": "dd"
     },
     {
-        "password": "",
-        "fecha_registro": "2025-11-16",
-        "apellido": "",
-        "id": 5,
-        "permisos": false,
-        "nombre": "",
-        "email": "",
-        "username": ""
+        "password": "13579",
+        "fecha_registro": "2025-10-24",
+        "apellido": "Perez",
+        "id": 1,
+        "permisos": true,
+        "nombre": "Jorge",
+        "email": "jorge@gmail.com",
+        "username": "jorgeC"
     },
     {
         "password": "1",
@@ -88,5 +88,35 @@
         "nombre": "juk",
         "email": "juk@gmail.com",
         "username": "jukwer1"
+    },
+    {
+        "password": "",
+        "fecha_registro": "2025-11-17",
+        "apellido": "wad",
+        "id": 12,
+        "permisos": false,
+        "nombre": "dawd",
+        "email": "fawpfmaw@gmail.com",
+        "username": "hola"
+    },
+    {
+        "password": "12345",
+        "fecha_registro": "2025-11-17",
+        "apellido": "awdaw",
+        "id": 13,
+        "permisos": false,
+        "nombre": "HOLAAAAAAAAAAAAAAAAAAAAAAAA",
+        "email": "dawdaw",
+        "username": "dawdawd"
+    },
+    {
+        "password": "willy",
+        "fecha_registro": "2025-11-17",
+        "apellido": "nose",
+        "id": 14,
+        "permisos": false,
+        "nombre": "HOla",
+        "email": "vegeta@gmail.com",
+        "username": "vegetta777"
     }
 ]

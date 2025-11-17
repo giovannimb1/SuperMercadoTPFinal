@@ -14,12 +14,14 @@ import java.awt.*;
 
 public class ModificarProducto extends JFrame {
 
+
+    //atributos
     private Categoria_Producto x;
     private boolean obligatorio = false;
     private String direccionDeImagen;
 
 
-
+//constructores
     public ModificarProducto() {
     }
 
@@ -32,6 +34,14 @@ public class ModificarProducto extends JFrame {
         panel.setBackground(new Color(255, 255, 255));
         add(panel);
 
+        //fondo
+
+        ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenuProductos/fondo.png"));
+        JLabel fondo = new JLabel(img);
+        fondo.setBounds(0, 0, 600, 500);
+
+
+        //creo los textos, los campos de texto
         JLabel text1 = Metodos.textoDefault(125, 50, "NOMBRE", Color.WHITE);
         JLabel text2 = Metodos.textoDefault(125, 100, "MARCA", Color.WHITE);
         JLabel text3 = Metodos.textoDefault(125, 150, "PRECIO", Color.WHITE);
@@ -60,7 +70,8 @@ public class ModificarProducto extends JFrame {
         inStock.setBounds(255, 250, 200, 25);
 
 
-        //cambiar despues tambien por iconos <------------------------------
+        //ya esta hecho
+        //categoria con botones de minecraft para diferenciar las categorias
 
         JButton categoria1 = Metodos.botonesCategorias(255, 300, "/img/Categorias/carne.png");
         JButton categoria2 = Metodos.botonesCategorias(285, 300, "/img/Categorias/leche.png");
@@ -70,7 +81,8 @@ public class ModificarProducto extends JFrame {
         JButton categoria6 = Metodos.botonesCategorias(405, 300, "/img/Categorias/higiene.png");
         JButton categoria7 = Metodos.botonesCategorias(435, 300, "/img/Categorias/limpieza.png");
 
-
+//aca le agregue la funcionalidad cuando se presiona el boton de cada categoria
+        //siendo q sea obligatorio para despues poder cargarlo en el json sin problema
         categoria1.addActionListener(e -> {
             obligatorio = true;
             x = Categoria_Producto.CARNE;
@@ -101,9 +113,7 @@ public class ModificarProducto extends JFrame {
         });
 
 
-        ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenuProductos/fondo.png"));
-        JLabel fondo = new JLabel(img);
-        fondo.setBounds(0, 0, 600, 500);
+
 
         JButton cargarImagen = new JButton("Imagen");
         cargarImagen.setBounds(200, 340, 200, 40);
@@ -125,7 +135,8 @@ public class ModificarProducto extends JFrame {
         boton.setFocusPainted(false);
 
         boton.addActionListener(e -> {
-
+//aca lo q se hace es comprobar si al tocar el boton cumple q
+            //se haya presionado un boton de las categorias
 
             if (obligatorio) {
                 String nombre = inNombre.getText();                                 //<------------------------------
@@ -135,7 +146,7 @@ public class ModificarProducto extends JFrame {
                 String marca = inMarca.getText();
                 String categoria = x.toString();
                 String direccion = direccionDeImagen;
-                System.out.println("DIRECCION DIFINITVA: " + direccion);
+               // System.out.println("DIRECCION DIFINITVA: " + direccion);
 
 
                 Administrador admin = (Administrador) Sesion.getUsuarioActivo();
@@ -143,16 +154,19 @@ public class ModificarProducto extends JFrame {
 
                 try {
 
-
+                    //como no sabiamos si valia la pena modificar en si el json
+                    //optamos por eliminar el producto y volverlo a añadir uno nuevo pero con los
+                    //nuevos valores :d
                     if (admin.crearProducto(nombre, stock, vencimiento, precio, marca, categoria, direccion)) {
 
                         if (admin.eliminarProducto(prod)) {
 
                             JOptionPane.showMessageDialog(null, "Modificado con exito!");
-                            ProductoVisual.productosReutilizable(Menu.getInstancia().getContenedorProductos()); // actualiza la pagina menu :2
+                            ProductoVisual.cargadorDeContenedores(Menu.getInstancia().getContenedorProductos(),1); // actualiza la pagina menu :2
 
                         } else {
                             JOptionPane.showMessageDialog(null, "Error");
+
 
                         }
                     }
@@ -175,8 +189,8 @@ public class ModificarProducto extends JFrame {
 
         cerrar.addActionListener(e -> dispose());
 
+        //y aca agrego al panel los label
 
-        //categorias:
         panel.add(categoria1);
         panel.add(categoria2);
         panel.add(categoria3);

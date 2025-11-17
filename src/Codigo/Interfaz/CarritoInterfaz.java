@@ -2,26 +2,59 @@ package Codigo.Interfaz;
 
 import Codigo.Interfaz.ClasesAux.Metodos;
 import Codigo.Interfaz.ClasesAux.PanelConFondoRepetido;
+import Codigo.Interfaz.ClasesAux.ProductoVisual;
 import Codigo.Logica.Producto;
 import Codigo.Logica.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class CarritoInterfaz extends JFrame {
 
+    //CarritoInterfaz es la opcion 2 de productosReutilizable
+
 
     //atributos
+
     private JPanel contenedorProductos;
+
+    //creo un atributo carrito para poder acceder desde Metodos de pago a carrito y lo instancio
+
+    private static CarritoInterfaz carrito;
+
+    public JPanel getContenedorProductos() {
+        return contenedorProductos;
+    }
+
+    public void setContenedorProductos(JPanel contenedorProductos) {
+        this.contenedorProductos = contenedorProductos;
+    }
+
+    public static CarritoInterfaz getInstancia() {
+        return carrito;
+    }
 
 
     public CarritoInterfaz() {
 
+        //aca pongo this para instanciarlo
+        carrito = this;
+
+        //config
         Metodos.ventanasConfiguracionnTipica(this, "Carrito");
 
         JPanel panel = new PanelConFondoRepetido("/img/Menu/1.png");
         panel.setLayout(null);
+
+        //esto permite q  se pueda scrolear en el panel
+
+        JScrollPane scroll = new JScrollPane(panel);
+        scroll.setBounds(0, 0, 1280, 720);
+        scroll.setBorder(null);
+        scroll.getVerticalScrollBar().setUnitIncrement(16);
+        add(scroll);
+
+        //agrego las imagenes y un texto bienvenido con el usuario actual
 
         ImageIcon img2 = new ImageIcon(getClass().getResource("/img/Menu/2.png"));
         JLabel decoracion1 = new JLabel(img2);
@@ -34,13 +67,9 @@ public class CarritoInterfaz extends JFrame {
         JLabel bienvendo = new JLabel("Bienvenido : " + Sesion.getUsuarioActivo().getUsername());
         bienvendo.setForeground(Color.BLACK);
         bienvendo.setFont(new Font("Segoe UI", Font.PLAIN, 36));
-        bienvendo.setBounds(200, 65, 400, 40);
+        bienvendo.setBounds(200, 65, 700, 40);
 
-        JScrollPane scroll = new JScrollPane(panel);
-        scroll.setBounds(0, 0, 1280, 720);
-        scroll.setBorder(null);
-        scroll.getVerticalScrollBar().setUnitIncrement(16);
-        add(scroll);
+        //botones
 
         JButton finalizarCompra = new JButton("Finalizar Compra");
         finalizarCompra.setBounds(720, 67, 200, 40);
@@ -52,12 +81,14 @@ public class CarritoInterfaz extends JFrame {
         finalizarCompra.addActionListener(e -> {
 
 
-            // hacer con metodo de gio
 
-            if (((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos().size()>0) {
+            //si tiene productos agarra y nos permite abrir el metodos
+            // de pago sino nos rebota y pone q nose selecciono ningun producto
 
+            if (((Cliente) Sesion.getUsuarioActivo()).tieneProductos()) {
+                // hacer con metodo de gio
                 new MetodosDePago().setVisible(true);
-            }else {
+            } else {
                 Metodos.excepcionPantallaEmergente("No tocaste ningun producto");
             }
         });
@@ -76,9 +107,10 @@ public class CarritoInterfaz extends JFrame {
 
         });
 
+        // y agrego al contenedor y al panel todos los jlabel
         contenedorProductos = new JPanel();
-        carritoAproductos();
 
+        ProductoVisual.cargadorDeContenedores(contenedorProductos,2); // esto refresca lo visual
         panel.add(finalizarCompra);
         panel.add(volverAlMenu);
         panel.add(contenedorProductos);
@@ -87,110 +119,6 @@ public class CarritoInterfaz extends JFrame {
         panel.add(decoracion1);
 
 
-    }
-
-    public void carritoAproductos() {
-
-        contenedorProductos.removeAll();
-
-        ArrayList<JPanel> productos = new ArrayList<>();
-
-
-
-        for (Producto p :((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos()) {
-            productos.add(productoAvisual(p));
-        }
-
-
-        contenedorProductos.setPreferredSize(new Dimension(1180, productos.size() * 220));
-        contenedorProductos.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
-        contenedorProductos.setBackground(new Color(87, 112, 144));
-        contenedorProductos.setOpaque(false);
-
-
-        for (JPanel p : productos) {
-            contenedorProductos.add(p);
-        }
-
-
-        int altoTotal = productos.size() * 220;
-
-        contenedorProductos.setBounds(40, 150, 1180, altoTotal);
-
-        contenedorProductos.revalidate();
-        contenedorProductos.repaint();
-    }
-
-    //creador de productos
-
-    private JPanel productoAvisual(Producto producto) {
-
-
-        JPanel caja = new JPanel();
-        caja.setPreferredSize(new Dimension(200, 200));
-        caja.setBackground(new Color(50, 60, 80));
-        caja.setLayout(new BoxLayout(caja, BoxLayout.Y_AXIS));
-        caja.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-        JLabel nombre = new JLabel(producto.getNombre());
-        nombre.setForeground(Color.WHITE);
-
-        JLabel marca = new JLabel("Marca: " + producto.getMarca());
-        marca.setForeground(Color.WHITE);
-
-        JLabel precio = new JLabel("$" + producto.getPrecio());
-        precio.setForeground(Color.WHITE);
-
-
-        JLabel foto = null;
-
-        ImageIcon img ;
-
-        // aca busca la imagen en el json
-
-        if (producto.getDireccionImg() != null) {
-            if (producto.getDireccionImg().startsWith("/")) {
-                img = new ImageIcon(getClass().getResource(producto.getDireccionImg()));
-            } else {
-                img = new ImageIcon(producto.getDireccionImg());
-            }
-        } else {
-            img = new ImageIcon(getClass().getResource("/img/FotoProductos/0.jpg"));
-        }
-
-        Image imagenEscalada = img.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-        img = new ImageIcon(imagenEscalada);
-
-        foto = new JLabel(img);
-        foto.setForeground(Color.WHITE);
-
-        JButton sacarDelCarrito = new JButton("Sacar");
-        sacarDelCarrito.setForeground(Color.WHITE);
-        sacarDelCarrito.setBackground(new Color(255, 35, 35));
-
-        sacarDelCarrito.addActionListener(e -> {
-
-            if (((Cliente) Sesion.getUsuarioActivo()).eliminarProducto(producto)) {
-
-                carritoAproductos();
-                contenedorProductos.revalidate();// refresco el contenedor nomas :"v
-                contenedorProductos.repaint();
-
-            } else {
-                Metodos.excepcionPantallaEmergente("Error");
-            }
-
-
-        });
-
-        caja.add(nombre);
-        caja.add(marca);
-        caja.add(precio);
-        caja.add(foto);
-        caja.add(sacarDelCarrito);
-
-
-        return caja;
     }
 
 

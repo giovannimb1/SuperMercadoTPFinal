@@ -372,21 +372,31 @@
     {
         "vencimiento": "2027-04-04",
         "marca": "2521",
-        "precio": 99999,
-        "categoria": "LACTEO",
+        "precio": 666,
+        "categoria": "VEGETAL",
         "direccion": null,
-        "id": 42,
+        "id": 44,
         "stock": 42,
-        "nombre": "qcrwwcq"
+        "nombre": "prueba"
     },
     {
         "vencimiento": "2027-04-04",
         "marca": "2521",
-        "precio": 99999,
-        "categoria": "LACTEO",
+        "precio": 3333,
+        "categoria": "CARNE",
         "direccion": null,
-        "id": 43,
+        "id": 45,
         "stock": 42,
-        "nombre": "qcrwwcq"
+        "nombre": "ni idea"
+    },
+    {
+        "vencimiento": "2026-03-02",
+        "marca": "-",
+        "precio": 816,
+        "categoria": "VEGETAL",
+        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/1.jpg",
+        "id": 46,
+        "stock": 960,
+        "nombre": "Manzana"
     }
 ]
