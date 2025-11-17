@@ -17,6 +17,12 @@ public class Carrito {
 
     }
 
+    ///GETTER
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
     /// METODOS
 
     public boolean agregarProducto(int id){

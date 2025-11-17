@@ -1,34 +1,25 @@
 package Codigo.Interfaz;
 
-
+import Codigo.Logica.Administrador;
 import Codigo.Logica.Categoria_Producto;
+import Codigo.Logica.ProductoInvalidoException;
 import Codigo.Logica.Producto;
 
 import javax.swing.*;
+import javax.swing.JButton;
 import java.awt.*;
-import java.io.File;
-import java.time.LocalDate;
 
 public class ModificarProducto extends JFrame {
 
-    private static Producto producto;
-
-    public static void setProducto(Producto producto) {
-        ModificarProducto.producto = producto;
-    }
+    private Categoria_Producto x;
+    private boolean obligatorio = false;
+    private String direccionDeImagen;
 
     public ModificarProducto() {
+    }
 
-        // borrar
-        Producto p1 = new Producto(
-                "Leche Entera",
-                "La Serenisima",
-                850.50,
-                LocalDate.of(2025, 11, 15),
-                25,
-                Categoria_Producto.LACTEO
-        );
-        setProducto(p1);
+    public ModificarProducto(Producto prod) {
+
 
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 getClass().getResource("/img/logos/logo.png")));
@@ -51,58 +42,131 @@ public class ModificarProducto extends JFrame {
         JLabel text6 = Metodos.textoDefault(125, 300, "CATEGORIA", Color.WHITE);
 
         JTextField inNombre = new JTextField();
-        inNombre.setText(producto.getNombre());
-        inNombre.setBounds(275, 50, 200, 25);
+        inNombre.setText(prod.getNombre());
+        inNombre.setBounds(255, 50, 200, 25);
 
         JTextField inMarca = new JTextField();
-        inMarca.setText(producto.getMarca());
-        inMarca.setBounds(275, 100, 200, 25);
+        inMarca.setText(prod.getMarca());
+        inMarca.setBounds(255, 100, 200, 25);
 
         JTextField inPrecio = new JTextField();
-        inPrecio.setText("" + producto.getPrecio());
-        inPrecio.setBounds(275, 150, 200, 25);
+        inPrecio.setText(String.valueOf(prod.getPrecio()));
+        inPrecio.setBounds(255, 150, 200, 25);
 
         JTextField inVencimiento = new JTextField();
-        inVencimiento.setText("" + producto.getVencimiento());
-        inVencimiento.setBounds(275, 200, 200, 25);
+        inVencimiento.setText(String.valueOf(prod.getVencimiento()));
+        inVencimiento.setBounds(255, 200, 200, 25);
 
         JTextField inStock = new JTextField();
-        inStock.setText("" + producto.getStock());
-        inStock.setBounds(275, 250, 200, 25);
+        inStock.setText(String.valueOf(prod.getStock()));
+        inStock.setBounds(255, 250, 200, 25);
 
-        JTextField inCategoria = new JTextField();
-        inCategoria.setText("" + producto.getCategoria());
-        inCategoria.setBounds(275, 300, 200, 25);
+
+        //cambiar despues tambien por iconos <------------------------------
+        JButton categoria1 = Metodos.botonesCategorias(255, 300, "1");
+        JButton categoria2 = Metodos.botonesCategorias(285, 300, "2");
+        JButton categoria3 = Metodos.botonesCategorias(315, 300, "3");
+        JButton categoria4 = Metodos.botonesCategorias(345, 300, "4");
+        JButton categoria5 = Metodos.botonesCategorias(375, 300, "5");
+        JButton categoria6 = Metodos.botonesCategorias(405, 300, "6");
+        JButton categoria7 = Metodos.botonesCategorias(435, 300, "7");
+
+
+        categoria1.addActionListener(e -> {
+            obligatorio = true;
+            x = Categoria_Producto.CARNE;
+        });
+        categoria2.addActionListener(e -> {
+            obligatorio = true;
+            x = Categoria_Producto.LACTEO;
+        });
+        categoria3.addActionListener(e -> {
+            obligatorio = true;
+            x = Categoria_Producto.VEGETAL;
+        });
+        categoria4.addActionListener(e -> {
+            obligatorio = true;
+            x = Categoria_Producto.BEBIDA;
+        });
+        categoria5.addActionListener(e -> {
+            obligatorio = true;
+            x = Categoria_Producto.SNACK;
+        });
+        categoria6.addActionListener(e -> {
+            obligatorio = true;
+            x = Categoria_Producto.HIGIENE;
+        });
+        categoria7.addActionListener(e -> {
+            obligatorio = true;
+            x = Categoria_Producto.LIMPIEZA;
+        });
+
 
         ImageIcon img = new ImageIcon(getClass().getResource("/img/MicroMenuProductos/fondo.png"));
         JLabel fondo = new JLabel(img);
         fondo.setBounds(0, 0, 600, 500);
 
+        JButton cargarImagen = new JButton("Imagen");
+        cargarImagen.setBounds(200, 340, 200, 40);
+        cargarImagen.setBackground(new Color(80, 150, 255));
+        cargarImagen.setForeground(Color.WHITE);
+        cargarImagen.setFocusPainted(false);
+
+
+        cargarImagen.addActionListener(e -> {
+            direccionDeImagen = ImagenAdministrador.direccionDeIMG();
+            //  System.out.println("PRUEBA FINAL : " + direccionDeImagen);
+        });
+
+
         JButton boton = new JButton("Modificar");
         boton.setBounds(320, 400, 200, 40);
-
         boton.setBackground(new Color(80, 150, 255));
         boton.setForeground(Color.WHITE);
         boton.setFocusPainted(false);
 
         boton.addActionListener(e -> {
 
-            String nombre = inNombre.getText();
-            String categoria = inCategoria.getText();
-            String stock = inStock.getText();
-            String vencimiento = inVencimiento.getText();
-            String precio = inPrecio.getText();
-            String marca = inMarca.getText();
 
-            boolean flag = true;
+            if (obligatorio) {
+                String nombre = inNombre.getText();                                 //<------------------------------
+                String stock = inStock.getText();                                   //<------------------------------
+                String vencimiento = inVencimiento.getText();                       //<------------------------------
+                String precio = inPrecio.getText();                                 //<------------------------------
+                String marca = inMarca.getText();
+                String categoria = x.toString();
+                String direccion = direccionDeImagen;
+                System.out.println("DIRECCION DIFINITVA: " + direccion);
 
-            if (flag) {
-                JOptionPane.showMessageDialog(null, "Modificado con exito!");
-                dispose();
+
+                Administrador admin = (Administrador) Sesion.getUsuarioActivo();
+
+
+                try {
+
+
+                    if (admin.crearProducto(nombre, stock, vencimiento, precio, marca, categoria, direccion)) {
+
+                        if (admin.eliminarProducto(prod)) {
+
+                            JOptionPane.showMessageDialog(null, "Modificado con exito!");
+                            Menu.getInstancia().productosReutilizable(); // actualiza la pagina menu :2
+
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error");
+
+                        }
+                    }
+
+                } catch (ProductoInvalidoException ex) {
+                    Metodos.excepcionPantallaEmergente(ex.getMessage());
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Error");
+                Metodos.excepcionPantallaEmergente("Elegi Una Categoria");
             }
+
         });
+
 
         JButton cerrar = new JButton("Cerrar");
         cerrar.setBounds(80, 400, 200, 40);
@@ -112,19 +176,17 @@ public class ModificarProducto extends JFrame {
 
         cerrar.addActionListener(e -> dispose());
 
-        JButton cargarImagen = new JButton("Imagen");
-        cargarImagen.setBounds(200, 340, 200, 40);
-        cargarImagen.setBackground(new Color(80, 150, 255));
-        cargarImagen.setForeground(Color.WHITE);
-        cargarImagen.setFocusPainted(false);
 
-        cargarImagen.addActionListener(e -> {
-       //     ImagenAdministrador.asociarDireccionDeImagenAproducto();
-        });
-
+        //categorias:
+        panel.add(categoria1);
+        panel.add(categoria2);
+        panel.add(categoria3);
+        panel.add(categoria4);
+        panel.add(categoria5);
+        panel.add(categoria6);
+        panel.add(categoria7);
         panel.add(inNombre);
         panel.add(inMarca);
-        panel.add(inCategoria);
         panel.add(inVencimiento);
         panel.add(inPrecio);
         panel.add(inStock);

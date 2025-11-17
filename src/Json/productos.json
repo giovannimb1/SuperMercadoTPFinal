@@ -260,53 +260,13 @@
         "nombre": "Tomate Perita"
     },
     {
-        "vencimiento": "2025-02-06",
+        "vencimiento": "2026-02-06",
         "marca": "TropiRico",
         "precio": 1000,
-        "categoria": "VEGETAL",
-        "direccion": null,
-        "id": 28,
-        "stock": 65,
-        "nombre": "Bananas"
-    },
-    {
-        "vencimiento": "2025-09-01",
-        "marca": "Paty",
-        "precio": 2000,
-        "categoria": "CARNE",
-        "direccion": null,
-        "id": 29,
-        "stock": 30,
-        "nombre": "Nuggets de Pollo"
-    },
-    {
-        "vencimiento": "2025-04-14",
-        "marca": "La Paulina",
-        "precio": 1400,
-        "categoria": "LACTEO",
+        "categoria": "BEBIDA",
         "direccion": null,
         "id": 30,
-        "stock": 50,
-        "nombre": "Queso Rallado"
-    },
-    {
-        "vencimiento": "2026-05-03",
-        "marca": "fawfw",
-        "precio": 1412,
-        "categoria": "LIMPIEZA",
-        "direccion": null,
-        "id": 31,
-        "stock": 333,
-        "nombre": "fawfwa"
-    },
-    {
-        "vencimiento": "2026-03-03",
-        "marca": "dawdaw",
-        "precio": 12512,
-        "categoria": "HIGIENE",
-        "direccion": null,
-        "id": 32,
-        "stock": 851,
-        "nombre": "dawdaw"
+        "stock": 65,
+        "nombre": "Bananas2134"
     }
 ]

@@ -172,26 +172,29 @@ public class Menu extends JFrame {
 
         JLabel foto = null;
 
+        ImageIcon img;
+
+        // aca busca la imagen en el json
+
         if (producto.getDireccionImg() != null) {
-
-            ImageIcon img = new ImageIcon(getClass().getResource(producto.getDireccionImg()));
-            Image imagen = img.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-            img = new ImageIcon(imagen);
-
-            foto = new JLabel(img);
-            foto.setForeground(Color.WHITE);
-
+            if (producto.getDireccionImg().startsWith("/")) {
+                img = new ImageIcon(getClass().getResource(producto.getDireccionImg()));
+            } else {
+                img = new ImageIcon(producto.getDireccionImg());
+            }
         } else {
-
-            ImageIcon img = new ImageIcon(getClass().getResource("/img/FotoProductos/0.jpg"));
-            Image imagen = img.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-            img = new ImageIcon(imagen);
-
-            foto = new JLabel(img);
-            foto.setForeground(Color.WHITE);
-
-
+            img = new ImageIcon(getClass().getResource("/img/FotoProductos/0.jpg"));
         }
+
+        Image imagenEscalada = img.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        img = new ImageIcon(imagenEscalada);
+
+        foto = new JLabel(img);
+        foto.setForeground(Color.WHITE);
+
+
+
+
         caja.add(nombre);
         caja.add(marca);
         caja.add(precio);
@@ -221,9 +224,10 @@ public class Menu extends JFrame {
         } else {
             JButton modificar = new JButton("Modificar");
             modificar.setForeground(Color.BLACK);
+
             modificar.addActionListener(e -> {
-                ModificarProducto.setProducto(producto);
-                new ModificarProducto().setVisible(true);
+
+                new ModificarProducto(producto).setVisible(true);
 
 
             });

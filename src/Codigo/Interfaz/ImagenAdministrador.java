@@ -28,7 +28,7 @@ public class ImagenAdministrador extends JFrame {
             System.out.println("direccion = " + archivo.toString());
 
 
-            return archivo.toString();
+            return archivo.getAbsolutePath().replace("\\", "/");
 
         }
         return null;
