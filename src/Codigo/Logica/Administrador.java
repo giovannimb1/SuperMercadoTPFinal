@@ -46,7 +46,7 @@ public class Administrador extends Usuario {
         } catch (NumberFormatException e1) {
             throw new ProductoInvalidoException("Stock y/o Precio invalidos");
         } catch (DateTimeParseException e2){
-            throw new ProductoInvalidoException("Fecha de vencimiento invalida");
+            throw new ProductoInvalidoException("Fecha de vencimiento invalida\n  Formato: (aaa-mm-dd)");
         } catch (IllegalArgumentException e3){
             throw new ProductoInvalidoException("Categoria invalida");
         }
