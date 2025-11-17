@@ -22,7 +22,7 @@ public class Administrador extends Usuario {
 
 
     public boolean crearProducto(String nombreP, String stockP, String vencimientoP,
-                                 String precioP, String marcaP, String categoriaP)
+                                 String precioP, String marcaP, String categoriaP, String direccionImg)
             throws ProductoInvalidoException {
 
         int stock, precio;
@@ -30,6 +30,9 @@ public class Administrador extends Usuario {
         LocalDate vencimiento;
 
         try {
+            if(nombreP == null || nombreP.isBlank() || marcaP == null || marcaP.isBlank()){
+                throw new ProductoInvalidoException("Nombre y/o Marca invalidos");
+            }
             stock = Integer.parseInt(stockP);
             precio = Integer.parseInt(precioP);
             if(stock < 1 || precio < 1){
@@ -47,11 +50,11 @@ public class Administrador extends Usuario {
         } catch (IllegalArgumentException e3){
             throw new ProductoInvalidoException("Categoria invalida");
         }
-        return Almacen.getInstancia().agregar(new Producto(nombreP,marcaP,precio,vencimiento,stock,categoria));
+        return Almacen.getInstancia().agregar(new Producto(nombreP,marcaP,precio,vencimiento,stock,categoria,direccionImg));
     }
 
     public boolean modificarProducto(Producto p){
-         return Almacen.getInstancia().modificar(p.getId(),p);
+        return Almacen.getInstancia().modificar(p.getId(),p);
     }
 
     public boolean eliminarProducto(Producto p){

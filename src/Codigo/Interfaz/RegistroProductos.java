@@ -136,7 +136,7 @@ public class RegistroProductos extends JFrame {
                 try {
 
 
-                    if (admin.crearProducto(nombre, stock, vencimiento, precio, marca, categoria)) {
+                    if (admin.crearProducto(nombre, stock, vencimiento, precio, marca, categoria,direccion)) {
                         JOptionPane.showMessageDialog(null, "Creado con exito!");
 
                         Menu.getInstancia().productosReutilizable(); // actualiza la pagina menu :2

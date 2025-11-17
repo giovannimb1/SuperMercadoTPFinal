@@ -17,7 +17,7 @@ public class Producto implements Comparable<Producto> {
     private String direccionImg;
 
     /// CONSTRUCTORES
-    public Producto(String nombre, String marca, double precio, LocalDate vencimiento, int stock, Categoria_Producto categoria) {
+    public Producto(String nombre, String marca, double precio, LocalDate vencimiento, int stock, Categoria_Producto categoria, String direccionImg) {
         this.id = cont++;
         this.nombre = nombre;
         this.marca = marca;
@@ -25,6 +25,7 @@ public class Producto implements Comparable<Producto> {
         this.vencimiento = vencimiento;
         this.stock = stock;
         this.categoria = categoria;
+        this.direccionImg = direccionImg;
     }
 
     public Producto() {
