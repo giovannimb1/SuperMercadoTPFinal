@@ -67,6 +67,9 @@ public class Main {
         System.out.println(Gestora.getInstancia().agregar(ctest));
 
         // ya meti todos al json
-
+        ctest.agregarProducto(p1.getId());
+        ctest.agregarProducto(p1.getId());
+        ctest.agregarProducto(p1.getId());
+        System.out.println(ctest.getCarrito().getTotal());
     }
 }

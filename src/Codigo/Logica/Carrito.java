@@ -32,7 +32,7 @@ public class Carrito {
         boolean flag = false;
         if(archivo.get(id)!=null && archivo.get(id).reducirStock()){
             flag = productos.add(archivo.get(id));
-            total+=productos.get(id).getPrecio();
+            total+=archivo.get(id).getPrecio();
         }
      return flag;
     }
