@@ -48,13 +48,13 @@ public class RegistroProductos extends JFrame {
         inStock.setBounds(255, 250, 200, 25);
 
 
-        JButton categoria1 = Metodos.botonesCategorias(255, 300, "1");
-        JButton categoria2 = Metodos.botonesCategorias(285, 300, "2");
-        JButton categoria3 = Metodos.botonesCategorias(315, 300, "3");
-        JButton categoria4 = Metodos.botonesCategorias(345, 300, "4");
-        JButton categoria5 = Metodos.botonesCategorias(375, 300, "5");
-        JButton categoria6 = Metodos.botonesCategorias(405, 300, "6");
-        JButton categoria7 = Metodos.botonesCategorias(435, 300, "7");
+        JButton categoria1 = Metodos.botonesCategorias(255, 300, "/img/Categorias/carne.png");
+        JButton categoria2 = Metodos.botonesCategorias(285, 300, "/img/Categorias/leche.png");
+        JButton categoria3 = Metodos.botonesCategorias(315, 300, "/img/Categorias/vegetales.png");
+        JButton categoria4 = Metodos.botonesCategorias(345, 300, "/img/Categorias/bebidas.png");
+        JButton categoria5 = Metodos.botonesCategorias(375, 300, "/img/Categorias/snack.png");
+        JButton categoria6 = Metodos.botonesCategorias(405, 300, "/img/Categorias/higiene.png");
+        JButton categoria7 = Metodos.botonesCategorias(435, 300, "/img/Categorias/limpieza.png");
 
 
         categoria1.addActionListener(e -> {

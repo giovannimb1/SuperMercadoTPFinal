@@ -372,8 +372,8 @@
     {
         "vencimiento": "2027-04-04",
         "marca": "2521",
-        "precio": 15125,
-        "categoria": "HIGIENE",
+        "precio": 99999,
+        "categoria": "LACTEO",
         "direccion": null,
         "id": 42,
         "stock": 42,
@@ -382,41 +382,11 @@
     {
         "vencimiento": "2027-04-04",
         "marca": "2521",
-        "precio": 15125,
-        "categoria": "HIGIENE",
+        "precio": 99999,
+        "categoria": "LACTEO",
         "direccion": null,
         "id": 43,
         "stock": 42,
         "nombre": "qcrwwcq"
-    },
-    {
-        "vencimiento": "2027-04-04",
-        "marca": "2521",
-        "precio": 15125,
-        "categoria": "HIGIENE",
-        "direccion": null,
-        "id": 44,
-        "stock": 42,
-        "nombre": "qcrwwcq"
-    },
-    {
-        "vencimiento": "2028-05-21",
-        "marca": "la serenisima",
-        "precio": 78,
-        "categoria": "LACTEO",
-        "direccion": null,
-        "id": 45,
-        "stock": 125,
-        "nombre": "julio"
-    },
-    {
-        "vencimiento": "2025-12-25",
-        "marca": "Casancrem",
-        "precio": 1750,
-        "categoria": "LACTEO",
-        "direccion": null,
-        "id": 47,
-        "stock": 25,
-        "nombre": "Queso Crema"
     }
 ]

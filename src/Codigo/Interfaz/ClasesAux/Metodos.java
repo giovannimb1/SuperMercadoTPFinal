@@ -38,13 +38,13 @@ public class Metodos extends JFrame {
 
     }
 
-    public static JButton botonesCategorias(int x, int y,String texto)
-    {
-        JButton boton = new JButton(texto);
-        boton.setBounds(x, y, 25, 25);
-        boton.setBackground(new Color(80, 150, 255));
-        boton.setForeground(Color.WHITE);
-        boton.setFocusPainted(false);
+    public static JButton botonesCategorias(int x, int y, String direccionDeLasimagenes) {
+        JButton boton = new JButton();
+        boton.setBounds(x, y, 35, 35); // tamaño sugerido para iconos
+
+        ImageIcon icono = new ImageIcon(Metodos.class.getResource(direccionDeLasimagenes));
+        Image img = icono.getImage().getScaledInstance(35, 35, Image.SCALE_SMOOTH); // la escalo
+        boton.setIcon(new ImageIcon(img));
 
         return boton;
     }

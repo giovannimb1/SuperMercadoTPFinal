@@ -10,7 +10,7 @@ public class RegistroUsuario extends JFrame {
 
     public RegistroUsuario() {
 
-        Metodos.ventanasConfiguracionAlternativa(this, "Registro Usuariosw");
+        Metodos.ventanasConfiguracionAlternativa(this, "Registro Usuarios");
 
         JPanel panel = new JPanel(null);
         panel.setBackground(new Color(255, 255, 255));

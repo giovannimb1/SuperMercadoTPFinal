@@ -4,18 +4,19 @@ import Codigo.Interfaz.Menu;
 import Codigo.Interfaz.ModificarProducto;
 import Codigo.Interfaz.Sesion;
 import Codigo.Logica.Almacen;
+import Codigo.Logica.Cliente;
 import Codigo.Logica.Producto;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class ProductoVisual extends JPanel{
-
-
+public class ProductoVisual extends JPanel {
 
 
     //creador de productos
+
+
 
     public static JPanel productoAvisual(Producto producto) {
 
@@ -58,8 +59,6 @@ public class ProductoVisual extends JPanel{
         foto.setForeground(Color.WHITE);
 
 
-
-
         caja.add(nombre);
         caja.add(marca);
         caja.add(precio);
@@ -67,24 +66,27 @@ public class ProductoVisual extends JPanel{
 
         if (!Sesion.getUsuarioActivo().isPermisos()) {
 
-            JButton mandarAlCarrito = new JButton("C:" + producto.getStock());
-            mandarAlCarrito.setForeground(Color.BLACK);
+            JButton mandarAlCarritoBoton = new JButton("C:" + producto.getStock());
+            mandarAlCarritoBoton.setForeground(Color.BLACK);
 
 
-            mandarAlCarrito.addActionListener(e -> {
-                if (Sesion.getCarrito().agregarProducto(producto.getId())) {
+            mandarAlCarritoBoton.addActionListener(e -> {
+
+                //Pasar producto
+                if (((Cliente) Sesion.getUsuarioActivo()).agregarProducto(producto.getId())) {
+
                     //esto cambia el texto del boton
-                    mandarAlCarrito.setText("C:" + producto.getStock());
+                    mandarAlCarritoBoton.setText("C:" + producto.getStock());
 
 
                 } else {
-                    mandarAlCarrito.setText("Sin Stock");
+                    mandarAlCarritoBoton.setText("Sin Stock");
                     Metodos.excepcionPantallaEmergente("No hay mas Productos");
 
                 }
 
             });
-            caja.add(mandarAlCarrito);
+            caja.add(mandarAlCarritoBoton);
 
         } else {
             JButton modificar = new JButton("Modificar");
@@ -105,7 +107,7 @@ public class ProductoVisual extends JPanel{
         return caja;
     }
 
-    public static void productosReutilizable(JPanel contenedorProductos){
+    public static void productosReutilizable(JPanel contenedorProductos) {
 
         contenedorProductos.removeAll();
 
@@ -126,7 +128,6 @@ public class ProductoVisual extends JPanel{
         for (JPanel p : productos) {
             contenedorProductos.add(p);
         }
-
 
 
         int altoTotal = productos.size() * 220;
