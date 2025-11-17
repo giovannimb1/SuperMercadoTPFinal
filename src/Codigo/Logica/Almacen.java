@@ -10,6 +10,7 @@ public class Almacen implements IGestor<Producto> {
 
     /// CONSTRUCTOR
     private Almacen() {
+        sincronizarCont();
     }
 
     //singleton
@@ -61,5 +62,16 @@ public class Almacen implements IGestor<Producto> {
         for (Producto p : productos.values()) {
             System.out.println(p);
         }
+    }
+
+    // sincronizar contador
+    private void sincronizarCont(){
+        int idMax=0;
+        for(Producto p : productos.values()){
+            if(idMax < p.getId()){
+                idMax = p.getId();
+            }
+        }
+     Producto.setCont(idMax+1);
     }
 }

@@ -89,7 +89,7 @@ public class CarritoInterfaz extends JFrame {
 
         ((Cliente) Sesion.getUsuarioActivo()).agregarProducto(30);
 
-        for (Producto p : ((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos()) {
+        for (Producto p :((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos()) {
             productos.add(productoAvisual(p));
         }
 

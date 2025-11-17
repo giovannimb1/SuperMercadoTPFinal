@@ -30,6 +30,16 @@
         "username": ""
     },
     {
+        "password": "1",
+        "fecha_registro": "2025-11-17",
+        "apellido": "nose",
+        "id": 6,
+        "permisos": false,
+        "nombre": "hola",
+        "email": "rawmfwopif",
+        "username": "soy yo"
+    },
+    {
         "password": "e",
         "fecha_registro": "2025-11-16",
         "apellido": "",
@@ -40,13 +50,43 @@
         "username": "e"
     },
     {
+        "password": "polo",
+        "fecha_registro": "2025-11-17",
+        "apellido": "paez",
+        "id": 8,
+        "permisos": false,
+        "nombre": "jorgito",
+        "email": "paezjorg@gmail.com",
+        "username": "jeropa"
+    },
+    {
         "password": "1",
         "fecha_registro": "2025-11-17",
-        "apellido": "nose",
-        "id": 6,
+        "apellido": "jyj",
+        "id": 9,
         "permisos": false,
-        "nombre": "hola",
-        "email": "rawmfwopif",
-        "username": "soy yo"
+        "nombre": "hy",
+        "email": "kilo",
+        "username": "ssjgoku"
+    },
+    {
+        "password": "loj",
+        "fecha_registro": "2025-11-17",
+        "apellido": "fernandez",
+        "id": 10,
+        "permisos": false,
+        "nombre": "tito",
+        "email": "titofer@gmail.com",
+        "username": "titofer"
+    },
+    {
+        "password": "23",
+        "fecha_registro": "2025-11-17",
+        "apellido": "wer",
+        "id": 11,
+        "permisos": false,
+        "nombre": "juk",
+        "email": "juk@gmail.com",
+        "username": "jukwer1"
     }
 ]

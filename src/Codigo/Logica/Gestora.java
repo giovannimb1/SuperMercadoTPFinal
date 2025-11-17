@@ -11,6 +11,7 @@ public class Gestora implements IGestor<Usuario> {
 
     /// CONSTRUCTOR
     public Gestora() {
+        sincronizarCont();
     }
 
     //singleton
@@ -85,5 +86,16 @@ public class Gestora implements IGestor<Usuario> {
             }
         }
       throw new AutenticacionException("Usuario y/o contraseña incorrectos");
+    }
+
+    //sincronizar cont
+    private void sincronizarCont(){
+        int idMax=0;
+        for(Usuario u : usuarios){
+            if(idMax < u.getId()){
+                idMax = u.getId();
+            }
+        }
+     Usuario.setCont(idMax+1);
     }
 }

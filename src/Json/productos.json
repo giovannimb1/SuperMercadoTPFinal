@@ -10,16 +10,6 @@
         "nombre": "Leche Entera"
     },
     {
-        "vencimiento": "2025-04-02",
-        "marca": "Casancrem",
-        "precio": 1800,
-        "categoria": "LACTEO",
-        "direccion": null,
-        "id": 3,
-        "stock": 25,
-        "nombre": "Queso Crema"
-    },
-    {
         "vencimiento": "2025-03-18",
         "marca": "Ilolay",
         "precio": 720,
@@ -408,5 +398,25 @@
         "id": 44,
         "stock": 42,
         "nombre": "qcrwwcq"
+    },
+    {
+        "vencimiento": "2028-05-21",
+        "marca": "la serenisima",
+        "precio": 78,
+        "categoria": "LACTEO",
+        "direccion": null,
+        "id": 45,
+        "stock": 125,
+        "nombre": "julio"
+    },
+    {
+        "vencimiento": "2025-12-25",
+        "marca": "Casancrem",
+        "precio": 1750,
+        "categoria": "LACTEO",
+        "direccion": null,
+        "id": 47,
+        "stock": 25,
+        "nombre": "Queso Crema"
     }
 ]

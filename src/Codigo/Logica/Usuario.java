@@ -97,6 +97,14 @@ public abstract class Usuario implements Comparable<Usuario> {
         this.fechaRegistro = fechaRegistro;
     }
 
+    public static int getCont() {
+        return cont;
+    }
+
+    public static void setCont(int cont) {
+        Usuario.cont = cont;
+    }
+
     /// METODOS
     @Override
     public String toString() {
