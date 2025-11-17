@@ -3,20 +3,17 @@ package Codigo.Interfaz.ClasesAux;
 import Codigo.Interfaz.Sesion;
 import Codigo.Logica.Almacen;
 import Codigo.Logica.Cliente;
-import Codigo.Logica.Producto;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
-public class PanelConFondoRepetido extends JPanel {
+public class PanelConFondoRepetidoCarrito extends JPanel {
 
     private final Image fondo;
 
     //fondo repetido
 
-    public PanelConFondoRepetido(String direccion) {
+    public PanelConFondoRepetidoCarrito(String direccion) {
         fondo = new ImageIcon(getClass().getResource(direccion)).getImage();
         setLayout(null);
     }
@@ -31,17 +28,18 @@ public class PanelConFondoRepetido extends JPanel {
     public int contadorDepixelesDeALTOO(){
 
 
-       // System.out.println(Almacen.getInstancia().getProductos().size());
+        // System.out.println(Almacen.getInstancia().getProductos().size());
 
         //para calcular el tamaño de largo de la ventana
 
-        return Almacen.getInstancia().getProductos().size() * 65;
+        return ((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos().size() * 65;
+
 
     }
 
 
 
-//esto hace q se repita
+    //esto hace q se repita
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

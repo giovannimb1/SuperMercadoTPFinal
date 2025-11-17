@@ -33,4 +33,6 @@ public class Cliente extends Usuario {
     public boolean tieneProductos(){
         return !carrito.getProductos().isEmpty();
     }
+
+
 }

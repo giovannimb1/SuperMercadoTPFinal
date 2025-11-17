@@ -2,8 +2,8 @@ package Codigo.Interfaz;
 
 import Codigo.Interfaz.ClasesAux.Metodos;
 import Codigo.Interfaz.ClasesAux.PanelConFondoRepetido;
+import Codigo.Interfaz.ClasesAux.PanelConFondoRepetidoCarrito;
 import Codigo.Interfaz.ClasesAux.ProductoVisual;
-import Codigo.Logica.Producto;
 import Codigo.Logica.*;
 
 import javax.swing.*;
@@ -17,6 +17,8 @@ public class CarritoInterfaz extends JFrame {
     //atributos
 
     private JPanel contenedorProductos;
+
+    private JLabel mostrarMonto;
 
     //creo un atributo carrito para poder acceder desde Metodos de pago a carrito y lo instancio
 
@@ -43,7 +45,7 @@ public class CarritoInterfaz extends JFrame {
         //config
         Metodos.ventanasConfiguracionnTipica(this, "Carrito");
 
-        JPanel panel = new PanelConFondoRepetido("/img/Menu/1.png");
+        JPanel panel = new PanelConFondoRepetidoCarrito("/img/Menu/1.png");
         panel.setLayout(null);
 
         //esto permite q  se pueda scrolear en el panel
@@ -59,6 +61,10 @@ public class CarritoInterfaz extends JFrame {
         ImageIcon img2 = new ImageIcon(getClass().getResource("/img/Menu/2.png"));
         JLabel decoracion1 = new JLabel(img2);
         decoracion1.setBounds(0, 0, 1280, 720);
+
+        ImageIcon img3 = new ImageIcon(getClass().getResource("/img/Menu/5.png"));
+        JLabel decoracion2 = new JLabel(img3);
+        decoracion2.setBounds(0, 0, 1280, 720);
 
         ImageIcon img4 = new ImageIcon(getClass().getResource("/img/Menu/4.png"));
         JLabel logochiquito = new JLabel(img4);
@@ -88,6 +94,7 @@ public class CarritoInterfaz extends JFrame {
             if (((Cliente) Sesion.getUsuarioActivo()).tieneProductos()) {
                 // hacer con metodo de gio
                 new MetodosDePago().setVisible(true);
+                refrescadorDeMonto();
             } else {
                 Metodos.excepcionPantallaEmergente("No tocaste ningun producto");
             }
@@ -110,18 +117,32 @@ public class CarritoInterfaz extends JFrame {
         // y agrego al contenedor y al panel todos los jlabel
         contenedorProductos = new JPanel();
 
+        mostrarMonto = new JLabel("Monto $ " + ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal());
+        mostrarMonto.setForeground(Color.WHITE);
+        mostrarMonto.setFont(new Font("Arial", Font.PLAIN, 18));
+        mostrarMonto.setBounds(770, 22, 300, 20);
+
         ProductoVisual.cargadorDeContenedores(contenedorProductos,2); // esto refresca lo visual
+        panel.add(mostrarMonto);
         panel.add(finalizarCompra);
         panel.add(volverAlMenu);
         panel.add(contenedorProductos);
         panel.add(bienvendo);
         panel.add(logochiquito);
         panel.add(decoracion1);
+        panel.add(decoracion2);
 
 
     }
 
-
+    public void refrescadorDeMonto() {
+        if (mostrarMonto != null) {
+            ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal();
+            mostrarMonto.setText("Monto $ " + ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal());
+            mostrarMonto.revalidate();
+            mostrarMonto.repaint();
+        }
+    }
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new CarritoInterfaz().setVisible(true));
     }

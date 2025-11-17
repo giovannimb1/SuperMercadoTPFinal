@@ -3,6 +3,7 @@ package Codigo.Interfaz;
 import Codigo.Interfaz.ClasesAux.Metodos;
 import Codigo.Interfaz.ClasesAux.PanelConFondoRepetido;
 import Codigo.Interfaz.ClasesAux.ProductoVisual;
+import Codigo.Logica.Cliente;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +12,10 @@ public class Menu extends JFrame {
 
     private JPanel contenedorProductos;
     private static Menu menu;
+
+    //
+    private JLabel mostrarMonto;
+    //
 
     public static Menu getInstancia() {
         return menu;
@@ -42,6 +47,10 @@ public class Menu extends JFrame {
         ImageIcon img2 = new ImageIcon(getClass().getResource("/img/Menu/2.png"));
         JLabel decoracion1 = new JLabel(img2);
         decoracion1.setBounds(0, 0, 1280, 720);
+
+        ImageIcon img3 = new ImageIcon(getClass().getResource("/img/Menu/5.png"));
+        JLabel decoracion2 = new JLabel(img3);
+        decoracion2.setBounds(0, 0, 1280, 720);
 
         ImageIcon img4 = new ImageIcon(getClass().getResource("/img/Menu/4.png"));
         JLabel logochiquito = new JLabel(img4);
@@ -117,20 +126,41 @@ public class Menu extends JFrame {
         });
 
 
+
+        mostrarMonto = new JLabel("Monto $ " + ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal());
+        mostrarMonto.setForeground(Color.WHITE);
+        mostrarMonto.setFont(new Font("Arial", Font.PLAIN, 18));
+        mostrarMonto.setBounds(770, 22, 300, 20);
+
+
+
         //Reinicio los contenedores
         ProductoVisual.cargadorDeContenedores(contenedorProductos,1);
 
         //en el panel agrego todos los jlabel
 
+
+        panel.add(mostrarMonto);
         panel.add(cerrarSesion);
         panel.add(contenedorProductos);
         panel.add(bienvendo);
         panel.add(logochiquito);
         panel.add(decoracion1);
-
+        panel.add(decoracion2);
+//aca no pongo el panel fondo porque lo puse directamente arriba como es repetido
 
 
     }
+
+    public void refrescadorDeMonto() {
+        if (mostrarMonto != null) {
+            ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal();
+            mostrarMonto.setText("Monto $ " + ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal());
+            mostrarMonto.revalidate();
+            mostrarMonto.repaint();
+        }
+    }
+
 
 
     public static void main(String[] args) {

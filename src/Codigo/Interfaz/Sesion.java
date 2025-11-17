@@ -5,6 +5,8 @@ public class Sesion {
 
     //Esto es para poder mantener el mismo Usuario en todos las clases
 
+
+
     private static Usuario usuarioActivo;
 
     private static Carrito carrito = new Carrito();
@@ -21,13 +23,9 @@ public class Sesion {
         usuarioActivo = null;
     }
 
-    public static Carrito getCarrito() {
-        return carrito;
-    }
 
-    public static void setCarrito(Carrito carrito) {
-        Sesion.carrito = carrito;
-    }
+
+
 
 }
 

@@ -1,5 +1,7 @@
 package Codigo.Interfaz.ClasesAux;
 
+import Codigo.Interfaz.CarritoInterfaz;
+import Codigo.Interfaz.Menu;
 import Codigo.Interfaz.ModificarProducto;
 import Codigo.Interfaz.Sesion;
 import Codigo.Logica.Almacen;
@@ -71,10 +73,13 @@ public class ProductoVisual extends JPanel {
                 sacarDelCarrito.addActionListener(e -> {
 
                     if (((Cliente) Sesion.getUsuarioActivo()).eliminarProducto(producto)) {
+                        Menu.getInstancia().refrescadorDeMonto();
+                        CarritoInterfaz.getInstancia().refrescadorDeMonto();
 
                         ProductoVisual.cargadorDeContenedores(contenedorProductos, 2);
                         contenedorProductos.revalidate();// refresco el contenedor nomas :"v
                         contenedorProductos.repaint();
+
 
 
                     } else {
@@ -99,6 +104,7 @@ public class ProductoVisual extends JPanel {
 
                             //esto cambia el texto del boton
                             mandarAlCarritoBoton.setText("C:" + producto.getStock());
+                            Menu.getInstancia().refrescadorDeMonto();
 
 
                         } else {

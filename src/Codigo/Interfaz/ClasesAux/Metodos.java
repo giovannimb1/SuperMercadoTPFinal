@@ -12,11 +12,11 @@ public class Metodos extends JFrame {
         JLabel aux = new JLabel(texto);
         aux.setForeground(color);
         aux.setFont(new Font("Arial", Font.PLAIN, 18));
-        aux.setBounds(x, y, 100, 20);
+        aux.setBounds(x, y, 300, 20);
 
         return aux;
     }
-
+//texto para productos
     public static JLabel textoProductos(int x, int y, String info, Color color) {
         JLabel aux = new JLabel(info);
         aux.setForeground(color);
@@ -25,19 +25,19 @@ public class Metodos extends JFrame {
         return aux;
     }
 
-
+//excepcion
     public static void excepcionPantallaEmergente(String mensaje) {
 // esto seria como una excepcion visual
         JOptionPane.showMessageDialog(null, mensaje);
 
     }
-
+//mensaje emergente tipo mini ventana
     public static void mensajeEmergente(String mensaje) {
 
         JOptionPane.showMessageDialog(null, mensaje);
 
     }
-
+//botones para categorias
     public static JButton botonesCategorias(int x, int y, String direccionDeLasimagenes) {
         JButton boton = new JButton();
         boton.setBounds(x, y, 35, 35); // tamaño sugerido para iconos
@@ -48,6 +48,8 @@ public class Metodos extends JFrame {
 
         return boton;
     }
+
+    //configuraciones de la ventana con titutlo y icono para las 2 vrsiones
 
     public static void ventanasConfiguracionnTipica(JFrame frame, String titulo) {
         frame.setIconImage(Toolkit.getDefaultToolkit().getImage(

@@ -7,6 +7,7 @@ import Codigo.Logica.Cliente;
 import Codigo.Logica.GestoraJSON;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MetodosDePago extends JFrame {
 
@@ -24,6 +25,8 @@ public class MetodosDePago extends JFrame {
 
         JPanel panel = new JPanel(null);
         add(panel);
+
+        mostrarTotal(panel);
 
 
         //dos imagenes de metodos de pago
@@ -43,7 +46,11 @@ public class MetodosDePago extends JFrame {
 
             Metodos.excepcionPantallaEmergente("Pago Realizado");
 
-            ((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos().clear();
+            ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getProductos().clear();
+            ((Cliente)Sesion.getUsuarioActivo()).getCarrito().setTotal(0);
+            ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal();
+            CarritoInterfaz.getInstancia().refrescadorDeMonto();
+            Menu.getInstancia().refrescadorDeMonto();
 
             GestoraJSON.mapAarchivo("productos.json", Almacen.getInstancia().getProductos());
 
@@ -57,6 +64,8 @@ public class MetodosDePago extends JFrame {
             //para evitar errores
 
             if (carrito != null) {
+
+
                 ProductoVisual.cargadorDeContenedores(carrito.getContenedorProductos(), 2);  // borra y lo vuelve a poner
                 carrito.revalidate();         //y esto simplemente agarra y vuelve a generar el layout y el panel
                 carrito.repaint();
@@ -79,7 +88,13 @@ public class MetodosDePago extends JFrame {
 
             Metodos.excepcionPantallaEmergente("Pago Realizado");
 
-            ((Cliente) Sesion.getUsuarioActivo()).getCarrito().getProductos().clear();
+
+
+            ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getProductos().clear();
+            ((Cliente)Sesion.getUsuarioActivo()).getCarrito().setTotal(0);
+            ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal();
+            CarritoInterfaz.getInstancia().refrescadorDeMonto();
+            Menu.getInstancia().refrescadorDeMonto();
 
             GestoraJSON.mapAarchivo("productos.json", Almacen.getInstancia().getProductos());
 
@@ -95,9 +110,11 @@ public class MetodosDePago extends JFrame {
 
 
             if (carrito != null) {
+
                 ProductoVisual.cargadorDeContenedores(carrito.getContenedorProductos(), 2);  // borra y lo vuelve a poner
                 carrito.revalidate();         //y esto simplemente agarra y vuelve a generar el layout y el panel
                 carrito.repaint();
+
             }
 
 
@@ -111,6 +128,21 @@ public class MetodosDePago extends JFrame {
         panel.add(metodo1);
         panel.add(metodo2);
         panel.add(fondo);
+
+    }
+
+    private static void mostrarTotal (JPanel panel){
+        ImageIcon total = new ImageIcon(MetodosDePago.class.getResource("/img/Menu/total.png"));
+        JLabel totalrecurso = new JLabel(total);
+        totalrecurso.setBounds(345, 0-20, 1280, 720);
+
+        JLabel montoTotal = new JLabel("Monto: "+((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal() ); // aca poner el metodo de gio de totales de el carrito
+        montoTotal.setForeground(Color.WHITE);
+        montoTotal.setFont(new Font("Arial", Font.PLAIN, 28));
+        montoTotal.setBounds(510, 618-20, 500, 20);
+
+        panel.add(montoTotal);
+                panel.add(totalrecurso);
 
     }
 
