@@ -73,7 +73,7 @@ public class CarritoInterfaz extends JFrame {
         JLabel bienvendo = new JLabel("Bienvenido : " + Sesion.getUsuarioActivo().getUsername());
         bienvendo.setForeground(Color.BLACK);
         bienvendo.setFont(new Font("Segoe UI", Font.PLAIN, 36));
-        bienvendo.setBounds(200, 65, 700, 40);
+        bienvendo.setBounds(200, 58, 600, 50);
 
         //botones
 

@@ -14,6 +14,10 @@ public class Almacen implements IGestor<Producto> {
     }
 
     //singleton
+    // esto lo tuve q investigar pq necesitaba que solo haya UN almacen en tod el sistema
+    // y asi los administradores operaban todos en el mismo almacen, lo que hace, al ser static
+    // es que cuando se llama desde fuera, devuelve el UNICO almacen en el sistema , pero si no lo hay
+    // lo crea en ese momento y dsp lo devuelve
     public static Almacen getInstancia() {
         if (instancia == null) {
             instancia = new Almacen();
@@ -28,6 +32,8 @@ public class Almacen implements IGestor<Producto> {
 
     /// METODOS
 
+    // esto solo añade el producto al map , si no esta lo añade y si ya esta lo sobreescribe
+    // para dsp actualizar el json
     @Override
     public boolean agregar(Producto p) {
         productos.put(p.getId(), p);
@@ -35,6 +41,8 @@ public class Almacen implements IGestor<Producto> {
         return true;
     }
 
+    // este se fija que el id recibido pertenezca a un producto dentro del almacen
+    // si existe , lo elimina y dsp actualiza el json
     @Override
     public boolean eliminar(int id) {
       boolean flag = false;
@@ -46,25 +54,9 @@ public class Almacen implements IGestor<Producto> {
         return flag;
     }
 
-    @Override
-    public boolean modificar(int id, Producto p) {
-       boolean flag = false;
-        if (productos.containsKey(id)) {
-            productos.put(id, p);
-            GestoraJSON.mapAarchivo("productos.json",productos);
-            flag = true;
-        }
-        return flag;
-    }
 
-    @Override
-    public void listar() {
-        for (Producto p : productos.values()) {
-            System.out.println(p);
-        }
-    }
-
-    // sincronizar contador
+    //sincronizar cont
+    // para que cuando se lea del json, el contador este bien ubicado
     private void sincronizarCont(){
         int idMax=0;
         for(Producto p : productos.values()){

@@ -15,6 +15,7 @@ public class Gestora implements IGestor<Usuario> {
     }
 
     //singleton
+    // explique el por que y como funciona en la clase almacen
     public static Gestora getInstancia() {
         if (instancia == null) {
             instancia = new Gestora();
@@ -29,6 +30,8 @@ public class Gestora implements IGestor<Usuario> {
 
     /// METODOS
 
+    // si el usuario no existia , lo añade y lo mete al json para despues devolver true
+    // a la interfaz , sino false
     @Override
     public boolean agregar(Usuario u) {
         boolean flag = false;
@@ -39,6 +42,8 @@ public class Gestora implements IGestor<Usuario> {
         return flag;
     }
 
+    // aca busca a ese usuario por id , si no lo encuentra devuelve false a la interfaz
+    // pero si esta, lo elimina y actualiza el json (esta hecho con iterator por la concurrencia)
     @Override
     public boolean eliminar(int id) {
        boolean flag = false;
@@ -55,30 +60,9 @@ public class Gestora implements IGestor<Usuario> {
         return flag;
     }
 
-    @Override
-    public boolean modificar(int id, Usuario u) {
-       boolean flag = false;
-        Iterator<Usuario> it = usuarios.iterator();
-        while (it.hasNext()) {
-            Usuario us = it.next();
-            if (us.getId() == id) {
-                it.remove();
-                u.setId(id);
-                flag = usuarios.add(u);
-                GestoraJSON.setAarchivo("usuarios.json",usuarios);
-                break;
-            }
-        }
-        return flag;
-    }
 
-    @Override
-    public void listar() {
-        for (Usuario u : usuarios) {
-            System.out.println(u);
-        }
-    }
-
+    // chequea que lo que ingresa el usuario en la interfaz grafica coincida
+    // con los datos de un usuario en el sistema y retorna ese usuario o excepcion dependiendo
     public Usuario inicioSesion(String us, String pass) throws AutenticacionException {
         for(Usuario u : usuarios){
             if(u.username.equals(us) && u.password.equals(pass)){
@@ -89,6 +73,7 @@ public class Gestora implements IGestor<Usuario> {
     }
 
     //sincronizar cont
+    // para que cuando se lea del json, el contador este bien ubicado
     private void sincronizarCont(){
         int idMax=0;
         for(Usuario u : usuarios){

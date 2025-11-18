@@ -4,6 +4,5 @@ public interface IGestor<T> {
 
       boolean agregar(T obj);
       boolean eliminar(int id);
-      boolean modificar(int id, T obj);
-      void listar();
+
 }

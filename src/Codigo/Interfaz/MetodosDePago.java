@@ -55,7 +55,7 @@ public class MetodosDePago extends JFrame {
             GestoraJSON.mapAarchivo("productos.json", Almacen.getInstancia().getProductos());
 
             //reinica el menu
-            ProductoVisual.cargadorDeContenedores(Menu.getInstancia().getContenedorProductos(), 2);
+            ProductoVisual.cargadorDeContenedores(Menu.getInstancia().getContenedorProductos(), 1);
 
             //aca instancio la clase interfaz carrito para poder acceder a ella
             CarritoInterfaz carrito = CarritoInterfaz.getInstancia();
@@ -99,7 +99,7 @@ public class MetodosDePago extends JFrame {
             GestoraJSON.mapAarchivo("productos.json", Almacen.getInstancia().getProductos());
 
             //reinica el menu
-            ProductoVisual.cargadorDeContenedores(Menu.getInstancia().getContenedorProductos(), 2);
+            ProductoVisual.cargadorDeContenedores(Menu.getInstancia().getContenedorProductos(), 1);
 
             //instancio carrito
             CarritoInterfaz carrito = CarritoInterfaz.getInstancia();

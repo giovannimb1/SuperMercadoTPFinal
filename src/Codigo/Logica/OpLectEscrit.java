@@ -12,7 +12,7 @@ import java.io.IOException;
 public class OpLectEscrit {
 
     public static void grabar(String nombreArchivo, JSONArray jarray) {
-        String archivo = "src/Json/"+nombreArchivo;
+        String archivo = "src/Json/"+nombreArchivo;  //esto es para elegir bien la ruta del archivo
         try {
             FileWriter fw = new FileWriter(archivo);
             fw.write(jarray.toString(4));
@@ -23,7 +23,7 @@ public class OpLectEscrit {
     }
 
     public static JSONTokener leer(String nombreArchivo) {
-        String archivo = "src/Json/"+nombreArchivo;
+        String archivo = "src/Json/"+nombreArchivo;   //esto es para elegir bien la ruta del archivo
         JSONTokener token = null;
         try {
             token = new JSONTokener(new FileReader(archivo));

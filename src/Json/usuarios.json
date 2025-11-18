@@ -1,122 +1,172 @@
 [
     {
-        "password": "",
-        "fecha_registro": "2025-11-16",
-        "apellido": "",
-        "id": 5,
-        "permisos": false,
-        "nombre": "",
-        "email": "",
-        "username": ""
-    },
-    {
-        "password": "f",
-        "fecha_registro": "2025-11-16",
-        "apellido": "agsag",
-        "id": 2,
-        "permisos": false,
-        "nombre": "holasi",
-        "email": "holasichauno@gmail.com",
-        "username": "dd"
-    },
-    {
-        "password": "13579",
-        "fecha_registro": "2025-10-24",
-        "apellido": "Perez",
-        "id": 1,
-        "permisos": true,
-        "nombre": "Jorge",
-        "email": "jorge@gmail.com",
-        "username": "jorgeC"
-    },
-    {
-        "password": "1",
+        "password": "123abc",
         "fecha_registro": "2025-11-17",
-        "apellido": "nose",
-        "id": 6,
-        "permisos": false,
-        "nombre": "hola",
-        "email": "rawmfwopif",
-        "username": "soy yo"
-    },
-    {
-        "password": "e",
-        "fecha_registro": "2025-11-16",
-        "apellido": "",
-        "id": 7,
-        "permisos": false,
-        "nombre": "",
-        "email": "e",
-        "username": "e"
-    },
-    {
-        "password": "polo",
-        "fecha_registro": "2025-11-17",
-        "apellido": "paez",
-        "id": 8,
-        "permisos": false,
-        "nombre": "jorgito",
-        "email": "paezjorg@gmail.com",
-        "username": "jeropa"
-    },
-    {
-        "password": "1",
-        "fecha_registro": "2025-11-17",
-        "apellido": "jyj",
-        "id": 9,
-        "permisos": false,
-        "nombre": "hy",
-        "email": "kilo",
-        "username": "ssjgoku"
-    },
-    {
-        "password": "loj",
-        "fecha_registro": "2025-11-17",
-        "apellido": "fernandez",
-        "id": 10,
-        "permisos": false,
-        "nombre": "tito",
-        "email": "titofer@gmail.com",
-        "username": "titofer"
-    },
-    {
-        "password": "23",
-        "fecha_registro": "2025-11-17",
-        "apellido": "wer",
-        "id": 11,
-        "permisos": false,
-        "nombre": "juk",
-        "email": "juk@gmail.com",
-        "username": "jukwer1"
-    },
-    {
-        "password": "",
-        "fecha_registro": "2025-11-17",
-        "apellido": "wad",
-        "id": 12,
-        "permisos": false,
-        "nombre": "dawd",
-        "email": "fawpfmaw@gmail.com",
-        "username": "hola"
-    },
-    {
-        "password": "12345",
-        "fecha_registro": "2025-11-17",
-        "apellido": "awdaw",
+        "apellido": "Ibarra",
         "id": 13,
         "permisos": false,
-        "nombre": "HOLAAAAAAAAAAAAAAAAAAAAAAAA",
-        "email": "dawdaw",
-        "username": "dawdawd"
+        "nombre": "Leandro",
+        "email": "lean@mail.com",
+        "username": "lean_i"
     },
     {
-        "password": "willy",
+        "password": "pass1",
         "fecha_registro": "2025-11-17",
-        "apellido": "nose",
+        "apellido": "Pérez",
+        "id": 3,
+        "permisos": false,
+        "nombre": "Julián",
+        "email": "julian@mail.com",
+        "username": "juli_p"
+    },
+    {
+        "password": "1234",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Gómez",
+        "id": 1,
+        "permisos": false,
+        "nombre": "Nicolás",
+        "email": "nico@mail.com",
+        "username": "nico_g"
+    },
+    {
+        "password": "abcd",
+        "fecha_registro": "2025-11-17",
+        "apellido": "López",
+        "id": 2,
+        "permisos": false,
+        "nombre": "María",
+        "email": "maru@mail.com",
+        "username": "maru_l"
+    },
+    {
+        "password": "pass2",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Rossi",
+        "id": 4,
+        "permisos": false,
+        "nombre": "Camila",
+        "email": "cami@mail.com",
+        "username": "cami_r"
+    },
+    {
+        "password": "xyzx",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Torres",
+        "id": 5,
+        "permisos": false,
+        "nombre": "Valentín",
+        "email": "valen@mail.com",
+        "username": "valen_t"
+    },
+    {
+        "password": "hola123",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Sosa",
+        "id": 8,
+        "permisos": false,
+        "nombre": "Paula",
+        "email": "paula@mail.com",
+        "username": "pau_s"
+    },
+    {
+        "password": "perrito",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Luna",
+        "id": 10,
+        "permisos": false,
+        "nombre": "Delfina",
+        "email": "delfi@mail.com",
+        "username": "delfi_l"
+    },
+    {
+        "password": "super",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Acosta",
         "id": 14,
         "permisos": false,
-        "nombre": "HOla",
-        "email": "vegeta@gmail.com",
-        "username": "vegetta777"
+        "nombre": "Florencia",
+        "email": "flor@mail.com",
+        "username": "flor_a"
+    },
+    {
+        "password": "contraseña",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Nuñez",
+        "id": 12,
+        "permisos": false,
+        "nombre": "Rocío",
+        "email": "rocio@mail.com",
+        "username": "ro_n"
+    },
+    {
+        "password": "qwerty",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Vera",
+        "id": 11,
+        "permisos": false,
+        "nombre": "Tomás",
+        "email": "tomi@mail.com",
+        "username": "tomi_v"
+    },
+    {
+        "password": "pandms",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Morro Bai",
+        "id": 16,
+        "permisos": true,
+        "nombre": "Giovanni",
+        "email": "morrobaigiovannisc@gmail.com",
+        "username": "giovannimb1"
+    },
+    {
+        "password": "sascp",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Lopez",
+        "id": 17,
+        "permisos": true,
+        "nombre": "Gonzalo Leonel",
+        "email": "gonnnzadev@gmail.com",
+        "username": "gonnnzaDev"
+    },
+    {
+        "password": "clave",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Martínez",
+        "id": 6,
+        "permisos": false,
+        "nombre": "Lucía",
+        "email": "lucia@mail.com",
+        "username": "lu_m"
+    },
+    {
+        "password": "messi10",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Silva",
+        "id": 9,
+        "permisos": false,
+        "nombre": "Franco",
+        "email": "franco@mail.com",
+        "username": "fran_s"
+    },
+    {
+        "password": "123456",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Rivas",
+        "id": 15,
+        "permisos": false,
+        "nombre": "Mateo",
+        "email": "mateo@mail.com",
+        "username": "mate_r"
+    },
+    {
+        "password": "0000",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Ramírez",
+        "id": 7,
+        "permisos": false,
+        "nombre": "Agustín",
+        "email": "agus@mail.com",
+        "username": "agus_r"
     }
 ]

@@ -20,7 +20,10 @@ public class Administrador extends Usuario {
 
     /// METODOS
 
-
+    // este metodo recibe todos los strings que ingreso el admin en el menu de la interfaz
+    // para poder crear un producto , pero antes realiza todas las comprobaciones necesarias para
+    // fijarse que todol lo ingresado tiene el formato correcto para instanciar el producto nuevo
+    // y si no las cumple , tira la excepcion personalizada
     public boolean crearProducto(String nombreP, String stockP, String vencimientoP,
                                  String precioP, String marcaP, String categoriaP, String direccionImg)
             throws ProductoInvalidoException {
@@ -53,10 +56,9 @@ public class Administrador extends Usuario {
         return Almacen.getInstancia().agregar(new Producto(nombreP,marcaP,precio,vencimiento,stock,categoria,direccionImg));
     }
 
-    public boolean modificarProducto(Producto p){
-        return Almacen.getInstancia().modificar(p.getId(),p);
-    }
 
+    // este recibe un id desde la interfaz grafica para dsp buscarlo y eliminarlo
+    // del almacen si es que existe
     public boolean eliminarProducto(Producto p){
         return Almacen.getInstancia().eliminar(p.getId());
     }

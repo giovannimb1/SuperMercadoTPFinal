@@ -16,7 +16,7 @@ public abstract class Usuario implements Comparable<Usuario> {
     protected LocalDate fechaRegistro;
     protected boolean permisos;
 
-    /// CONSTRUCTORES
+    /// CONSTRUCTORES  (los 2 constructores se aseguran q se inicien con id y fecha de registro)
     public Usuario(String nombre, String apellido, String username, String email, String password) {
         this.id = cont++;
         this.nombre = nombre;
@@ -121,6 +121,8 @@ public abstract class Usuario implements Comparable<Usuario> {
 
     }
 
+    // este equals hace que un usuario sea considerado igual a otro si tienen mismo id
+    // O mismo email O mismo usuario
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Usuario u)) return false;
@@ -134,6 +136,7 @@ public abstract class Usuario implements Comparable<Usuario> {
         return 0;  // esto es para q pase de una a comparar por equals
     }
 
+    // esto era por si lo usabamos mas adelante
     @Override
     public int compareTo(Usuario aux) {
         return this.fechaRegistro.compareTo(aux.getFechaRegistro());

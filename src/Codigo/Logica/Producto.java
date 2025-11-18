@@ -16,7 +16,7 @@ public class Producto implements Comparable<Producto> {
     private Categoria_Producto categoria;
     private String direccionImg;
 
-    /// CONSTRUCTORES
+    /// CONSTRUCTORES (los 2 constructores le dan un id a cada producto q se crea)
     public Producto(String nombre, String marca, double precio, LocalDate vencimiento, int stock, Categoria_Producto categoria, String direccionImg) {
         this.id = cont++;
         this.nombre = nombre;
@@ -121,6 +121,7 @@ public class Producto implements Comparable<Producto> {
                 "|------------------------------------------------|";
     }
 
+    // un producto es considerado igual a otro si comparten el mismo id
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Producto producto)) return false;
@@ -132,11 +133,14 @@ public class Producto implements Comparable<Producto> {
         return Objects.hashCode(id);
     }
 
+    // esto era por si mas adelante filtrabamos por precio pero no lo hicimos
     @Override
     public int compareTo(Producto aux) {
         return Double.compare(this.precio, aux.precio);
     }
 
+    // estos 2 reducen o aumentan el stock de un producto x para cuando un cliente
+    // agrega o elimina ese producto x de su carrito
     public boolean reducirStock(){
         boolean flag = false;
         if(this.stock > 0){

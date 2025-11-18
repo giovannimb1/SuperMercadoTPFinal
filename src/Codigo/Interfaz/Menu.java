@@ -59,7 +59,7 @@ public class Menu extends JFrame {
         JLabel bienvendo = new JLabel("Bienvenido : " + Sesion.getUsuarioActivo().getUsername());
         bienvendo.setForeground(Color.BLACK);
         bienvendo.setFont(new Font("Segoe UI", Font.PLAIN, 36));
-        bienvendo.setBounds(200, 65, 400, 40);
+        bienvendo.setBounds(200, 58, 600, 50);
 
         //Esto permite usar la ruedita del mouse
 
@@ -126,12 +126,13 @@ public class Menu extends JFrame {
         });
 
 
-
-        mostrarMonto = new JLabel("Monto $ " + ((Cliente)Sesion.getUsuarioActivo()).getCarrito().getTotal());
-        mostrarMonto.setForeground(Color.WHITE);
-        mostrarMonto.setFont(new Font("Arial", Font.PLAIN, 18));
-        mostrarMonto.setBounds(770, 22, 300, 20);
-
+      if(Sesion.getUsuarioActivo() instanceof Cliente) {
+          mostrarMonto = new JLabel("Monto $ " + ((Cliente) Sesion.getUsuarioActivo()).getCarrito().getTotal());
+          mostrarMonto.setForeground(Color.WHITE);
+          mostrarMonto.setFont(new Font("Arial", Font.PLAIN, 18));
+          mostrarMonto.setBounds(770, 22, 300, 20);
+          panel.add(mostrarMonto);
+      }
 
 
         //Reinicio los contenedores
@@ -140,7 +141,7 @@ public class Menu extends JFrame {
         //en el panel agrego todos los jlabel
 
 
-        panel.add(mostrarMonto);
+
         panel.add(cerrarSesion);
         panel.add(contenedorProductos);
         panel.add(bienvendo);
