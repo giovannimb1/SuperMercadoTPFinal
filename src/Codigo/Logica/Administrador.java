@@ -28,7 +28,8 @@ public class Administrador extends Usuario {
                                  String precioP, String marcaP, String categoriaP, String direccionImg)
             throws ProductoInvalidoException {
 
-        int stock, precio;
+        int stock;
+        double precio;
         Categoria_Producto categoria;
         LocalDate vencimiento;
 
@@ -37,7 +38,7 @@ public class Administrador extends Usuario {
                 throw new ProductoInvalidoException("Nombre y/o Marca invalidos");
             }
             stock = Integer.parseInt(stockP);
-            precio = Integer.parseInt(precioP);
+            precio = Double.parseDouble(precioP);
             if(stock < 1 || precio < 1){
                 throw new ProductoInvalidoException("Precio y Stock deben ser mayores a 0");
             }
