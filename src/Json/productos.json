@@ -4,20 +4,10 @@
         "marca": "La Rural",
         "precio": 4200,
         "categoria": "CARNE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/asado-dos-costillas.jpg",
+        "direccion": "img/FotoProductos/asado-dos-costillas.jpg",
         "id": 52,
         "stock": 30,
         "nombre": "Asado"
-    },
-    {
-        "vencimiento": "2026-02-28",
-        "marca": "Don José",
-        "precio": 3500,
-        "categoria": "CARNE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/milanesa.jpg",
-        "id": 53,
-        "stock": 40,
-        "nombre": "Milanesas"
     },
     {
         "vencimiento": "2026-03-05",
@@ -500,23 +490,23 @@
         "nombre": "Atún"
     },
     {
-        "vencimiento": "6666-06-06",
-        "marca": "CMPSOG",
-        "precio": 1,
-        "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/frrrrrrrrGIOVANNIYGONZA.png",
-        "id": 105,
-        "stock": 2,
-        "nombre": "giovannimb1 Y gonnnzaDev"
-    },
-    {
         "vencimiento": "2028-09-15",
         "marca": "SDLG",
         "precio": 900,
         "categoria": "SNACK",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/18445-1.jpg",
+        "direccion": "img/FotoProductos/18445-1.jpg",
         "id": 106,
         "stock": 500,
         "nombre": "Doritos"
+    },
+    {
+        "vencimiento": "6666-06-06",
+        "marca": "CMPSOG",
+        "precio": 1,
+        "categoria": "HIGIENE",
+        "direccion": "img/fotosUsuario/frrrrrrrrGIOVANNIYGONZA.png",
+        "id": 107,
+        "stock": 2,
+        "nombre": "giovannimb1 Y gonnnzaDev"
     }
 ]

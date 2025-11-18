@@ -3,6 +3,7 @@ package Codigo.Interfaz.ClasesAux;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 
 public class ImagenAdministrador extends JFrame {
 
@@ -18,15 +19,31 @@ public class ImagenAdministrador extends JFrame {
         int resultado = buscador.showOpenDialog(null);
 
         if (resultado == JFileChooser.APPROVE_OPTION) {
-            File archivo = buscador.getSelectedFile(); // esto es el archivo
-            ImageIcon img = new ImageIcon(archivo.getAbsolutePath());
-            Image imagenEscaladaxc = img.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+            try {
+                File origen = buscador.getSelectedFile();
 
+                File carpeta = new File("img/fotosUsuario");
+                if (!carpeta.exists()) carpeta.mkdirs();
 
-            System.out.println("direccion = " + archivo.toString());
+                File destino = new File(carpeta, origen.getName());
 
+                java.nio.file.Files.copy(
+                        origen.toPath(),
+                        destino.toPath(),
+                        java.nio.file.StandardCopyOption.REPLACE_EXISTING
+                );
 
-            return archivo.getAbsolutePath().replace("\\", "/");
+                return "img/fotosUsuario/" + origen.getName();
+
+            } catch (IOException e) {
+                Metodos.excepcionPantallaEmergente(e.getMessage());
+
+            } catch(ImagenErrorException e){
+
+                Metodos.excepcionPantallaEmergente(e.getMessage());
+
+            }
+
 
         }
         return null;
