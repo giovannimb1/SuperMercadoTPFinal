@@ -29,14 +29,4 @@ Para el Trabajo Practico Final de Programación II realizamos un Sistema de Comp
 
 - Frontend : Gonzalo Leonel Lopez
 
--
 
-
-
-
-
-
-
-
-
-Ezequiel y Jeronimo
