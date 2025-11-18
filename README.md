@@ -1,4 +1,4 @@
-Para el Trabajo Practico Final de Programación II realizamos un Sistema de Compra y Venta de productos de un Supermercado.
+Para el Trabajo Practico Final de Programación II realizamos un Sistema de Compra y Venta.
 
 ### Tecnologias
 
@@ -16,5 +16,17 @@ Para el Trabajo Practico Final de Programación II realizamos un Sistema de Comp
 - Carrito de compras
     
 - Visualización de stock y productos
+
+### Herramientas Utilizadas:
+
+- Photoshop
+
+- Git
+
+### Equipo:
+
+- Backend: Giovanni Morro Bai
+
+- Frontend : Gonzalo Leonel Lopez
 
 
