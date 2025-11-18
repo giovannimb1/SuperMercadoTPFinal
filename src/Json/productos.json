@@ -1,20 +1,10 @@
 [
     {
-        "vencimiento": "2026-03-10",
-        "marca": "La Rural",
-        "precio": 4200,
-        "categoria": "CARNE",
-        "direccion": "img/FotoProductos/asado-dos-costillas.jpg",
-        "id": 52,
-        "stock": 30,
-        "nombre": "Asado"
-    },
-    {
         "vencimiento": "2026-03-05",
         "marca": "La Pampeana",
         "precio": 2900,
         "categoria": "CARNE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/Carne-Picada-Especial-de-Novillito-Kg-1-5805.jpg",
+        "direccion": "img/FotoProductos/Carne-Picada-Especial-de-Novillito-Kg-1-5805.jpg",
         "id": 54,
         "stock": 25,
         "nombre": "Carne Picada"
@@ -24,7 +14,7 @@
         "marca": "La Serenísima",
         "precio": 950,
         "categoria": "LACTEO",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/yoguSerenisima.jpeg",
+        "direccion": "img/FotoProductos/yoguSerenisima.jpeg",
         "id": 55,
         "stock": 60,
         "nombre": "Yogur Entero"
@@ -34,7 +24,7 @@
         "marca": "La Serenísima",
         "precio": 800,
         "categoria": "LACTEO",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/leche serinisimma.png",
+        "direccion": "img/FotoProductos/leche serinisimma.png",
         "id": 56,
         "stock": 97,
         "nombre": "Leche"
@@ -44,7 +34,7 @@
         "marca": "La Paulina",
         "precio": 1200,
         "categoria": "LACTEO",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/quesoralladoPaulina.jpg",
+        "direccion": "img/FotoProductos/quesoralladoPaulina.jpg",
         "id": 58,
         "stock": 40,
         "nombre": "Queso Rallado"
@@ -54,7 +44,7 @@
         "marca": "Frutalia",
         "precio": 700,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/1.jpg",
+        "direccion": "img/FotoProductos/1.jpg",
         "id": 59,
         "stock": 75,
         "nombre": "Manzanas"
@@ -64,7 +54,7 @@
         "marca": "EcuadorPlus",
         "precio": 650,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/banana.jpg",
+        "direccion": "img/FotoProductos/banana.jpg",
         "id": 60,
         "stock": 80,
         "nombre": "Bananas"
@@ -74,7 +64,7 @@
         "marca": "Ilolay",
         "precio": 2500,
         "categoria": "LACTEO",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/quesoppppIlolAy.jpg",
+        "direccion": "img/FotoProductos/quesoppppIlolAy.jpg",
         "id": 61,
         "stock": 20,
         "nombre": "Queso Cremoso"
@@ -84,7 +74,7 @@
         "marca": "Campo Sur",
         "precio": 500,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/papa.jpg",
+        "direccion": "img/FotoProductos/papa.jpg",
         "id": 62,
         "stock": 100,
         "nombre": "Papas"
@@ -94,7 +84,7 @@
         "marca": "La Huerta",
         "precio": 430,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/cebolla.jpeg",
+        "direccion": "img/FotoProductos/cebolla.jpeg",
         "id": 63,
         "stock": 90,
         "nombre": "Cebollas"
@@ -104,7 +94,7 @@
         "marca": "La Finca",
         "precio": 820,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/tomates.jpg",
+        "direccion": "img/FotoProductos/tomates.jpg",
         "id": 64,
         "stock": 50,
         "nombre": "Tomates"
@@ -114,7 +104,7 @@
         "marca": "Villavicencio",
         "precio": 500,
         "categoria": "BEBIDA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/villavicencio.jpeg",
+        "direccion": "img/FotoProductos/villavicencio.jpeg",
         "id": 65,
         "stock": 200,
         "nombre": "Agua Mineral"
@@ -124,7 +114,7 @@
         "marca": "Manaos",
         "precio": 750,
         "categoria": "BEBIDA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/manos.jpg",
+        "direccion": "img/FotoProductos/manos.jpg",
         "id": 66,
         "stock": 150,
         "nombre": "Gaseosa Cola"
@@ -134,7 +124,7 @@
         "marca": "BC",
         "precio": 680,
         "categoria": "BEBIDA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/bc.jpeg",
+        "direccion": "img/FotoProductos/bc.jpeg",
         "id": 67,
         "stock": 120,
         "nombre": "Jugo de Naranja"
@@ -144,7 +134,7 @@
         "marca": "Quilmes",
         "precio": 900,
         "categoria": "BEBIDA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/quilmesZarpada.jpeg",
+        "direccion": "img/FotoProductos/quilmesZarpada.jpeg",
         "id": 68,
         "stock": 200,
         "nombre": "Cerveza Rubia"
@@ -154,7 +144,7 @@
         "marca": "Lays",
         "precio": 700,
         "categoria": "SNACK",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/lays.jpg",
+        "direccion": "img/FotoProductos/lays.jpg",
         "id": 69,
         "stock": 100,
         "nombre": "Papas Fritas"
@@ -164,7 +154,7 @@
         "marca": "Arcor",
         "precio": 620,
         "categoria": "SNACK",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/maniJapo.jpeg",
+        "direccion": "img/FotoProductos/maniJapo.jpeg",
         "id": 70,
         "stock": 80,
         "nombre": "Maní Japonés"
@@ -174,7 +164,7 @@
         "marca": "Bagley",
         "precio": 550,
         "categoria": "SNACK",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/pepas.jpg",
+        "direccion": "img/FotoProductos/pepas.jpg",
         "id": 71,
         "stock": 60,
         "nombre": "Galletitas Pepas"
@@ -184,7 +174,7 @@
         "marca": "Don Satur",
         "precio": 480,
         "categoria": "SNACK",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/bizcochitos-salados-de-grasa-don-satur-argentinos-.jpg",
+        "direccion": "img/FotoProductos/bizcochitos-salados-de-grasa-don-satur-argentinos-.jpg",
         "id": 72,
         "stock": 70,
         "nombre": "Bizcochitos"
@@ -194,7 +184,7 @@
         "marca": "Sedal",
         "precio": 1200,
         "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/sedal.jpg",
+        "direccion": "img/FotoProductos/sedal.jpg",
         "id": 73,
         "stock": 50,
         "nombre": "Shampoo"
@@ -204,7 +194,7 @@
         "marca": "Pantene",
         "precio": 1350,
         "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/pantene.jpeg",
+        "direccion": "img/FotoProductos/pantene.jpeg",
         "id": 74,
         "stock": 45,
         "nombre": "Acondicionador"
@@ -214,7 +204,7 @@
         "marca": "Dove",
         "precio": 1100,
         "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/dove.jpeg",
+        "direccion": "img/FotoProductos/dove.jpeg",
         "id": 75,
         "stock": 70,
         "nombre": "Jabón Líquido"
@@ -224,7 +214,7 @@
         "marca": "Rexona",
         "precio": 980,
         "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/desodorante-rexona-men-sensitive-x-90-gr.jpg",
+        "direccion": "img/FotoProductos/desodorante-rexona-men-sensitive-x-90-gr.jpg",
         "id": 76,
         "stock": 60,
         "nombre": "Desodorante"
@@ -234,7 +224,7 @@
         "marca": "Elegante",
         "precio": 1600,
         "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/papel elegante.jpeg",
+        "direccion": "img/FotoProductos/papel elegante.jpeg",
         "id": 77,
         "stock": 100,
         "nombre": "Papel Higiénico"
@@ -244,7 +234,7 @@
         "marca": "Ayudín",
         "precio": 850,
         "categoria": "LIMPIEZA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/ayudin.jpeg",
+        "direccion": "img/FotoProductos/ayudin.jpeg",
         "id": 78,
         "stock": 80,
         "nombre": "Lavandina"
@@ -254,7 +244,7 @@
         "marca": "Magistral",
         "precio": 780,
         "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/detergente.jpg",
+        "direccion": "img/FotoProductos/detergente.jpg",
         "id": 79,
         "stock": 70,
         "nombre": "Detergente"
@@ -264,7 +254,7 @@
         "marca": "Magistral",
         "precio": 780,
         "categoria": "LIMPIEZA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/detergente.jpg",
+        "direccion": "img/FotoProductos/detergente.jpg",
         "id": 80,
         "stock": 70,
         "nombre": "Detergente"
@@ -274,7 +264,7 @@
         "marca": "Ala",
         "precio": 2200,
         "categoria": "LIMPIEZA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/ala.jpg",
+        "direccion": "img/FotoProductos/ala.jpg",
         "id": 81,
         "stock": 50,
         "nombre": "Jabón en Polvo"
@@ -284,7 +274,7 @@
         "marca": "Mr Músculo",
         "precio": 900,
         "categoria": "LIMPIEZA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/mrmusculo.jpeg",
+        "direccion": "img/FotoProductos/mrmusculo.jpeg",
         "id": 82,
         "stock": 65,
         "nombre": "Limpiavidrios"
@@ -294,7 +284,7 @@
         "marca": "Lysoform",
         "precio": 1300,
         "categoria": "LIMPIEZA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/lysofrm.jpeg",
+        "direccion": "img/FotoProductos/lysofrm.jpeg",
         "id": 83,
         "stock": 55,
         "nombre": "Desinfectante"
@@ -304,7 +294,7 @@
         "marca": "Matarazzo",
         "precio": 550,
         "categoria": "SNACK",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/fideo.jpeg",
+        "direccion": "img/FotoProductos/fideo.jpeg",
         "id": 84,
         "stock": 120,
         "nombre": "Fideos"
@@ -314,7 +304,7 @@
         "marca": "Gallo",
         "precio": 800,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/arrozoro.jpeg",
+        "direccion": "img/FotoProductos/arrozoro.jpeg",
         "id": 85,
         "stock": 100,
         "nombre": "Arroz"
@@ -324,7 +314,7 @@
         "marca": "Cocinero",
         "precio": 1500,
         "categoria": "BEBIDA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/2320094_f.jpg",
+        "direccion": "img/FotoProductos/2320094_f.jpg",
         "id": 86,
         "stock": 90,
         "nombre": "Aceite"
@@ -334,7 +324,7 @@
         "marca": "Bimbo",
         "precio": 1300,
         "categoria": "SNACK",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/bimbo.jpeg",
+        "direccion": "img/FotoProductos/bimbo.jpeg",
         "id": 87,
         "stock": 40,
         "nombre": "Pan de Molde"
@@ -344,7 +334,7 @@
         "marca": "Pureza",
         "precio": 700,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/harina.jpeg",
+        "direccion": "img/FotoProductos/harina.jpeg",
         "id": 89,
         "stock": 80,
         "nombre": "Harina"
@@ -354,7 +344,7 @@
         "marca": "Chango",
         "precio": 680,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/azucar.jpeg",
+        "direccion": "img/FotoProductos/azucar.jpeg",
         "id": 90,
         "stock": 70,
         "nombre": "Azúcar"
@@ -364,7 +354,7 @@
         "marca": "Celusal",
         "precio": 450,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/salFina.jpeg",
+        "direccion": "img/FotoProductos/salFina.jpeg",
         "id": 91,
         "stock": 60,
         "nombre": "Sal Fina"
@@ -374,7 +364,7 @@
         "marca": "Taragüí",
         "precio": 900,
         "categoria": "BEBIDA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/te.jpeg",
+        "direccion": "img/FotoProductos/te.jpeg",
         "id": 92,
         "stock": 50,
         "nombre": "Té Negro"
@@ -384,7 +374,7 @@
         "marca": "Nescafé",
         "precio": 2100,
         "categoria": "BEBIDA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/nescafe.jpeg",
+        "direccion": "img/FotoProductos/nescafe.jpeg",
         "id": 94,
         "stock": 55,
         "nombre": "Café Instantáneo"
@@ -394,7 +384,7 @@
         "marca": "Sancor",
         "precio": 1200,
         "categoria": "LACTEO",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/sancorMAnteca.jpeg",
+        "direccion": "img/FotoProductos/sancorMAnteca.jpeg",
         "id": 95,
         "stock": 45,
         "nombre": "Manteca"
@@ -404,7 +394,7 @@
         "marca": "Ilolay",
         "precio": 950,
         "categoria": "LACTEO",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/ilolayCrema.jpeg",
+        "direccion": "img/FotoProductos/ilolayCrema.jpeg",
         "id": 96,
         "stock": 42,
         "nombre": "Crema de Leche"
@@ -414,7 +404,7 @@
         "marca": "Granja Oro",
         "precio": 1100,
         "categoria": "SNACK",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/huevo.jpeg",
+        "direccion": "img/FotoProductos/huevo.jpeg",
         "id": 97,
         "stock": 90,
         "nombre": "Huevos"
@@ -424,7 +414,7 @@
         "marca": "CampoSur",
         "precio": 3800,
         "categoria": "CARNE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/pollo.jpeg",
+        "direccion": "img/FotoProductos/pollo.jpeg",
         "id": 98,
         "stock": 25,
         "nombre": "Pollo Entero"
@@ -434,7 +424,7 @@
         "marca": "PolloMax",
         "precio": 3300,
         "categoria": "CARNE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/pechuga.jpeg",
+        "direccion": "img/FotoProductos/pechuga.jpeg",
         "id": 99,
         "stock": 35,
         "nombre": "Pechugas"
@@ -444,7 +434,7 @@
         "marca": "El Fueguero",
         "precio": 1500,
         "categoria": "VEGETAL",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/carbon.jpeg",
+        "direccion": "img/FotoProductos/carbon.jpeg",
         "id": 100,
         "stock": 40,
         "nombre": "Carbón"
@@ -454,7 +444,7 @@
         "marca": "Virulana",
         "precio": 600,
         "categoria": "LIMPIEZA",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/virulana.jpeg",
+        "direccion": "img/FotoProductos/virulana.jpeg",
         "id": 101,
         "stock": 80,
         "nombre": "Esponjas"
@@ -464,7 +454,7 @@
         "marca": "Ayudín",
         "precio": 900,
         "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/ayudin.jpeg",
+        "direccion": "img/FotoProductos/ayudin.jpeg",
         "id": 102,
         "stock": 70,
         "nombre": "Alcohol en Gel"
@@ -474,7 +464,7 @@
         "marca": "Elite",
         "precio": 500,
         "categoria": "HIGIENE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/elite.jpeg",
+        "direccion": "img/FotoProductos/elite.jpeg",
         "id": 103,
         "stock": 100,
         "nombre": "Servilletas"
@@ -484,7 +474,7 @@
         "marca": "La Campagnola",
         "precio": 1400,
         "categoria": "CARNE",
-        "direccion": "C:/Users/Gonzalo/Desktop/SuperMercadoTPFinal/recursos/img/FotoProductos/lacampagnola.jpeg",
+        "direccion": "img/FotoProductos/lacampagnola.jpeg",
         "id": 104,
         "stock": 60,
         "nombre": "Atún"
@@ -504,9 +494,19 @@
         "marca": "CMPSOG",
         "precio": 1,
         "categoria": "HIGIENE",
-        "direccion": "img/fotosUsuario/frrrrrrrrGIOVANNIYGONZA.png",
+        "direccion": "img/FotoProductos/creadores.png",
         "id": 107,
-        "stock": 2,
+        "stock": 1,
         "nombre": "giovannimb1 Y gonnnzaDev"
+    },
+    {
+        "vencimiento": "2027-03-03",
+        "marca": "prueba",
+        "precio": 333,
+        "categoria": "SNACK",
+        "direccion": null,
+        "id": 108,
+        "stock": 223,
+        "nombre": "hola"
     }
 ]

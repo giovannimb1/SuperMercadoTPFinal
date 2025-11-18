@@ -25,11 +25,11 @@ public class Producto implements Comparable<Producto> {
         this.vencimiento = vencimiento;
         this.stock = stock;
         this.categoria = categoria;
-        if(direccionImg == null || direccionImg.isBlank()){
-            this.direccionImg = "/img/FotoProductos/0.jpg";
-        }else{
+       // if(direccionImg == null || direccionImg.isBlank()){
+         //   this.direccionImg = "/img/FotoProductos/0.jpg";
+        //}else{
             this.direccionImg = direccionImg;
-        }
+       // }
     }
 
     public Producto() {
