@@ -22,7 +22,7 @@ public class ImagenAdministrador extends JFrame {
             try {
                 File origen = buscador.getSelectedFile();
 
-                File carpeta = new File("img/fotosUsuario");
+                File carpeta = new File("img/FotoProductos");
                 if (!carpeta.exists()) carpeta.mkdirs();
 
                 File destino = new File(carpeta, origen.getName());
@@ -33,7 +33,7 @@ public class ImagenAdministrador extends JFrame {
                         java.nio.file.StandardCopyOption.REPLACE_EXISTING
                 );
 
-                return "img/fotosUsuario/" + origen.getName();
+                return "img/FotoProductos/" + origen.getName();
 
             } catch (IOException e) {
                 Metodos.excepcionPantallaEmergente(e.getMessage());

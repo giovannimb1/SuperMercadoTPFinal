@@ -508,5 +508,15 @@
         "id": 108,
         "stock": 223,
         "nombre": "hola"
+    },
+    {
+        "vencimiento": "2026-03-03",
+        "marca": "momo",
+        "precio": 3425235,
+        "categoria": "VEGETAL",
+        "direccion": null,
+        "id": 111,
+        "stock": 31231,
+        "nombre": "meme"
     }
 ]
