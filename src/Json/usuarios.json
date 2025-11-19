@@ -40,6 +40,26 @@
         "username": "maru_l"
     },
     {
+        "password": "1234",
+        "fecha_registro": "2025-11-18",
+        "apellido": "reyes",
+        "id": 18,
+        "permisos": false,
+        "nombre": "gisele",
+        "email": "giselereyes@hotmail.com",
+        "username": "gise123"
+    },
+    {
+        "password": "0000",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Ramírez",
+        "id": 7,
+        "permisos": false,
+        "nombre": "Agustín",
+        "email": "agus@mail.com",
+        "username": "agus_r"
+    },
+    {
         "password": "pass2",
         "fecha_registro": "2025-11-17",
         "apellido": "Rossi",
@@ -90,26 +110,6 @@
         "username": "flor_a"
     },
     {
-        "password": "contraseña",
-        "fecha_registro": "2025-11-17",
-        "apellido": "Nuñez",
-        "id": 12,
-        "permisos": false,
-        "nombre": "Rocío",
-        "email": "rocio@mail.com",
-        "username": "ro_n"
-    },
-    {
-        "password": "qwerty",
-        "fecha_registro": "2025-11-17",
-        "apellido": "Vera",
-        "id": 11,
-        "permisos": false,
-        "nombre": "Tomás",
-        "email": "tomi@mail.com",
-        "username": "tomi_v"
-    },
-    {
         "password": "pandms",
         "fecha_registro": "2025-11-17",
         "apellido": "Morro Bai",
@@ -128,16 +128,6 @@
         "nombre": "Gonzalo Leonel",
         "email": "gonnnzadev@gmail.com",
         "username": "gonnnzaDev"
-    },
-    {
-        "password": "clave",
-        "fecha_registro": "2025-11-17",
-        "apellido": "Martínez",
-        "id": 6,
-        "permisos": false,
-        "nombre": "Lucía",
-        "email": "lucia@mail.com",
-        "username": "lu_m"
     },
     {
         "password": "messi10",
@@ -160,13 +150,33 @@
         "username": "mate_r"
     },
     {
-        "password": "0000",
+        "password": "contraseña",
         "fecha_registro": "2025-11-17",
-        "apellido": "Ramírez",
-        "id": 7,
+        "apellido": "Nuñez",
+        "id": 12,
         "permisos": false,
-        "nombre": "Agustín",
-        "email": "agus@mail.com",
-        "username": "agus_r"
+        "nombre": "Rocío",
+        "email": "rocio@mail.com",
+        "username": "ro_n"
+    },
+    {
+        "password": "qwerty",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Vera",
+        "id": 11,
+        "permisos": false,
+        "nombre": "Tomás",
+        "email": "tomi@mail.com",
+        "username": "tomi_v"
+    },
+    {
+        "password": "clave",
+        "fecha_registro": "2025-11-17",
+        "apellido": "Martínez",
+        "id": 6,
+        "permisos": false,
+        "nombre": "Lucía",
+        "email": "lucia@mail.com",
+        "username": "lu_m"
     }
 ]

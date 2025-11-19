@@ -376,7 +376,7 @@
         "categoria": "BEBIDA",
         "direccion": "img/FotoProductos/nescafe.jpeg",
         "id": 94,
-        "stock": 55,
+        "stock": 54,
         "nombre": "Café Instantáneo"
     },
     {
@@ -486,7 +486,7 @@
         "categoria": "SNACK",
         "direccion": "img/FotoProductos/18445-1.jpg",
         "id": 106,
-        "stock": 500,
+        "stock": 499,
         "nombre": "Doritos"
     },
     {
@@ -496,7 +496,7 @@
         "categoria": "HIGIENE",
         "direccion": "img/FotoProductos/creadores.png",
         "id": 107,
-        "stock": 1,
+        "stock": 0,
         "nombre": "giovannimb1 Y gonnnzaDev"
     },
     {

@@ -47,7 +47,9 @@ public class PanelConFondoRepetidoCarrito extends JPanel {
         int ancho = fondo.getWidth(this);
         int largo = fondo.getHeight(this);
 
-        if (ancho <= 0 || largo <= 0) return;
+        if (ancho <= 0 || largo <= 0) {
+            return;
+        }
 
         for (int x = 0; x < getWidth(); x += ancho) {
             for (int y = 0; y < getHeight(); y += largo) {

@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Metodos extends JFrame {
 
-
+// esto es para modularizar
     //metodo texto default :v
 
     public static JLabel textoDefault(int x, int y, String texto, Color color) {
@@ -60,6 +60,7 @@ public class Metodos extends JFrame {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
     }
+    //configuracion para la pantalla chiquita
 
     public static void ventanasConfiguracionAlternativa(JFrame frame, String titulo) {
         frame.setIconImage(Toolkit.getDefaultToolkit().getImage(
